@@ -85,7 +85,53 @@
 | **dockerTools.streamLayeredImage** | Stream directly to docker load |
 | **nixos-generators** | Build multiple image formats from one config |
 | **nixos-appliance-ota-update** | Reference for A/B OTA appliance images |
+| **nix2container** | Efficient container building (alternative to dockerTools) |
+| **compose2nix** | Generate NixOS config from Docker Compose |
 
+### 19.9 Additional Ecosystem Tools (Round 2 Research)
+
+| Tool | Category | Purpose |
+|---|---|---|
+| **bento** | Deployment | KISS NixOS fleet management |
+| **Clan** | Deployment | P2P deployment with built-in secrets and networking |
+| **morph** | Deployment | NixOS fleet management (legacy) |
+| **Nixlets** | Kubernetes | Helm-like tool using only Nix (Kubenix under the hood) |
+| **KuberNix** | Kubernetes | Single-dependency K8s clusters via Nix |
+| **nixidy** | GitOps | Kubernetes GitOps with Nix and Argo CD |
+| **terranix** | IaC | Nix-based Terraform/OpenTofu JSON generator |
+| **sbomnix** | Security | SBOM, provenance, dependency graph, vulnerability tools for Nix |
+| **bsf** | Security | Developer-centric supply chain security (SLSA) |
+| **MCP-NixOS** | AI | MCP server for NixOS package/option search |
+| **nix-health** | CI | Project-specific Nix health checks in flake.nix |
+| **nix-output-monitor** | Dev | Build graphs and statistics during derivations |
+| **nix-tree** | Dev | Interactive dependency graph browser |
+| **nvd** | Dev | Diff package versions between NixOS generations |
+| **nix-init** | Dev | Generate Nix packages from URLs with hash prefetching |
+| **nurl** | Dev | Generate Nix fetcher calls from repository URLs |
+| **nix-diff** | Dev | Explain why two Nix derivations differ |
+| **nix-du** | Dev | Visualise GC roots to free store space |
+| **angrr** | Dev | Auto Nix GC Roots Retention (delete old roots by mtime) |
+| **optnix** | Dev | Terminal-based options searcher for Nix modules |
+| **nixos-cli** | Dev | All-in-one CLI for common NixOS tools |
+| **nixpkgs-hammering** | Quality | Opinionated linter for Nixpkgs expressions |
+| **pre-commit-hooks.nix** | Quality | Run linters/formatters at commit time and in CI |
+| **nil** | Editor | Nix Language Server (incremental analysis) |
+| **nixd** | Editor | Nix language server (based on Nix libraries) |
+| **rnix-lsp** | Editor | Syntax-checking language server for Nix |
+| **Arion** | Containers | Run docker-compose with Nix/NixOS |
+| **extra-container** | Containers | Run declarative NixOS containers from CLI |
+| **microvm.nix** | VMs | NixOS-based MicroVMs |
+| **nixos-shell** | VMs | Simple headless VM config (like Vagrant) |
+| **agent-sandbox.nix** | Security | Declarative sandboxing with bubblewrap/sandbox-exec |
+| **robotnix** | Mobile | Declarative Android (AOSP) build system |
+| **Devbox** | Dev | Instant, portable, predictable dev environments |
+| **flox** | Dev | Manage and share dev environments |
+| **Snowfall Lib** | Flake | Opinionated flake management library |
+| **flakelight** | Flake | Modular flake framework minimizing boilerplate |
+| **Conflake** | Flake | Convention-based flake.nix framework |
+| **dream2nix** | Packaging | Auto-convert packages from other build systems |
+| **Nix GitLab CI** | CI | Define GitLab CI pipelines in pure Nix |
+| **Standard** | Framework | Opinionated Nix Flakes framework for large projects |
 
 ---
 

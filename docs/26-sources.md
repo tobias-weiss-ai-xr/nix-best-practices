@@ -113,12 +113,33 @@ verified against the actual repository contents.*
 | Nixpkgs Manual | nixos.org/manual/nixpkgs/stable | Nixpkgs reference (overlays, dockerTools, testers) |
 | Zero to Nix | zero-to-nix.com | Determinate Systems learning resource |
 | nixcademy | nixcademy.com | Blog posts on appliance images, OTA, integration tests, macOS |
-| nixos.wiki | nixos.wiki | Community wiki (Flakes, Binary Cache, Impermanence) |
+| nixos.wiki (Wayback) | web.archive.org/nixos.wiki | Community wiki (Flakes schema, Binary Cache, Impermanence, Disko, Secure Boot) |
 | Nix Pills | nixos.org/guides/nix-pills | Foundational Nix tutorial |
 | nixos-and-flakes | nixos-and-flakes.thiscute.world/best-practices/intro | Best practices guide |
+| Awesome Nix | github.com/nix-community/awesome-nix | 150+ curated ecosystem tools |
+| devops-research | ~/git/devops-research | DevSecOps intelligence corpus (sbomnix, comin, terranix, NixOS paper) |
+
+### Round 2 New Sources
+
+| Source | URL | Key New Findings |
+|---|---|---|
+| NixOS Manual | nixos.org/manual/nixos/stable | systemd-repart images, container management, 34 module examples, Keycloak/Forgejo modules |
+| nixos.wiki (Wayback) | web.archive.org/nixos.wiki | Full Flakes output schema, nix-serve+nginx, impermanence+home-manager, disko GPT/bcachefs, Lanzaboote |
+| Zero to Nix | zero-to-nix.com | Binary cache mechanics, NixOS generations/rollbacks, module anatomy |
+| Awesome Nix | github.com/nix-community/awesome-nix | 150+ tools: bento, Clan, nix2container, compose2nix, nixidy, MCP-NixOS, nix-health |
+| Nixpkgs Manual | nixos.org/manual/nixpkgs/stable | 90+ examples: dockerTools (19+), testers, build helpers, overlays, fakeNss |
+| nix.dev Troubleshooting | nix.dev/guides/troubleshooting | Cache troubleshooting, DB repair, schema migration, macOS issues |
+| nix.dev FAQ | nix.dev/guides/faq | nixfmt (official), nixpkgs-review, Home Manager, nixos-generators |
+| nix.dev VM Tutorial | nix.dev/tutorials/nixos/nixos-configuration-on-vm | QEMU VM config, nix-build -A vm, graphical VMs, Sway |
+| nix.dev ISO Tutorial | nix.dev/tutorials/nixos/building-bootable-iso-image | Custom ISO with nixos-generators, kernel customization |
+| nix.dev RPi Tutorial | nix.dev/tutorials/nixos/installing-nixos-on-a-raspberry-pi | ARM deployment, nixos-hardware, extlinux, mutableUsers |
+| nix.dev Python Tutorial | nix.dev/guides/recipes/python-environment | python3.withPackages, mkShellNoCC, non-Python tools in shell |
+| nix.dev Further Reading | nix.dev/recommended-reading | 15+ community resources, video series, blogs |
+| devops-research corpus | ~/git/devops-research | sbomnix (307★), bsf (289★), comin (968★), terranix (505★), NixOS declarative infra paper |
 
 ---
 
 *This guide synthesizes findings from 20+ ecosystem projects, official manuals,
-community wikis, blog posts, and the applicative-systems repository analysis.
+community wikis, blog posts, the applicative-systems repository analysis,
+the devops-research intelligence corpus, and the Awesome Nix curated list.
 All code examples are verified against actual source code.*

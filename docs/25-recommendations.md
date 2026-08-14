@@ -288,5 +288,29 @@
 | Flake structure | **flake-parts** | Modular, reusable, perSystem |
 | Image building | **dockerTools.buildLayeredImage** | Layered, cacheable, reproducible |
 
+### 20.5 New Tools from Round 2 Research
+
+The following tools and patterns were identified in the second research round
+and are recommended for evaluation:
+
+| Tool | Category | Relevance to opendesk-edu |
+|---|---|---|
+| **comin** (968★) | NixOS GitOps | Continuously pulls NixOS config from Git — complements ArgoCD for base OS layer |
+| **sbomnix** (307★) | SBOM generation | Nix-native SBOM with CycloneDX/SPDX — enhance opendesk-nix sbom.nix |
+| **terranix** (505★) | Terraform/OpenTofu | Nix-to-Terraform JSON — alternative to builtins.toJSON in declarative-runtime |
+| **nixidy** | K8s GitOps | Kubernetes GitOps with Nix and Argo CD — native Nix alternative to Helmfile |
+| **compose2nix** | Docker migration | Generate NixOS config from Docker Compose — useful for service migration |
+| **MCP-NixOS** | AI integration | MCP server for NixOS package/option search — AI-assisted configuration |
+| **nix-health** | Health checks | Project-specific Nix health checks in flake.nix — CI validation |
+| **nix2container** | Container images | Efficient container building (alternative to dockerTools) — smaller images |
+| **services-flake** | Service config | NixOS-like service framework for flakes — dev environments |
+| **nh** | CLI enhancement | Better output for nix/nixos-rebuild — developer experience |
+| **nix-output-monitor** | Build monitoring | Graphs and statistics during builds — CI visibility |
+| **nix-tree** | Dependency analysis | Interactive dependency graph browser — debugging closures |
+| **nvd** | Version diff | Diff package versions between NixOS generations — update tracking |
+| **nixos-generators** | Image building | Multi-format image output (ISO, VM, cloud) — provisioning flexibility |
+| **buildsafedev/bsf** (289★) | Supply chain | SLSA provenance for Nix builds — compliance |
+| **NixOS declarative containers** | Container management | systemd-nspawn declarative containers — sidecar services on nodes |
+
 ---
 

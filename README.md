@@ -45,7 +45,8 @@ nix-best-practices/
 │   ├── 23-best-practices.md           # Do/Don't tables
 │   ├── 24-opendesk-architecture.md    # Current opendesk-edu/opendesk-nix state + gaps
 │   ├── 25-recommendations.md          # 4 goals, migration path, priority actions
-│   └── 26-sources.md                  # All source references
+│   ├── 26-sources.md                  # All source references
+│   └── 27-new-research-findings.md    # Round 2 research (manuals, wiki, Awesome Nix)
 └── examples/                          # Standalone Nix configuration examples
     ├── flake.nix                      # Reference flake (treefmt, checks, devShell)
     ├── treefmt.nix                    # treefmt config (nixfmt + statix + deadnix)
@@ -139,13 +140,18 @@ This knowledge base synthesizes findings from:
 - **applicative-systems** GitHub organization (16 repos, analyzed in [docs/02-applicative-systems.md](docs/02-applicative-systems.md))
 - **nix.dev** tutorials (all 9 curriculum sections, in [docs/04-nix-curriculum.md](docs/04-nix-curriculum.md))
 - **nixos-and-flakes.thiscute.world** best practices
-- **nixos.org** manuals (NixOS, Nixpkgs)
-- **nixos.wiki** (Flakes, Binary Cache, Impermanence)
+- **nixos.org** manuals (NixOS, Nixpkgs) — systemd-repart, containers, module system
+- **nixos.wiki** (via Wayback) — Flakes schema, Binary Cache, Impermanence, Disko, Secure Boot
+- **Zero to Nix** (Determinate Systems) — Caching, NixOS concepts
+- **Awesome Nix** — 150+ ecosystem tools (deployment, CLI, dev, DevOps)
+- **devops-research** corpus — sbomnix, comin, terranix, NixOS security paper
 - **nixcademy** blog posts (minimizing images, container tests, macOS testing)
 - **Ecosystem projects**: Attic, Harmonia, Colmena, disko, nixos-anywhere, agenix, sops-nix, impermanence, lanzaboote, flake-parts, vzvm, gcan
 - **opendesk-edu** and **opendesk-nix** repositories
 
 Full source references: [docs/26-sources.md](docs/26-sources.md)
+
+Round 2 research findings: [docs/27-new-research-findings.md](docs/27-new-research-findings.md)
 
 ## License
 
