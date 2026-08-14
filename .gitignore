@@ -1,0 +1,19 @@
+# Nix
+result
+result-*
+*.drv
+.direnv/
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
