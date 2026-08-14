@@ -51,7 +51,7 @@ services.atticd = {
 nix.settings.substituters = [ "http://attic.internal:8080" ];
 nix.settings.trusted-public-keys = [ "attic.internal:..." ];
 # If behind the HTTP proxy:
-networking.proxy.httpProxy = "http://www-proxy2.uni-marburg.de:3128";
+networking.proxy.httpProxy = "http://proxy.internal:3128";
 ```
 
 ### 1.3 nix-serve (Simplest, for Small Setups)
@@ -113,7 +113,7 @@ nix.settings.trusted-public-keys = [
 ### 5.1 Binary Cache for Air-Gapped SCS
 
 **Problem**: The SCS K3s cluster is air-gapped with an HTTP proxy
-(`www-proxy2.uni-marburg.de:3128`). Nix cannot reach `cache.nixos.org` directly.
+(`proxy.internal:3128`). Nix cannot reach `cache.nixos.org` directly.
 Binary caches must be self-hosted or proxied.
 
 **Solution**: Self-hosted `nix-serve` + nginx + signing keys (from nix.dev
@@ -152,7 +152,7 @@ nix.settings.trusted-public-keys = [ "cache.internal:..." ];
 # If proxy is required:
 nix.settings.extra-substituters = [ "http://cache.internal:5000" ];
 # HTTP proxy for fetching from the cache:
-networking.proxy.httpProxy = "http://www-proxy2.uni-marburg.de:3128";
+networking.proxy.httpProxy = "http://proxy.internal:3128";
 ```
 
 **Alternative**: If NixOS is not the base OS on K3s nodes (they run K3s on

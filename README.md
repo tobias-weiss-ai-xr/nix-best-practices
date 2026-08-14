@@ -7,7 +7,7 @@ cloud stack on an air-gapped SCS K3s cluster.
 ## Context
 
 - **Target platform**: SCS K3s cluster (air-gapped, HTTP proxy at
-  `www-proxy2.uni-marburg.de:3128`, HAProxy ingress, Ceph CSI RBD+CephFS)
+  `proxy.internal:3128`, HAProxy ingress, Ceph CSI RBD+CephFS)
 - **Existing stack**: Ansible (orchestration) + Nix (pinned tooling) +
   Helmfile (K8s packages) + ArgoCD (GitOps)
 - **NixOS version**: 24.11 (nixpkgs pin)

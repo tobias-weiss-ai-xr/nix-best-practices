@@ -108,7 +108,7 @@
 - Generate signing keys: `nix-store --generate-binary-cache-key`
 - Configure all build machines and SCS nodes to use the cache as a substituter
 - Set up `post-build-hook` for automatic upload
-- Configure HTTP proxy (`www-proxy2.uni-Marburg.de:3128`) for the initial
+- Configure HTTP proxy (`proxy.internal:3128`) for the initial
   `cache.nixos.org` pull-through
 
 **1.2 Add treefmt to opendesk-nix**

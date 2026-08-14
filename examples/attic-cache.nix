@@ -60,8 +60,8 @@
 
   # === HTTP proxy for initial cache.nixos.org pull-through ===
   networking.proxy = {
-    httpProxy = "http://www-proxy2.uni-marburg.de:3128";
-    httpsProxy = "http://www-proxy2.uni-marburg.de:3128";
+    httpProxy = "http://proxy.internal:3128";
+    httpsProxy = "http://proxy.internal:3128";
     noProxy = "localhost,127.0.0.1,attic.internal,ceph-rgw.internal";
   };
 

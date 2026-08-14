@@ -58,8 +58,8 @@ in
       export ATTIC_SERVER=http://attic.internal:8080
 
       # HTTP proxy for air-gapped environment
-      export HTTP_PROXY=http://www-proxy2.uni-marburg.de:3128
-      export HTTPS_PROXY=http://www-proxy2.uni-marburg.de:3128
+      export HTTP_PROXY=http://proxy.internal:3128
+      export HTTPS_PROXY=http://proxy.internal:3128
       export NO_PROXY=localhost,127.0.0.1,attic.internal,ceph-rgw.internal
 
       echo "opendesk-edu dev shell (SCS K3s)"
