@@ -46,7 +46,8 @@ nix-best-practices/
 │   ├── 24-opendesk-architecture.md    # Current opendesk-edu/opendesk-nix state + gaps
 │   ├── 25-recommendations.md          # 4 goals, migration path, priority actions
 │   ├── 26-sources.md                  # All source references
-│   └── 27-new-research-findings.md    # Round 2 research (manuals, wiki, Awesome Nix)
+│   ├── 27-new-research-findings.md    # Round 2 research (manuals, wiki, Awesome Nix)
+│   └── 28-nix-integration-status.md   # Nix-spirit integration map + open gaps
 └── examples/                          # Standalone Nix configuration examples
     ├── flake.nix                      # Reference flake (treefmt, checks, devShell)
     ├── treefmt.nix                    # treefmt config (nixfmt + statix + deadnix)
