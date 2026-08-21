@@ -1,4 +1,8 @@
 # Topic-based research taxonomy for Nix/NixOS best practices
+topic:
+  name: "Nix and NixOS Best Practices"
+  short: nix
+  description: Research on Nix package manager, NixOS, and functional deployment patterns
 openalex_queries:
   - category: nix-language
     query: "Nix language functional deployment"
@@ -22,4 +26,3 @@ openalex_queries:
     query: "Nix reproducible builds"
 arxiv_queries: []
 other_sources_queries: []
-topic: "Nix and NixOS best practices"
