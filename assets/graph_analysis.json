@@ -1,0 +1,31 @@
+{
+ "categories": [
+  {
+   "id": "unknown",
+   "name": "unknown",
+   "count": 0,
+   "trajectory": {},
+   "momentum": {
+    "id": "unknown",
+    "name": "Unknown",
+    "total": 0,
+    "recent": 0,
+    "prior": 0,
+    "growth_pct": null,
+    "recent_share": 0,
+    "papers_per_month": 0.0,
+    "score": 0
+   }
+  }
+ ],
+ "subcategories": [
+  {
+   "id": "unknown",
+   "name": "unknown",
+   "count": 0
+  }
+ ],
+ "timeline": [],
+ "venues": [],
+ "keyword_bursts": []
+}
