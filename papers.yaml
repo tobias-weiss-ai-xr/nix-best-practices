@@ -1,1 +1,1727 @@
-papers: []
+papers:
+- title: Deklarativna, ponovljiva, neobstojna in varna postavitev ter upravljanje
+    infrastrukture z Nix/NixOS
+  date: 2026-07
+  url: https://repozitorij.uni-lj.si/IzpisGradiva.php?id=185108
+  category: nixos
+  subcategory: ''
+  authors:
+  - Miha Krumpestar
+  abstract: 'Every mainstream operating system and configuration manager treats the
+    filesystem as a mutable global namespace and deployment as a sequence of stateful
+    transformations upon it. The resulting failure modes are treated as inevitable:
+    non-atomic upgrades, component interference, nominal dependency resolution permitting
+    substitution attacks, and configuration irreversibility. Each is structural, not
+    a bug. A purely functional model, as realized in Nix and NixOS, eliminates all
+    four by construction. Four qualities were evaluated: declarative composition,
+    reproducibility, impermanence, and security. Each has been studied in isolation'
+  venue: Repository of the University of Ljubljana (University of Ljubljana)
+- title: 'Desktop as Code: Automating Your Perfect Workstation'
+  date: 2026-03
+  url: https://myweirdprompts.com/episode/desktop-automation-reproducible-linux
+  category: nixos
+  subcategory: ''
+  authors:
+  - Daniel Rosehill
+  - Gemini 3.1 (Flash)
+  - Chatterbox TTS
+  abstract: 'Episode summary: We''ve all felt the dread of a crashed operating system
+    and the weeks of tweaking required to restore those "perfect" settings. This episode
+    explores the transition from treating your computer like a pet to treating it
+    like a reproducible recipe using Infrastructure as Code. We dive into the power
+    of NixOS, the flexibility of dotfile managers like Chezmoi, and the reliability
+    of Ansible playbooks to ensure your environment is always just one command away
+    from a total rebuild. Whether you are interested in immutable distributions like
+    Fedora Silverblue or custom Ubuntu spins, learn how to protect the "soul of your
+    machine" through modern automation. Show Notes The traditional approach to maintaining
+    a personal computer is often compared to caring for a pet: each system is unique,
+    manually nurtured, and devastating to lose. When a workstation fails, the tragedy
+    isn''t just the loss of the operating system, but the loss of the "soul" of the
+    machine—the thousands of tiny customizations, keybindings, and configuration tweaks
+    accumulated over years. To solve this, power users are increasingly turning to
+    Infrastructure as Code (IaC) to make their personal desktops entirely reproducible.
+    ### The Dotfile Dilemma The biggest obstacle to a reproducible desktop is the
+    hidden configuration files, or "dotfiles," stored in the user''s home directory.
+    These files control everything from terminal padding to browser extensions. Because
+    these settings are often scattered and poorly documented, they are difficult to
+    track. The first step in modern desktop automation is treating these configurations
+    as code. By moving these files into a version control system like Git, users can
+    track changes and deploy their environment to any new machine instantly. ### The
+    Declarative Approach with NixOS For those seeking the ultimate level of reproducibility,
+    NixOS represents a radical shift. Unlike traditional distributions where users
+    modify system files directly, NixOS uses a single declarative configuration file.
+    This file acts as a master blueprint; if a setting or package isn''t defined in
+    the code, it doesn''t exist on the system. This approach eliminates "configuration
+    drift" and allows users to replicate their entire operating system—including drivers
+    and hardware-specific settings—on new hardware with a single command. Recent partnerships
+    between NixOS and hardware manufacturers like Framework suggest this functional
+    approach is moving toward the mainstream. ### Modular Management and Secrets Not
+    every user is ready to switch to a functional operating system. For those on traditional
+    distributions, tools like Chezmoi and Ansible offer a middle ground. Chezmoi acts
+    as a specialized manager for dotfiles, using templates to adapt configurations
+    to different hardware, such as adjusting font sizes based on screen resolution.
+    Critically, these tools integrate with password managers to handle sensitive data.
+    This allows users to store their configurations in public repositories without
+    exposing private API keys or SSH credentials, as the sensitive data is injected
+    locally during deployment. ### The Rise of the Immutable Desktop The industry
+    is also seeing a shift toward "atomic" or immutable desktops, such as Fedora Silverblue.
+    These systems use a read-only root file system, which prevents accidental breakage
+    of core system components. Instead of piling software onto a base layer, applications
+    are handled via isolated formats like Flatpaks. If an update causes an issue,
+    the user can simply roll back to a previous "deployment" at boot time. This provides
+    a massive safety net, effectively offering an "undo button" for the entire operating
+    system. Ultimately, the goal of desktop automation is to move away from manual
+    backups and toward dynamic rebuilding. Whether through a custom-baked ISO, a declarative
+    Nix configuration, or a suite of Ansible playbooks, the future of the personal
+    desktop is a system that can be destroyed and recreated at will, ensuring that
+    the user''s perfect environment is never more than a few minutes away. Listen
+    online: https://myweirdprompts.com/episode/desktop-automation-reproducible-linux'
+  venue: Open MIND
+- title: 'Nix: A Solution With Problems'
+  date: 2026-04
+  url: https://arxiv.org/abs/2604.11398
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Matias Zwinger
+  abstract: Software deployment suffers from numerous problems pertaining, for example,
+    to reproducibility and dependency resolution. Many of these problems have been
+    successfully solved by the purely functional approach to package management implemented
+    in the Nix project. However, Nix does not solve all issues, and it does introduce
+    some novel problems of its own. Therefore, the aim of this thesis is to conduct
+    a literature review on the current state of research on Nix and to determine the
+    direction of future research. The first part of this paper explores the problems
+    historically faced in different areas of software deployment, e.g., irreproducibility
+    and dependency resolution issues. The main four categories of software deployment
+    tools analyzed are build systems, package managers, configuration management,
+    and development environments. Popular software from each category serve as case
+    studies to illustrate the problems. The second part introduces Nix and explains
+    the methods utilized to solve some of the problems introduced in the earlier part.
+    Because Nix is the first large project to utilize the purely functional approach,
+    it is far from a perfect solution. Thus, the third part is dedicated to analyzing
+    the new problems that Nix introduces, as well as old problems, which Nix has been
+    unable to solve, such as trust and granular incremental builds. Furthermore, some
+    proposed state of the art solutions put forth by the Nix community are discussed.
+  venue: arXiv (Cornell University)
+- title: 'kdeldycke/meta-package-manager: v6.3.0'
+  date: 2026-04
+  url: https://doi.org/10.5281/zenodo.19487292
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Kevin Deldycke
+  - Björn Torkelsson
+  - Sid
+  abstract: '[!NOTE] 6.3.0 is available on 🐍 PyPI and 🐙 GitHub. [cpan] Add CPAN package
+    manager for Perl modules with installed, outdated, install, and upgrade support.
+    Closes {issue}602. [deb-get] Add deb-get package manager with installed, outdated,
+    search, install, upgrade, remove, sync, and cleanup support. Closes {issue}1609.
+    [nix] Add Nix package manager with installed, outdated, search, install, upgrade,
+    remove, sync, and cleanup support. [pacstall] Add Pacstall package manager with
+    installed, outdated, search, install, upgrade, remove, and sync support. Closes
+    {issue}1610. [sdkman] Add SDKMAN! package manager with installed, outdated, install,
+    upgrade, sync, and cleanup support. Closes {issue}729. [stew] Add Stew package
+    manager for installing pre-compiled binaries from GitHub Releases. Closes {issue}1680.
+    [zerobrew] Add ZeroBrew manager with installed, outdated, install, and remove
+    support. Closes {issue}1681. [uvx] Implement outdated operation. Bump minimal
+    requirement to 0.10.10. Closes {pr}1704. [yarn] Split into Yarn Classic and Yarn
+    Berry managers. Restrict Classic to <2.0.0. Closes {issue}1548. [yarn-berry] Add
+    Yarn Berry (2.x+) manager with search and cleanup support. [winget] Switch installed
+    and outdated to winget list --details structured output; filter to Origin Source:
+    winget packages only, excluding sideloaded and portable entries. Bump minimum
+    required version to >=1.28.190. [pip] Only report top-level packages as outdated,
+    skipping transitive dependencies. Closes {issue}1214. [mpm] Support version range
+    specifiers (e.g. >=1.20.0,<2.0.0) in manager requirement field. Refs {issue}1548.
+    [mpm] Add must_succeed parameter to run_cli for structured-output calls, preventing
+    silent data loss on CLI failures. Refs {issue}1703. [mpm] Add Chocolatey as a
+    supported Windows installation method; automate package publishing on release.
+    [mpm] Overhaul version tokenization: preserve original separators and case, keep
+    hex hashes as single tokens, normalize pre-release aliases (alpha/a, beta/b, c/rc),
+    and recognize post/patch as post-release tags. [mpm] Fix version comparison accuracy:
+    integer tokens now rank above string tokens (e.g., 3.12.0 > 3.12.0a4), trailing
+    .0 segments are treated as padding, the cosmetic v prefix is stripped, and false-positive
+    outdated entries where parsed versions compare equal are filtered. [mpm] Snap
+    version diff highlighting to separator boundaries so the full diverging token
+    and its preceding separator are colored. [mpm] Detect Windows App Execution Aliases
+    (reparse points) when resolving CLI paths, fixing detection of winget and similar
+    tools installed via the Microsoft Store. [gem] Remove --user-install flag from
+    install, upgrade, and update commands so all operations target the same gem scope
+    as list and outdated. Closes {issue}389. [pip] Remove --user flag from upgrade
+    command so upgrades target the same scope as list and outdated. [pip] Prepend
+    the current Python executable to the list of candidates when searching for pip
+    binaries, so the active environment is always checked first. [mpm] Cache installed
+    package IDs before the spec loop in upgrade and remove commands, avoiding redundant
+    CLI calls per package specifier. [mpm] Reduce CI matrix on pull requests: skip
+    release builds, experimental Python versions, redundant architecture variants,
+    and install tests. Declare windows-11-arm exclusion in [tool.repomatic.test-matrix]
+    config instead of hardcoding it. Full changelog: v6.2.1...v6.3.0'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: 'kdeldycke/meta-package-manager: v6.4.1'
+  date: 2026-05
+  url: https://doi.org/10.5281/zenodo.20026631
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Kevin Deldycke
+  - Björn Torkelsson
+  - Sid
+  abstract: '[!NOTE] 6.4.1 is available on 🐍 PyPI and 🐙 GitHub. [guix] Drop the >=1.0.0
+    version requirement and add a hex-hash regex variant. Guix is a rolling-release
+    distribution: guix pull-managed installs and in-tree dev wrappers (./pre-inst-env
+    guix, ./scripts/guix) report a git commit hash as the "version", which the previous
+    >=1.0.0 specifier rejected as not satisfying the requirement and made mpm skip
+    the manager. The new version_regexes chain accepts stable releases (1.4.0), git
+    describe-style versions (1.4.0-7-gabc1234), and bare 7–40-char lowercase hex hashes,
+    so any working guix registers as available. [mpm] Add PackageManager.unavailable_reason
+    and use it in the pool''s "Skip" log line. When mpm drops a manager from selection,
+    the message now spells out why it was dropped: not supported on ''<sysname>'',
+    no executable named ''<names>'' found in PATH, ''<path>'' is not executable, could
+    not parse version from ''<path>'' output, or version <X> does not satisfy ''<spec>''
+    requirement. Replaces the previous opaque Skip unavailable <id> manager. line.
+    [mpm] Move --cov and --cov-report=term from pyproject.toml [tool.pytest].addopts
+    into the CI workflow. Removes pytest-cov as an unconditional test-time dependency
+    for downstream packagers. [mpm] Move --numprocesses=auto, --dist=loadgroup, and
+    --maxschedchunk=1 from pyproject.toml [tool.pytest].addopts into the CI workflow.
+    Removes pytest-xdist as an unconditional test-time dependency for downstream packagers.
+    [zypper] Loosen xmltodict floor from >=1 to >=0.12. The parse() API I rely on
+    in managers/zypper.py has been stable since 0.12, so the bump to 1.0 was cosmetic
+    and forced downstream packagers to ship a newer release than necessary. [mpm]
+    Drop more-itertools dependency. The single peekable use site in pool.py is replaced
+    with a next(iterator, None) empty-check using stdlib only. Removes one transitive
+    dependency for downstream packagers. [choco] Move Chocolatey package files from
+    packaging/choco/ into packaging/choco/meta-package-manager/ so the directory name
+    matches the nuspec basename, as required by Chocolatey-AU''s Update-Package. Fixes
+    the 🍫 Chocolatey release job that was failing with No nuspec file found in the
+    package directory. [mpm] Add choco-source, nix-source, and guix-source jobs to
+    tests-install.yaml that build and install from the in-repo packaging specs (packaging/choco/meta-package-manager/,
+    packaging/nix/, packaging/guix/). The workflow now also triggers on pushes and
+    pull requests touching packaging/{choco,nix,guix}/**, so changes to in-repo specs
+    are validated before merge. [mpm] Render the chocolatey, guix, and nix release-PR
+    bodies through repomatic pr-body --template-file .github/pr-templates/update-package-spec.md.noformat.
+    PRs now include the standard <details> workflow-metadata block (trigger, actor,
+    ref, commit, job, workflow, run links), the refresh-tip admonition pointing at
+    the workflow''s dispatch URL, and the attribution footer, matching every other
+    PR opened by repomatic-driven jobs across kdeldycke/* repositories. Full changelog:
+    v6.4.0...v6.4.1'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: 'kdeldycke/meta-package-manager: v6.4.0'
+  date: 2026-04
+  url: https://doi.org/10.5281/zenodo.19813169
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Kevin Deldycke
+  - Björn Torkelsson
+  - Sid
+  abstract: '[!NOTE] 6.4.0 is available on 🐍 PyPI and 🐙 GitHub. [apk] Add Alpine Linux''s
+    apk package manager with installed, outdated, search, install, upgrade, remove,
+    sync, and cleanup support. [guix] Add GNU Guix package manager with installed,
+    outdated, search, install, upgrade, remove, sync, and cleanup support. [macports]
+    Add MacPorts package manager with installed, outdated, search, install, upgrade,
+    remove, sync, and cleanup support. [ports] Add FreeBSD ports tree manager with
+    installed, outdated, install, upgrade, upgrade_all, remove, sync, and cleanup
+    support. Drives make-based source builds out of /usr/ports, delegates registry
+    queries to pkg, and uses git for tree updates. [sfsu] Add sfsu (Scoop alternative)
+    package manager with installed, outdated, search, install, upgrade, remove, sync,
+    and cleanup support. Mutating operations delegate to Scoop. [xbps] Add XBPS (Void
+    Linux) package manager with installed, outdated, search, install, upgrade, remove,
+    sync, and cleanup support. [apm,apt,choco,composer,emerge,flatpak,opkg,sdkman,snap,zypper]
+    Add remove operation. Closes {issue}1775. [composer] Fix install operation: use
+    composer global require instead of composer global install. [apm,npm,pip] Add
+    cleanup operation. [gem,winget] Add sync operation. [mpm] Add Delegate descriptor
+    to capabilities.py for declarative cross-manager method delegation. [mpm] Add
+    Python version and platform to --version output. [mpm] Add typed config_schema
+    to the CLI group for configuration file validation. [mpm] Document pyproject.toml
+    auto-discovery for per-project [tool.mpm] configuration. [mpm] Extend --table-format
+    structured output to TOML, YAML, XML, JSON5, JSONC, and HJSON for all subcommands
+    that produce machine-readable data (managers, installed, outdated, search, locate).
+    [mpm] Change JSON output indentation from 4 to 2 spaces and stop sorting keys,
+    aligning with click-extra defaults. [mpm] Rename --output-format / -o back to
+    --table-format, aligning with the upstream click-extra default. [mpm] Make Chocolatey
+    release job idempotent: check if version already exists on Chocolatey before pushing,
+    and open a PR to update the nuspec after a successful publish. [mpm] Add Guix
+    and Nix package definitions with automated update jobs on release; reorganize
+    packaging/ directory into packaging/choco/, packaging/guix/, and packaging/nix/
+    subdirectories. [pip] Filter mpm''s own dependency tree from outdated results
+    to fix false positives in Homebrew-installed environments. Closes {issue}1767.
+    [scoop] Fix CLI invocation in outdated operation. [winget] Fix search crash when
+    no results are returned. [zypper] Skip install and remove tests on Linux CI runners:
+    the RPM database at /var/lib/rpm is inaccessible on Ubuntu-based runners. Full
+    changelog: v6.3.0...v6.4.0'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: 'kdeldycke/meta-package-manager: v7.5.0'
+  date: 2026-08
+  url: https://doi.org/10.5281/zenodo.21777789
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Kevin Deldycke
+  - Björn Torkelsson
+  - Sid
+  abstract: '[!NOTE] 7.5.0 is available on 🐍 PyPI and 🐙 GitHub. [volta] Add Volta
+    package manager (installed, install, upgrade, remove), flagged unmaintained since
+    its November 2025 retirement in favor of mise. pkg:npm/ purls now also resolve
+    to it. Addresses #1995. [mpm] Raise the click-extra floor from 8.6.1 to 8.7.0,
+    scoping mpm''s strict-config check to its own pyproject.toml section and forcing
+    telemetry off on a truthy DO_NOT_TRACK. [mpm] Raise the extra-platforms floor
+    from 13.5.1 to 13.6.0, whose new AlmaLinux detection stops the spurious unrecognized-platform
+    warning mpm printed on AlmaLinux hosts. [mpm] Bump the in-repo Alpine, Guix, MacPorts
+    and Nix packaging specs to build from 7.4.1, switching Alpine to the PyPI sdist
+    instead of the GitHub tag tarball. [snap] Fix snap remove failing with error:
+    unknown flag ''color'' on recent snapd by no longer appending --color=never, which
+    remove does not accept. [mpm] Add favicon.svg and banner-social.svg (light/dark
+    PNG exports) as the Sphinx browser-tab icon and OpenGraph image, and switch the
+    readme banner to a dark-mode-aware <picture> element. [mpm] Refresh the readme''s
+    manager Sankey diagram and operation matrix. Full changelog: v7.4.1...v7.5.0'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: 'kdeldycke/meta-package-manager: v7.4.0'
+  date: 2026-07
+  url: https://doi.org/10.5281/zenodo.21567645
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Kevin Deldycke
+  - Björn Torkelsson
+  - Sid
+  abstract: '[!NOTE] 7.4.0 is available on 🐍 PyPI and 🐙 GitHub. [mpm] Raise the click-extra
+    floor from 8.4.0 to 8.6.0, the release shipping the OperationTrail batch ✓/✗ trail
+    upstreamed from mpm''s own dispatch layer, which mpm now consumes from the published
+    package instead of a git checkout. [mpm] The Python and click-extra compatibility
+    tables of the documentation read newest-first on both axes, following click-extra
+    8.6.0''s {matrix} ordering defaults: the most recent compatibility information
+    sits in the upper-left corner. [mpm] Bump the packaging pins of click-extra to
+    8.6.0 and the Nix pin of extra-platforms to 13.3.1 across the Nix, MacPorts and
+    Alpine overlays, to match mpm''s dependency floors. Breaking: [mpm] Remove the
+    PackageManager.query_parts class method: Package.query_parts is the canonical
+    query tokenizer. Breaking: [mpm] The SBOM stats() dictionaries drop the components_in_document
+    (CycloneDX) and relationships_total (SPDX) keys, which no consumer read. Breaking:
+    [mpm] Rename the manager deprecated flag to unmaintained and broaden it to cover
+    abandoned or inactive upstreams (archived, years without a release, formally superseded,
+    or a discontinued platform), not just officially retired projects. The deprecation_url
+    attribute becomes an unmaintained_message markdown block rendered into the documentation,
+    and the [mpm.managers.<id>] config override key deprecated is likewise renamed
+    to unmaintained. [mpm] Flag apt-cyg, pacaur and swupd as unmaintained, joining
+    apm: their upstreams are archived, abandoned or belong to a discontinued platform,
+    so they are hidden from default selection and dropped from the test matrices.
+    Name them explicitly or pass --all-managers to still drive them. [mpm] Add a maintenance_note
+    attribute that renders a note admonition atop a manager''s documentation page
+    for still-maintained but slowing or superseded upstreams worth watching (cave,
+    dnf, fink, sorcery, stew, sun-tools, tazpkg, yarn, yum). [mpm] Drop the unmaintained
+    pacapt, sysget and whohas tools from the benchmark comparison and add a note pointing
+    their users to mpm as an actively-maintained replacement covering the same cross-manager
+    operations. [mpm] Package managers gain shared parse_regex_lines and parse_json_items
+    engines on the base class: configuration-defined operations and built-in managers
+    now parse their listings through the same code path. [mpm] The action commands
+    (install, remove, upgrade, restore) name failed packages uniformly as id@version
+    in their end-of-run critical: summary, instead of a mix of raw purls and bare
+    IDs. [mpm] doctor singularizes its end-of-run summary when a single manager reports
+    problems. [mpm] dump --merge and dump --update-version no longer misreport an
+    existing target file as about to be overwritten, and only disclose the inert --overwrite
+    flag when it was actually passed. [brew,cask] cleanup invokes the cache scrub
+    with the long-form --scrub flag. [mpm] Add a --plan/-p option that prints the
+    exact package-manager commands each state-changing operation would run, without
+    running them. Read-only queries (installed, outdated, search) still execute, so
+    install, remove and upgrade --all resolve to the commands they would actually
+    run; the plan prints to stdout, one copy-pasteable command per line. [mpm] Add
+    an --orphans option to remove that also drops the dependencies the package alone
+    pulled in, mapped to each manager''s native scoped cascade verb (apt remove --auto-remove,
+    pacman --remove --recursive, dnf autoremove, xbps-remove --recursive, zypper remove
+    --clean-deps). Managers with no such verb remove the package only. mpm builds
+    no dependency graph: it delegates the reverse-dependency reasoning to the manager.
+    [mpm] cleanup decomposes into cumulative categories, each with a two-sided flag
+    pair: --orphans/--skip-orphans (system-wide orphan sweep: apt autoremove, brew
+    autoremove, flatpak uninstall --unused), --cache/--skip-cache (caches, downloads
+    and left-over artifacts, the category a monolithic cleanup amounts to) and --repair/--skip-repair
+    (local state verification, like flatpak repair). Positive flags narrow the run
+    to the listed categories, skip flags subtract them, and a plain cleanup runs the
+    cache and repair categories only: the orphan sweep is the one category removing
+    packages, so it stays strictly behind --orphans, uniformly across managers, just
+    as remove keeps its dependency cascade behind the same flag. The per-manager narration
+    and the ✓/✗ trail name the categories dispatched to each manager (✓ brew (cache)).
+    A manager with no native sweep verb but a native orphan listing gets the sweep
+    synthesized from its orphans query, removing the listed orphans one by one until
+    none are left (the in-process equivalent of Arch''s pacman -Rns $(pacman -Qtdq)
+    idiom, covering pacman, its AUR helpers and zypper); the synthesized sweep only
+    engages on an explicit --orphans, so a skip flag can never remove packages a plain
+    cleanup would have left alone. [mpm] Add an orphans subcommand listing the packages
+    installed as dependencies that nothing requires anymore, without removing them.
+    Each manager reports through its native read-only query (pacman --query --deps
+    --unrequired, brew autoremove --dry-run, dnf repoquery --unneeded, zypper packages
+    --unneeded, pkg autoremove --dry-run, apt autoremove --simulate, xbps-query --list-orphans,
+    emerge --depclean --pretend, cave purge in its default pretend mode, pkg_delete
+    -a -n). Supports the same query filtering, table projection and serialization
+    as installed. [mpm] Add a doctor subcommand (aliases check and diagnose) running
+    each manager''s native self-diagnosis (brew doctor, pip check, pacman --database
+    --check, npm doctor, dnf check, gem check, composer diagnose, mise doctor, apt-get
+    check, pkg check --checksums, xbps-pkgdb --all, flatpak repair --dry-run, scoop
+    checkup, port diagnose, tlmgr check all). Read-only: health is read from each
+    command''s exit code, the report (merging <stdout> and <stderr>) is relayed verbatim,
+    and the run exits non-zero when any manager reports problems, so it can gate a
+    CI job (-0/--zero-exit opts out). [mpm] Configuration-defined managers can declare
+    remove_orphan, cleanup_orphan, cleanup_cache, cleanup_repair, doctor and orphans
+    operations, wiring them to remove --orphans, the cleanup category flags and the
+    orphans subcommand. Breaking: [mpm] cleanup is no longer an operation managers
+    define: every manager now declares cleanup category methods only (cleanup_orphan,
+    cleanup_cache, cleanup_repair), and PackageManager.cleanup() composes the natively
+    implemented ones. Monolithic cleanups across the pool were reclassified as cleanup_cache,
+    and a configuration-defined manager declaring the old cleanup operation is rejected
+    with an error naming the category keys. [cave,pkg-tools] Their cleanup commands,
+    both orphan sweeps (cave purge, pkg_delete -a), are re-declared as cleanup_orphan:
+    cleanup --orphans now reaches them and cleanup --cache leaves them alone. [apt,apt-mint,brew,cask,cave,dnf,dnf5,emerge,pkg,pkg-tools,xbps,yum]
+    Plain cleanup no longer removes orphaned packages: their native sweeps moved behind
+    cleanup --orphans. This also stops emerge''s cleanup from triggering its pre-depclean
+    world upgrade unless --orphans is given. [emerge] The cleanup steps split into
+    cleanup_orphan (the safety upgrade plus --depclean) and cleanup_cache (eclean
+    distfiles), giving emerge native cleanup --orphans support. [uv] cleanup skips
+    uv''s cache commands when mpm itself was launched by uv run or uvx, whose parent
+    process locks the cache for as long as mpm lives: each uv cache command would
+    otherwise wait on its own ancestor for UV_LOCK_TIMEOUT (300 seconds by default)
+    and fail, stalling the cleanup for ten minutes. [dnf,dnf5,xbps,yum] remove no
+    longer cascades to orphaned dependencies by default: a plain removal keeps them.
+    Use the new remove --orphans to restore the previous behavior. [mpm] Every supported
+    package manager gets a dedicated documentation page detailing its platforms, operations
+    and backfilled capabilities, CLI invocation and version probe, escalation and
+    cooldown behaviors, purl types, selection and configuration examples and the captured
+    native outputs its parsers were written against, all rendered live from the manager
+    declarations at Sphinx build time. A new hub page indexes the 72 pages, and manager
+    IDs in the readme''s operation matrix, the benchmark table and the augmentations
+    table now link to them. [mpm] Each per-manager documentation page opens with a
+    "What mpm adds to <id>" section, pitched at a reader who already knows the native
+    tool: the capabilities mpm backfills for that manager (synthesized upgrade --all,
+    orphan sweep, --exact/--extended search), the cross-manager reach naming its purl-ecosystem
+    neighbors, and the universal augmentations. Derived live from the capability declarations,
+    so it describes only what mpm does and never overstates a native limitation. [winget]
+    Documentation samples use the conventional > PowerShell prompt instead of PS C:\Users\kev>,
+    reconnecting them to the corpus harvester: the documented commands are now validated
+    against the constructed ones, the manager page gains its full Rosetta table and
+    a clean version transcript, and the reference traces render under proper pwsh-session
+    fences. The full and single-package upgrade samples show the exact winget update
+    --all and winget install invocations mpm runs, and the agreement-prompt and different-install-technology
+    illustrations move to non-fixture console fences. [mpm] Each per-manager documentation
+    page gains a Rosetta table mapping the manager''s own commands (uv pip list, brew
+    install, pacman --sync, …) to their one-to-one mpm equivalents, harvested from
+    the operation methods'' documented samples, and a recipes section with copy-paste
+    snapshot/restore, SBOM export and CI-health-gate commands. The cooldown section
+    now frames release-age gating as a supply-chain guard, the invocation section
+    explain'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: 'kdeldycke/meta-package-manager: v7.1.0'
+  date: 2026-07
+  url: https://doi.org/10.5281/zenodo.21245491
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Kevin Deldycke
+  - Björn Torkelsson
+  - Sid
+  abstract: '[!NOTE] 7.1.0 is available on 🐍 PyPI and 🐙 GitHub. Breaking: [mpm] Split
+    the [sbom] extra into [sbom-offline] (CycloneDX and SPDX document rendering) and
+    [sbom-online] (the --network vulnerability lookups). pip install meta-package-manager[sbom]
+    no longer resolves: use [sbom-offline] for the previous behavior, adding [sbom-online]
+    for vulnerability scanning. [mpm] Define brand-new package managers from the configuration
+    file: a [mpm.managers.<id>] section declares a manager''s platforms, CLI and version
+    detection, and per-operation commands with regex or JSON parsers. Defined managers
+    get --<id> / --no-<id> selectors and join the default set. [mpm] Manager definitions
+    load only from a trusted local config file (owned by you, not world-writable,
+    never a remote --config URL), and a command-redirecting override (pre_cmds, cli_names,
+    cli_search_path) read from an untrusted source now warns: see the new {doc}security
+    page. [mpm] Ship package managers as bundled configuration definitions: TOML files
+    under meta_package_manager/managers/, built through the same schema as a user''s
+    [mpm.managers.<id>] section but loaded at startup like built-ins and exempt from
+    the config-file trust gate. [gh-ext] Add GitHub CLI extensions (gh extension)
+    manager with installed, search, install, upgrade, and remove support, cross-platform
+    on Linux, macOS, and Windows; mpm''s first bundled configuration-defined manager.
+    Requires gh >=2.0.0. [soar] Add Soar (pkgforge) package manager with installed,
+    search, install, upgrade, remove, sync, and cleanup support on Linux; a bundled
+    configuration-defined manager. Requires soar >=0.12.0. [conda] Add Conda package
+    manager with installed, outdated, search, install, upgrade, remove, and cleanup
+    support, cross-platform on Linux, macOS, and Windows; requires conda >=4.6.0.
+    [mpm] Add a global --network / --no-network flag (default off) that opts into
+    network calls during a run. [mpm] mpm --network sbom queries OSV.dev for known
+    vulnerabilities across OSV''s indexed ecosystems (pip, npm, cargo, gem, composer):
+    CycloneDX gains a vulnerabilities array, SPDX per-package SECURITY external references,
+    and the end-of-run summary a vulnerability count. [mpm] OSV responses are cached
+    on disk; network failures, a missing extra, or an unwritable cache degrade gracefully
+    to an SBOM without vulnerability data. [mpm] Privilege escalation is now per-manager:
+    system package managers still run state-changing operations through sudo by default,
+    and a new global --sudo / --no-sudo flag or per-manager [mpm.managers.<id>] sudo
+    config key overrides that either way. Resolves #1295 and #33. [mpm] Escalating
+    commands authenticate sudo once up front and run through sudo -n, so a password
+    prompt no longer stalls the concurrent fan-out; off a terminal, managers needing
+    root fail fast with a message pointing at --sudo instead of hanging. [yay] Honor
+    --cooldown by overlaying a generated init.lua through a private XDG_CONFIG_HOME,
+    holding back AUR upgrades and installs newer than the release-age floor while
+    preserving the user''s own yay config. Requires yay 13.0.0 for its Lua hooks.
+    [mpm] The CLI gains a global --export-config FORMAT option that prints the fully-resolved
+    configuration (config file, environment, and defaults merged) as toml, yaml, json,
+    json5, jsonc, hjson, or xml, then exits. [mpm] Managers sharing a backend lock
+    (brew/cask, apt/apt-mint/deb-get, the RPM and pacman families) now run serially
+    within their family during state-changing commands; members resolving to an identical
+    command run it once. Fixes spurious cask failures when syncing alongside brew.
+    [mpm] A single Ctrl+C now aborts a concurrent command promptly: the first interrupt
+    terminates in-flight package-manager subprocesses, so the thread pool drains and
+    the run exits cleanly instead of hanging until a second Ctrl+C and a threading-shutdown
+    traceback. [mpm] --timeout now also bounds the manager version-detection probes,
+    not just the operation that follows, so a wedged binary cannot outlast the limit
+    during startup detection. [bar-plugin] Cap each mpm call the plugin makes at 60
+    seconds via --timeout, so a wedged package manager fails the menubar refresh in
+    about a minute instead of stalling it for several. [mpm] Raise the click-extra
+    floor from 8.1.1 to 8.2.0, the first release shipping the concurrency primitives,
+    the --export-config option, and the compatibility-matrix machinery mpm relies
+    on. [guix] Meta Package Manager is now available in GNU Guix upstream, installable
+    with guix install meta-package-manager. [guix] Rename the reference package to
+    meta-package-manager, fetch its source from the tagged git commit, build it with
+    setuptools.build_meta, drop the now-optional SBOM and more-itertools inputs, and
+    fix the python-packageurl input name so guix install --load-path=packaging/guix
+    resolves. [nix] Drop the now-optional SBOM and more-itertools dependencies from
+    the reference package definition. [pip] Only target a Python the user can actually
+    install into: mpm''s own bundled virtualenv and externally-managed interpreters
+    (PEP 668) are skipped, so distro-managed packages no longer surface as bogus outdated
+    pip upgrades. Supersedes the dependency-tree filter from #1767. [pip] Probe the
+    Python interpreter version under the short read-only timeout instead of the long
+    state-changing default. [mpm] The --cooldown help now shows [default: (disabled)]
+    instead of the bare [default: ""], so the unset state reads as a word rather than
+    an empty string. [dnf] upgrade and upgrade --all now pass --assumeyes, as the
+    other dnf operations already did, so upgrades no longer hang on an interactive
+    confirmation prompt. [eopkg] upgrade --all now passes --yes-all, matching the
+    single-package upgrade, so it no longer hangs on an interactive confirmation prompt.
+    [fwupd] Fix version-pinned installs: the device ID and release version were joined
+    into a single CLI argument that fwupdmgr could not parse. [npm] install no longer
+    passes --no-fund and --no-audit twice. [mpm] The installation page now documents
+    which Python and click-extra versions each mpm release accepts, in tables regenerated
+    from the release tags and guarded by a drift test. [mpm] Catalog every released
+    standalone binary on a new documentation page, linking each platform build to
+    its download and public VirusTotal analysis, with a detection-rate trend chart.
+    [mpm] Add a hermetic test replaying each manager''s documented CLI samples through
+    its own parsers and command builders, covering installed, outdated, --version,
+    and the mutation commands; corrected the stale samples flagged across a dozen
+    managers. Toward #1023. Full changelog: v7.0.1...v7.1.0'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: 'kdeldycke/meta-package-manager: v7.6.0'
+  date: 2026-08
+  url: https://doi.org/10.5281/zenodo.21871441
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Kevin Deldycke
+  - Björn Torkelsson
+  - Sid
+  abstract: '[!NOTE] 7.6.0 is available on 🐍 PyPI and 🐙 GitHub. [vim-pack] Add Neovim''s
+    built-in vim.pack plugin manager (Neovim 0.12 and above) with installed, install,
+    remove and upgrade support. Plugins are keyed on their source URL, and each operation
+    is a Lua one-liner run by a --clean --headless Neovim. [zinit] Add the Zinit Zsh
+    plugin manager with installed, install, remove and upgrade support. Zsh is the
+    CLI mpm executes, and the plugin inventory is read from an interactive shell since
+    Zinit tracks plugins in state the user''s .zshrc populates. [mpm] Show each manager''s
+    brand mark on its documentation page and in the manager index, from a new logo
+    attribute naming an SVG vendored under docs/assets/managers/. 54 of the 75 managers
+    carry one; the rest keep the default package glyph. Marks are inlined so they
+    follow the light and dark themes. [mpm] Close each manager''s documentation page
+    on a changelog of its own: every changelog entry scoped to that manager, grouped
+    by the release that shipped it, newest first. [mpm] Add to each manager''s infobox
+    an Issues and PRs badge carrying its GitHub label, in the label''s own color,
+    linking to every issue and pull request filed under it. Managers sharing an ecosystem
+    share one label, hence one search. [mpm] Move how mpm invokes each tool into its
+    infobox: CLI names, extra search paths, the arguments and environment forced on
+    every call, and the call timeout. The How mpm drives section they came from is
+    reduced to the version probe and moved next to the reference traces. The tracker
+    badge and the source file close the box. [mpm] Turn every URL of the manager descriptions
+    into a proper link: bare URLs were rendering as dead text on the manager pages
+    and in the API documentation. [mpm] Reconcile the changelog''s scope tags against
+    the git history of every manager implementation, followed through the 2016 split
+    of the single-file plugin, the move into a dedicated folder and the later conversions
+    to bundled definitions. 13 entries covering mpm''s own packaging, installation
+    documentation or CI were rescoped to [mpm], where that work already sits; 6 manager
+    fixes that had never been logged were added; the apt --yes and search fixes were
+    extended to apt-mint, which inherits both; and the 2.3.0 empty-output fix was
+    split into its general and gem-specific halves. [mpm] Follow the documentation''s
+    own light and dark toggle with the sidebar logo, instead of a single light-only
+    variant that left the wordmark unreadable on the dark theme. Hide the readme banner
+    on the front page, where it duplicated that logo and could not agree with the
+    theme. [mpm] Turn the license page into the project''s legal sink: it now also
+    carries the trademark notice, the credits for every vendored brand mark, the documentation
+    artwork attributions and a pointer to where dependency licenses live. [gnome-shell]
+    Add a GNOME Shell extension (GNOME 46 to 50) mirroring the Xbar/SwiftBar plugin:
+    a top bar indicator lists outdated packages per manager, and every menu action
+    runs mpm itself. Addresses #809. [gnome-shell] Attach the packed extension to
+    every GitHub release as an attested mpm-gnome-shell-extension.zip asset, built
+    with gnome-extensions pack. [bar-plugin] Menu actions run mpm itself instead of
+    the manager''s native upgrade command, so manager selection, sudo policy, overrides
+    and the cooldown all apply. A manager that cannot enforce an active cooldown is
+    now skipped with a warning. [mpm] A batch of managers running concurrently reports
+    through a determinate progress bar (Searching [####----] 3/6 managers) instead
+    of an indeterminate spinner. Each manager''s own CLI call keeps its per-call spinner
+    when it runs alone. [mpm] The ✓/✗ trail''s finisher carries an elapsed time only
+    under --time, where it previously always showed one. [mpm] The warnings proposing
+    a CLI flag as their remedy now also name the configuration key that makes it stick:
+    [mpm] require_cooldown_support for the cooldown skip, and [mpm] sudo for the two
+    credential warnings. [mpm] Raise the click-extra floor from 8.7.0 to 8.8.1, dropping
+    mpm''s own is_stdout and prep_path helpers for the click_extra.output originals
+    and inheriting click-extra''s own uncapped uv-build requirement. [mpm] Rename
+    the 🔌 bar-plugin GitHub label to 🔌 plugin, now covering the Xbar/SwiftBar plugin
+    and the GNOME Shell extension alike. [mpm] Fix the 🔌 plugin, 🖥 platform: macOS
+    and 🖥 platform: Windows labels never being applied to issues: their keywords are
+    now OR-joined into one case-insensitive pattern instead of all being required
+    at once. [mpm] Fix backup, dump and sbom dying on an unhandled FileNotFoundError
+    when the output path points into a directory that does not exist yet: missing
+    parent directories are now created. [mpm] Fix guix install --load-path=packaging/guix
+    failing on unbound python-pytest and python-xmltodict, whose modules were not
+    imported, and align the definition with the upstream Guix stanza. [mpm] Fix nix-env
+    --file packaging/nix failing its runtime-dependency check on the stale click-extra
+    8.6.2 and extra-platforms 13.5.1 pins, bumping them to 8.8.1 and 13.6.0 to satisfy
+    mpm 7.5.0''s raised floors. [mpm] Add an Unsupported managers page documenting
+    which tools are deliberately excluded and why, and what a manager must expose
+    to be wrappable. [mpm] Document that --cooldown replaces a stricter release-age
+    policy already configured natively, instead of tightening it. [mpm] Document the
+    retraction path behind each package registry (yank, unpublish, relabel, index
+    revert, flag only) and the per-version publish-date metadata it exposes, since
+    a cooldown only protects where a compromised release can actually be withdrawn.
+    Without one the gate can even prefer a malicious version over the fix that superseded
+    it. Every pool manager is mapped to its registry, and its cooldown documentation
+    page now closes on that registry''s row. [gnome-shell] Lint the extension and
+    its gjs test runner with ESLint against GNOME Shell''s own eslint-config-gnome
+    ruleset, in a new eslint job installing the stack behind a 7-day npm --min-release-age
+    cooldown. [mpm] Drop the Codecov integration, its coverage badge and the XML report
+    artifacts that fed it. Coverage is now gated in CI by the [tool.coverage] report.fail_under
+    ratchet, cleared by the parallel non-destructive run; the bar-plugin and destructive
+    slices opt out with --cov-fail-under=0. [mpm] Run the project-metadata and GNOME
+    Shell extension invariant tests on a single runner instead of on every matrix
+    cell, behind a new once pytest marker and a once-tests job. Neither module imports
+    package code, so the coverage floor is unaffected. [mpm] Widen the test workflow''s
+    trigger to changelog.md, readme.md, docs/** and gnome-shell/**. The suite holds
+    all four to byte-identity with their generators, but an edit to any of them never
+    ran the test guarding it. [mpm] Declare the supply-chain cooldown window on the
+    GNOME Shell extension and manager-logo workflows, and an explicit zero-length
+    window on the distributor workflow, whose subject is the freshly published artifact.
+    [mpm] Drop the full Homebrew cask tap clone and the HOMEBREW_NO_INSTALL_FROM_API
+    override from the test matrix, both left behind by a cask-version-checkout test
+    that no longer exists. [mpm] Fix the test matrix''s drift guard silently skipping
+    for a week after every upstream toolkit bump: it resolved repomatic without the
+    per-package cooldown exemption, so the workflow''s release-age window left the
+    pinned version unresolvable and the failed run landed in the test''s skip branch.
+    [mpm] Scope the docs dependency group to Python 3.14 and above, the only interpreter
+    that ever renders a page. Its members drop their marker-split floors for flat
+    ones, and the lockfile stops carrying a second, older resolution of the documentation
+    toolchain (myst-parser, sphinx, docutils, markdown-it-py, sphinx-autodoc-typehints,
+    sphinx-design) for interpreters that never build the site. Full changelog: v7.5.0...v7.6.0'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: 'kdeldycke/meta-package-manager: v7.3.0'
+  date: 2026-07
+  url: https://doi.org/10.5281/zenodo.21416617
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Kevin Deldycke
+  - Björn Torkelsson
+  - Sid
+  abstract: '[!NOTE] 7.3.0 is available on 🐍 PyPI and 🐙 GitHub. Breaking: [mpm] Move
+    the declarative-manager schema, validation and class factory into the new meta_package_manager.definitions
+    module, out of meta_package_manager.config (which keeps the loading policy: trust
+    gate, override application, registration passes) and meta_package_manager.manager
+    (which keeps the base class only). Breaking: [mpm] Move the cross-manager fan-out
+    machinery (collect_from_managers, collect_per_package, OperationTrail, the shared-lock
+    families and the jobs policy) into the new meta_package_manager.dispatch module,
+    out of meta_package_manager.execution (which keeps the single-subprocess engine).
+    Breaking: [mpm] Move the per-command column registries and the table-projection
+    and serialization helpers into the new meta_package_manager.tables module, which
+    also absorbs the meta_package_manager.sorting module and its SortableField vocabulary.
+    Breaking: [mpm] meta_package_manager.sbom no longer re-exports the SBOM writers:
+    import them from meta_package_manager.sbom.base, meta_package_manager.sbom.spdx
+    and meta_package_manager.sbom.cyclonedx. [mpm] Manager definitions gain three
+    schema features: per-refinement search argument templates (exact_args, extended_args
+    and id_name_only_args, spliced at their {marker} position when the matching mpm
+    search flag is active, and advertising native support), a [N] list-index suffix
+    on JSON field selectors, and sudo = true on query operations for tools that gate
+    even their read-only listings behind root. [mpm] Malformed JSON output from a
+    manager''s query now logs a warning tagged with the manager ID and yields no packages,
+    instead of crashing the command; built-in managers and config-defined operations
+    share the same parse_json implementation. [choco] Convert from a Python class
+    to a bundled configuration definition, the native exact and ID-restricted search
+    switches declared through the new refinement templates. [macports] Convert from
+    a Python class to a bundled configuration definition, the native exact/extended
+    search switches declared through the new refinement templates. The optional description
+    column of its search results is no longer populated. [stew] Convert from a Python
+    class to a bundled configuration definition, its two installed-listing regexes
+    merged into one alternation, with no functional change. [zerobrew] Convert from
+    a Python class to a bundled configuration definition, its installed-versions array
+    read through the new [N] field selector, with no functional change. [mpm] The
+    --query, --exact and --overwrite options of dump and sbom now share a single definition
+    and help text. [mpm] Fix the bar-plugin labeller file rule, whose glob targeted
+    a directory and could never match the plugin''s module files. [bar-plugin] The
+    <xbar.version> header tracks the package version again: it fell out of the version-bump
+    configuration during the bump-my-version migration and was stuck at 7.0.0.dev0.
+    [mpm] Sudo priming now probes the credential cache before any prompt: found warm
+    (a prior sudo --validate, a NOPASSWD rule), it is silently kept alive for the
+    whole run. The password notice names the escalating managers and the subcommand
+    (apt needs administrator rights to upgrade: enter your password.), the sudo prompt
+    is branded ([mpm] password for apt:), and the no-terminal warning names the managers
+    left to fail fast. A host whose sudo is missing or cannot be run logs a warning
+    instead of crashing. [mpm] Add an internal_sudo marker for managers whose CLI
+    runs sudo itself mid-run and is never wrapped by mpm: cask and fink adopt it,
+    and manager definitions may set it as a config field. A warm credential cache
+    found at priming time is now kept alive for internal escalators too. [mpm] A mutating
+    call of an internal escalator that goes silent for 30 seconds on a terminal, with
+    no warm credential cache, now logs a warning that it may be waiting on a hidden
+    password prompt, quoting its last output line. Addresses #1938. [mpm] --verbosity
+    INFO now discloses every package manager CLI invocation as a reproducible $-prompt
+    line, forced environment variables included. Version-detection probes stay at
+    DEBUG. [mpm] The output of package manager CLIs now streams to DEBUG logs live,
+    line by line and tagged with the manager ID, instead of being dumped once the
+    call completes. Closes #528. [mpm] Streamed CLI output and manager-scoped log
+    lines glue the manager ID into their level prefix (debug:mas: ..., warning:gem:
+    Could not list installed packages.), making logs grep-able by manager. Closes
+    #530. [mpm] Disclosed CLI invocations are themed by token family: dim prompt sigil,
+    environment name/value assignment pairs, highlighted binary name (directory plain,
+    in the $-prompt and spawn-trace lines), option-styled flags. [mpm] --no-color
+    now also strips the color of log lines emitted from background threads (streamed
+    subprocess output, concurrent fan-outs). [mpm] The capability probe logs one answered
+    DEBUG line per manager (brew implements installed.) instead of an unanswered question
+    exposing the raw class repr. [mpm] Add -0/--zero-exit: action commands then report
+    per-package failures without gating automation on a non-zero exit code. Usage
+    and configuration errors keep exiting 2. [mpm] Add a --columns option to the table-rendering
+    subcommands (managers, installed, outdated, search, which): a comma-separated
+    list of column IDs restricts and reorders the table, SQL-SELECT-style, validated
+    against each command''s column registry. mpm search''s description column joins
+    the registry: --description is now a shorthand for selecting it, and an explicit
+    --columns selection wins. Serialized formats keep the full structured payload.
+    [mpm] The mpm managers table''s binary-path highlighting is delegated to click-extra''s
+    highlight_bin_name, the same renderer as the $-prompt and spawn-trace log lines.
+    [mpm] Log lines emitted while a progress spinner animates now print on their own
+    line above it, instead of garbling the in-progress frame. [mpm] Delegate subprocess
+    spawning, output streaming, timeout enforcement and Ctrl+C child termination to
+    click-extra, raising its floor from 8.3.0 to 8.4.0. [mpm] Authenticate the GitHub
+    API release lookups in the Guix, Nix and yay cooldown workflow jobs, which flaked
+    on the anonymous rate limit. [mpm] The per-manager table of the augmentations
+    page now renders live at Sphinx build time, derived from the capability declarations
+    in the manager implementations. Drops steamcmd''s stale full-upgrade --all row.
+    [mpm] The PyPI keywords and the labeller file/content rules in pyproject.toml
+    are now generated from the manager pool by docs/docs_update.py. Every bundled
+    manager gains labeller coverage, definition-file globs are anchored on their full
+    stem, and the chocotaley keyword typo is fixed. [mpm] Bundled manager definitions
+    now embed their version-probe and parser output samples in a [samples] table of
+    their own TOML file; the test suite derives its checks from the shipped files
+    instead of hardcoded per-manager fixtures. [bar-plugin] Version differences are
+    now highlighted in the outdated-package menu lines, with the same coloring as
+    mpm outdated: common prefix gray, installed suffix red, latest suffix green. Package
+    lines carry ansi=true so both SwiftBar and Xbar render the colors. [mpm] Delegate
+    --cooldown duration parsing and the cross-command --sort-by machinery to click-extra,
+    keeping the same per-table sorting semantics. -s/--sort-by now renders at the
+    end of its option group in help screens. [mpm] mpm which joins the sortable-table
+    commands instead of ignoring --sort-by, its manager column leading the default
+    sort. [mpm] docs/docs_update.py now renders the pyproject.toml label arrays in
+    pyproject-fmt''s canonical style, ending the pull-request ping-pong between the
+    update-docs and format-pyproject autofix jobs. A new test asserts the rewritten
+    sections stay a pyproject-fmt fixpoint. [mpm] The dump and Brewfile provenance
+    headers and the bar-plugin upgrade notice now write the bare package version,
+    dropping their v prefix. [cask] upgrade --all now passes --greedy to brew upgrade
+    when auto-updating packages are included, matching the outdated behavior. Auto-updating
+    casks reported as outdated were never upgraded. Closes #1940. [pipx] outdated
+    now relies on pipx''s native pipx list --outdated query on pipx 1.16.0 and newer:
+    all venvs are checked in a single call, each by its own backend (pip or uv). Older
+    pipx keeps the previous per-venv pip probes. Full changelog: v7.2.0...v7.3.0'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: 'kdeldycke/meta-package-manager: v6.4.2'
+  date: 2026-05
+  url: https://doi.org/10.5281/zenodo.20119319
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Kevin Deldycke
+  - Björn Torkelsson
+  - Sid
+  abstract: '[mpm] Compile version_regexes with re.MULTILINE only, dropping re.VERBOSE.
+    Under re.VERBOSE, unescaped whitespace in the pattern is silently ignored, so
+    patterns like r"guix \(GNU Guix\) (?P<version>...)" would never match guix --version
+    output and the manager was reported as unavailable with could not parse version
+    from <path> output. Affected guix, nix, and stew, all of which now correctly detect
+    their installed version. steamcmd, which used \ escapes to work around the same
+    flag, is unaffected. Full changelog: v6.4.1...v6.4.2'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: 'NixNet: Reproducible Virtual Network Experiments'
+  date: 2026-07
+  url: https://doi.org/10.1145/3822163.3827939
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Benedikt Spies
+  - Marcin Bosk
+  - Paulo Mendes
+  abstract: In practice, network experiments are difficult to share and repeat due
+    to undeclared dependencies, environment drift, and fragile imperative scripts.
+    These problems cause experiments to silently diverge across machines and time,
+    making results hard to verify and build upon. In this paper, we present NixNet,
+    a framework that automates the complete experiment lifecycle—from dependency installation
+    to resource cleanup. NixNet leverages the Nix package manager to enable reproducibility
+    and preservation of network experiments through a virtual testbed. Testbeds are
+    defined by a single declarative expression specifying network nodes, virtual links,
+    link characteristics, and application scripts. By enforcing strict isolation using
+    Linux namespaces, NixNet eliminates unintended side-effects and ensures reproducibility
+    by pinning the entire dependency closure, including userspace binaries and input
+    data. NixNet configures the Linux networking stack directly via syscalls, providing
+    a lightweight yet strongly isolated testbed. We demonstrate NixNet's utility through
+    scenarios in protocol research—including Media over QUIC streaming and LEO satellite
+    link emulation—and provide a detailed comparison against Mininet and containerlab,
+    showing superior scalability and isolation properties.
+  venue: ''
+- title: Nix to the Rescue for a Reproducible HPC-AI Software Stack
+  date: 2026-07
+  url: https://arxiv.org/abs/2607.26688
+  category: nix-flakes
+  subcategory: ''
+  authors:
+  - Wenke Du
+  - Jean-Marc Gratien
+  - Raphael Gayno
+  abstract: 'Reproducibility in HPC remains difficult under the constraints of production
+    supercomputers: no root access, limited internet, and software stacks that increasingly
+    span C/C++, Fortran, Python, MPI, and GPU runtimes. Traditional approaches based
+    on environment modules and Conda require manual intervention to locate dependencies,
+    leak system libraries into builds, and fail to compose across projects. Containers
+    help with deployment but do not by themselves guarantee reproducibility. We report
+    on our experience building a hybrid HPC/AI software stack with Nix, covering local
+    development on a workstation without root and remote deployment as an Apptainer
+    image on a production cluster. Nix''s consistent package layout, full environment
+    isolation, and flake-based composition resolve the dependency discovery, leakage,
+    and composition problems we encountered, while unifying C/C++ and Python management
+    under a single declarative specification that also generates the deployment container.
+    We discuss trade-offs against Spack and Guix, the development-versus-production
+    split addressed via CMake presets, and current gaps in ML package coverage in
+    Nixpkgs.'
+  venue: HAL (Le Centre pour la Communication Scientifique Directe)
+- title: 'LoganEvans/chiral-gauge-dynamics: Foundational Release of Chiral Gauge Dynamics'
+  date: 2026-07
+  url: https://github.com/LoganEvans/chiral-gauge-dynamics/tree/v1.0.0
+  category: nix-flakes
+  subcategory: ''
+  authors:
+  - L. Evans
+  abstract: 'This release marks the initial public publication of the Chiral Gauge
+    Dynamics (CGD) formalization and its accompanying foundational manuscript. Included
+    in this release: The complete Lean 4 formalization of the CGD axioms, kinematic
+    geometry, and emergent properties. The LaTeX source code for the introductory
+    paper (cgd-foundations). Python analysis scripts and data sets for the phenomenological
+    evaluation of the proton radius puzzle. Key formalized results in this version:
+    Emergence of unimodular gravity from the self-dual chiral sector via the Urbantke
+    metric. Derivation of a topological mass gap and stable solitons in the anti-self-dual
+    sector. Kinematic isolation of self-interacting dark matter (SIDM) from the self-dual
+    topology. Geometric emergence of the Dirac equation, quantum entanglement bounds,
+    and the Born rule. Hadronic phenomenology including Sivers and Boer-Mulders kinematic
+    sign flips, and the requirement of an axial-vector condensate. Build environment:
+    This release is configured with a Nix flake for exact reproducibility of the Lean
+    4 and Lake environment. It relies on the Litlib library to explicitly track and
+    parameterize boundaries from historical, unformalized peer-reviewed literature.'
+  venue: Open MIND
+- title: 'LoganEvans/litlib4: Litlib4 Initial Release'
+  date: 2026-07
+  url: https://doi.org/10.5281/zenodo.21432195
+  category: nix-flakes
+  subcategory: ''
+  authors:
+  - L. Evans
+  abstract: 'v1.0.0: Initial Release This is the initial public release of Litlib4,
+    a metadata and transcription framework for scientific literature in Lean 4. This
+    release establishes the core metadata framework and CLI tooling for tracking unformalized
+    physical literature. Instead of using global axiom statements to represent unformalized
+    literature, Litlib4 allows researchers to encode peer-reviewed claims into parameterized
+    typeclasses, restricting unproven assumptions strictly to the downstream theorems
+    that explicitly require them. Core Features Compartmentalized Axiomatics: Infrastructure
+    for encoding physical literature as strict boundary classes (signatures). Metadata
+    Macros: The Litlib.paper, Litlib.equation, and @[litlib_track] macros allow users
+    to embed metadata (BibTeX, authors, DOIs, page numbers) directly into Lean 4 declarations.
+    Litlib Report CLI (litlib_report): Dashboard view: Generates hierarchical CLI
+    views of tracked literature, equations, and standalone theorems. LaTeX artifact
+    generation: The --latex flag generates a LaTeX integration package, including
+    a .sty package, a labeled .tex formal code appendix, and deduplicated .bib files.
+    Inline citations: Introduces the \leanref{} LaTeX macro to cross-reference Lean
+    4 declarations directly from the main text of a paper. Transcription Guidelines:
+    Documentation provided in docs/conventions.md and docs/ai_transcription_prompt.md
+    detailing transcription rules to prevent dimensional collapse and enforce boundary
+    conditions. Reproducibility: Configured with Nix Flakes to ensure exact Lean and
+    Lake toolchain matching. Usage Litlib4 is designed to be used as a dependency
+    in downstream Lake projects. Literature can be transcribed and tracked locally
+    without requiring upstreaming to a central repository. See the README for installation
+    instructions.'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: Spatial rendering cost profiling and visualization framework using spherical
+    harmonics cost probes
+  date: 2026-07
+  url: https://resolver.tudelft.nl/uuid:cb5c40f9-449b-4bf7-ba8a-e65c76e3a45a
+  category: nix-flakes
+  subcategory: ''
+  authors:
+  - D.J. Bettencourt de Freitas
+  abstract: 'This dataset contains the software developed for the master''s thesis
+    "Visualizations for Guiding Rendering Costs" (Danilo José Bettencourt de Freitas,
+    Delft University of Technology, 2026).<br><strong>Objective</strong>. Stable frame
+    rates are critical to real-time rendering, but conventional frame profilers only
+    reveal when and why a frame exceeds its budget — not where in the scene, or along
+    which view direction, the bottleneck lies. Developers relying on manual scene
+    exploration or fixed camera paths risk missing expensive viewpoints or entire
+    regions. This software implements a probe-based framework that captures view-dependent
+    rendering cost across a static 3D scene and surfaces the expensive viewpoints
+    through coordinated visualizations.<br><strong>Type of research.</strong><strong>
+    </strong>Applied computer-graphics / tool-building research, evaluated qualitatively
+    through a working implementation and a set of rendering case studies rather than
+    a controlled user study.<br><strong>Methods.</strong>A uniform grid of probes
+    samples rendering cost over view directions on a sphere and encodes each probe''s
+    signal as memory-efficient Spherical Harmonics (SH) coefficients; a separate confirmation
+    pass recovers each probe''s true peak cost free of SH band-limiting error. Six
+    linked visual idioms then guide the user from a global cost overview down to the
+    specific expensive viewpoint. The framework is integrated into a custom Vulkan
+    renderer and evaluated on case studies covering common bottlenecks — expensive
+    materials, over-submitted draw calls from misconfigured occlusion culling, and
+    vertex bottlenecks from missing level-of-detail.<br><strong>Contents</strong>.
+    The complete C++ source of the Vulkan rendering engine and the SH cost-probe profiling/visualization
+    framework; the primary thesis application; and four built-in procedural case-study
+    scenes (overdraw, geometry, dungeon, peaks) that reproduce the evaluated bottlenecks.
+    Also included: GLSL shader sources, glTF/GLB example assets and .scene configuration
+    files, unit tests, and the full pinned build toolchain (Nix flake + CMake + Makefile),
+    plus a README with build/run instructions, an MIT license, and citation metadata.
+    Building and running require a Linux system (X11 or Wayland with XWayland) and
+    a Vulkan-capable GPU.<br>'
+  venue: Open MIND
+- title: Futhark
+  date: 2026-03
+  url: https://doi.org/10.5281/zenodo.19023251
+  category: nix-devops
+  subcategory: ''
+  authors:
+  - The Futhark Hackers
+  abstract: 'Bug Fixes all each anySize is distinct (Troels Henriksen) Continuous
+    Integration update Ubuntu. (#2366) #2366 (Troels Henriksen) use nix-shell more.
+    (#2367) #2367 (Troels Henriksen) Commits add test-interpreter (Troels Henriksen)
+    b2c5b3c: Make LiftAllocations properly alias-aware. (Troels Henriksen) add test-multicore
+    (Troels Henriksen) 6caae76: Support 8/16 bit atomics in GPU backends (#2262) (Troels
+    Henriksen) #2262 3893f97: Improve representation and optimisation of reshapes
+    (#2261) (Troels Henriksen) #2261 dab03e0: Maintain attributes here. (Troels Henriksen)
+    maintain attributes (Troels Henriksen) a71ac7e: Avoid ugly spacing. (Troels Henriksen)
+    add #[blank] and #[scratch] (Troels Henriksen) copy-reshape-manifest compositions
+    (Troels Henriksen) 03d38a3: Fix variable name in C API futhark_context_free (#2263)
+    (Tom Smeding) #2263 d3b19eb: Document this a bit. (Troels Henriksen) add LMADs
+    for function param (#2264) #2264 (Troels Henriksen) improve indexing (#2265) #2265
+    (Troels Henriksen) add more haddocks (Troels Henriksen) eb3d045: Fix after let-generalisation.
+    (Troels Henriksen) ee09e5f: Allow type refinements to be lifted. (#2267) (Troels
+    Henriksen) #2267 fa1dbec: Fix #2268 (Troels Henriksen) cf10f0d: Test for #2268.
+    (Troels Henriksen) 1115c6c: Allow section syntax in value specs. (Troels Henriksen)
+    997b6b9: futhark profile: put fraction of runtime in .summary. (Troels Henriksen)
+    b19b263: Stop warning about opaque types. (#2270) (Troels Henriksen) #2270 871a503:
+    Fix type error message. (Troels Henriksen) better indexing errors. (Troels Henriksen)
+    734e54d: Fix #2271. (Troels Henriksen) 54b8c79: Also replace records in type annotations.
+    (Troels Henriksen) eae3f62: Parens around projections. (Troels Henriksen) 10e21cb:
+    Better printing. (Troels Henriksen) 7669f31: Fix #2273 (#2274) (Troels Henriksen)
+    #2274 782afba: Do not treat 8/16-bit atomics as "primitive". (Troels Henriksen)
+    371609f: futhark-benchmarks: bump (Troels Henriksen) 839076c: This is 0.25.31.
+    (Troels Henriksen) 2bbb76a: Onwards! (Troels Henriksen) 190fd37: These are not
+    actually in scope. (Troels Henriksen) 274b723: futhark doc: print warnings (Troels
+    Henriksen) allow elison of "in" before "let". (Troels Henriksen) 1b11084: Add
+    unit tests for the printer. (Troels Henriksen) 145674f: Fix #2276. (Troels Henriksen)
+    63c3b73: Fix f64 atomics on pre-CC 6 CUDA GPUs. (#2275) (Troels Henriksen) #2275
+    4955936: Quotes are better than backticks. (Troels Henriksen) 5e9d153: This can
+    be anySize. (Troels Henriksen) aa13da2: This error changed slightly. (Troels Henriksen)
+    fix error message. (Troels Henriksen) af80871: futhark test: infer array element
+    type from first element (#2278) (Troels Henriksen) #2278 e4c2725: Add infrastructure
+    for benchmarking of the compiler itself. (#2279) (Troels Henriksen) #2279 7f3a1e9:
+    Fix #2283. (#2284) (Troels Henriksen) #2284 0866247: Minor doc fixes. (Troels
+    Henriksen) 8f968b3: allow ~ character in package path (#2285) (cwhaddon) #2285
+    68316e4: cuda backend: explicitly support CC 8.9, 9.0, 10.0, 10.1, and 12.0. (#2287)
+    (Troels Henriksen) #2287 fdfb667: Fix #2288. (#2290) (Troels Henriksen) #2290
+    handle sign/unsign for AD values. (Troels Henriksen) 013729c: Fix #2292. (#2293)
+    (Troels Henriksen) #2293 7702430: Fix #2294. (#2295) (Troels Henriksen) #2295
+    aaeeba6: We need uniform versions of these. (Troels Henriksen) dbdbd1c: Begin
+    tracking provenance of IR statements. (#2280) (Troels Henriksen) #2280 6ed01b5:
+    Bump Hackage snapshot. (Troels Henriksen) 3647e6a: Bump Nixpkgs. (Troels Henriksen)
+    a1c76d1: shell.nix: bump ghc. (Troels Henriksen) propagate SOAC attributes. (Troels
+    Henriksen) dbacb71: Reformat. (Troels Henriksen) 4eee0ed: Ignore some buggy hlint
+    rules. (Troels Henriksen) 6ca6a74: Newer ispc have cbrt(). (Troels Henriksen)
+    4ad19c8: Bump Python. (Troels Henriksen) a95de5b: Implement parsing of IR source
+    locations. (Troels Henriksen) bf956ec: Fix #2300. (Troels Henriksen) 5f39b7e:
+    This is 0.25.32. (Troels Henriksen) fbe726e: Onwards! (Troels Henriksen) 65c3104:
+    Implement cachedir specification. (#2303) (Troels Henriksen) #2303 abc3f71: Store
+    VNameSource when printing IR. (Troels Henriksen) e051db9: Must have linebreak
+    here. (Troels Henriksen) 905f2d0: Avoid elemType here. (Troels Henriksen) 874f73e:
+    Cannot index accumulator. (Troels Henriksen) e16024e: Look at the right edges.
+    (Troels Henriksen) b316978: Fix typo. (Troels Henriksen) 09a8f19: Handle accumulators
+    when sequentialising Stream. (Troels Henriksen) 2c06a19: Fix to withacc-soac fusion.
+    (Troels Henriksen) 78de664: Use canonical Show instances. (Troels Henriksen) 5f0f789:
+    Fix horizontal fusion of WithAccs. (Troels Henriksen) 21fede6: Fix typo. (Troels
+    Henriksen) 9105194: Style fix. (Troels Henriksen) 8bd75c4: Print hostnames as
+    well. (Troels Henriksen) 8102e57: Rewrite Scatter in terms of accumulators. (#2304)
+    (Troels Henriksen) #2304 23608a0: futhark fmt: do not print program on --check.
+    (Troels Henriksen) f9c635c: Reformat all tests with futhark fmt. (Troels Henriksen)
+    a64de9c: KernelBody simplification. (#2305) (Troels Henriksen) #2305 b18947b:
+    Fix #2306. (#2307) (Troels Henriksen) #2307 b80355a: Fix #2308. (Troels Henriksen)
+    1233781: Rework user''s guide theme. (Troels Henriksen) b7a3fd3: Refactor AD part
+    of interpreter. (Troels Henriksen) 9b22d93: Add some more useful methods to ArrayShape.
+    (Troels Henriksen) 2b36a72: Unique is clearer than mempty. (Troels Henriksen)
+    29e4563: futhark script: free before terminating. (Troels Henriksen) 1270969:
+    The macOS nightlies are actually ARM64 binaries. (Troels Henriksen) 9e6791a: Add
+    ''autodiff'' tag to every test that uses ad. (Due) f2367a4: This works. (Due)
+    63dccae: Add more hlint rules. (Troels Henriksen) a1559af: Revert "Add more hlint
+    rules." (Troels Henriksen) 5c684b5: This rule is fine. (Troels Henriksen) 46d9aab:
+    Replace many uses of String with Name/Text. (#2311) (Troels Henriksen) #2311 6ff492e:
+    Temporarily disable cachix. (Troels Henriksen) e1174ad: Track local function name
+    location precisely. (Troels Henriksen) 9fe9d44: Remove spurious import. (Troels
+    Henriksen) 8397178: Add unit tests for DataDependencies. (Troels Henriksen) b0b50b7:
+    futhark script: add $restore, improve $store. (#2312) (Troels Henriksen) #2312
+    5d4828a: Fix #2314. (#2315) (Troels Henriksen) #2315 f8bbbed: Simplification rule
+    for condition function. (Troels Henriksen) c9afb04: Fix derivatives of power.
+    (Troels Henriksen) bd8a956: futhark fmt: improve printing of assert. (Troels Henriksen)
+    491dc05: Remove "unsafe" syntax from documentation. (Troels Henriksen) b80f86b:
+    Make assert more syntactically flexible. (Troels Henriksen) e1cbe8d: Bump Nix
+    and Hackage snapshot. (Troels Henriksen) 4597906: This is 0.25.33. (Troels Henriksen)
+    c0ad584: Onwards! (Troels Henriksen) 55cecaf: Avoid generating zero-length arrays.
+    (Troels Henriksen) 892a9d9: Add simplification rule for doomed expressions. (Troels
+    Henriksen) cdd88e0: Simplify away indexes into Scratch. (Troels Henriksen) 1a7651e:
+    Fix typo. (Troels Henriksen) a9b3d1b: This now optimises better. (Troels Henriksen)
+    61e57c4: This also needs unsafe. (Troels Henriksen) 3da1182: Fix #2316. (#2317)
+    (Troels Henriksen) #2317 19b51c6: Update doc link. (Troels Henriksen) 2ceacbc:
+    Neater return type. (Troels Henriksen) 53f029e: Maximise disk space when testing
+    ISPC. (#2318) (Troels Henriksen) #2318 161ffc8: Do not delete CACHEDIR.TAG. (Troels
+    Henriksen) 5b11588: futhark literate: print tuples and records properly. (#2321)
+    (Troels Henriksen) #2321 permit decomposition of server-side tuples. (Troels Henriksen)
+    support projection. (Troels Henriksen) 9a19fa7: Maintain all aux information here.
+    (Troels Henriksen) 8e9ac07: Better source locations for let-in. (Troels Henriksen)
+    9e8df43: Allow size expressions in let-bound shapes. (Troels Henriksen) 9ef1284:
+    Cleanly distinguish types and type constructors in interpreter. (Troels Henriksen)
+    c601bee: futhark pkg: handle invalid tags robustly. (Troels Henriksen) 7b4a0cb:
+    Support unrolling of maps over accumulators. (Troels Henriksen) c1efa35: Use dedicated
+    shell-style.nix for CI. (#2323) (Troels Henriksen) #2323 ca65606: Fix #2324. (Troels
+    Henriksen) 3f2530e: Fix #2326. (Troels Henriksen) 260452d: No need for show here.
+    (Troels Henriksen) 072c0ab: Add monomorphisation statistics. (Troels Henriksen)
+    0489c62: Further speed up monomorphisation. (Troels Henriksen) 31d2700: Oops.
+    (Troels Henriksen) e1f5e1a: Much faster when this is a Map. (Troels Henriksen)
+    809a912: This should not be a Semigroup. (Troels Henriksen) dc0521b: Optimise
+    handling of environments in defunctionaliser. (Troels Henriksen) e8ad9d3: Slightly
+    speed up scope construction. (Troels Henriksen) d43e540: Stop using SymbolTable
+    as a monoid. (Troels Henriksen) da1e9c6: Fix abbreviated comment. (Troels Henriksen)
+    7e363d3: Bump Hackage snapshot. (Troels Henriksen) a221ea9: Fix race condition.
+    (Troels Henriksen) 8edfacd: Support CUDA 13. (#2329) (Troels Henriksen) #2329
+    b88976e: This is 0.25.34. (Troels Henriksen) 76fb548: Onwards! (Troels Henriksen)
+    6273ae1: Improve dead code elimination for loops. (Troels Henriksen) 63b1427:
+    This line is too long. (Troels Henriksen) 6aba678: Fix #2332. (#2334) (Troels
+    Henriksen) #2334 7947116: Properly document conversions. (Troels Henriksen) d06e167:
+    Fix JSON output when having duplicate stanzas. (Troels Henriksen) 45c08b2: Clearer
+    error on random input mismatch. (Troels Henriksen) dddb43c: Explicitly hide this
+    library. (Troels Henriksen) 18dd027: Improve const-correctness. (Troels Henriksen)
+    3a4a389: Fix #2335. (Troels Henriksen) do not build docs for test suite. (Troels
+    Henriksen) ef8779c: Listing of source locations for cost centres in profile.summary
+    (#2338) (VegOwOtenks) #2338 e6aab97: Update Nixpkgs. (Troels Henriksen) 1ebb31c:
+    Bump these actions. (Troels Henriksen) 708b04f: No need to export these. ('
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: 'The effect of gestational age on the socio-individual development of premature
+    children: the mediating role of parental trauma and attachment quality.'
+  date: 2026-05
+  url: https://osf.io/cxdv8
+  category: nix-development
+  subcategory: ''
+  authors:
+  - Annaël Rocher
+  - Laurine DUJARDIN
+  - Marion LOUVION
+  abstract: 'Some studies show an impact of prematurity on socio-individual development
+    (Hua et al., 2022; Pau et al., 2015), defined by autonomy, self-awareness and
+    social skills. Although this development depends on the child’s environment (Norman
+    &amp; Tomlinson, 1959), few studies on this development exist and they do not
+    include the child’s family environment. Yet, prematurity can impact this environment,
+    often leading parents to develop postpartum parental trauma (Naeem et al., 2019)
+    and affecting the quality of parent-child attachment (Fuertes et al., 2024), these
+    effects are accentuated with a low gestational age (Brunson et al., 2021; Fuertes
+    et al., 2024). In addition, studies show that postpartum parental trauma influences
+    the quality of attachment after premature birth (Borghini &amp; Nix, 2015), yet
+    no study combines these factors to study the development of preterm children.
+    Thus, this study aims to examine whether the gestational age influences the socio-individual
+    development of the premature child by the parental trauma related to the premature
+    birth of the child, and therefore, the parent-child attachment relationship. Borghini,
+    A. et Müller Nix, C. (2015). Traumatisme parental et conséquences lors d’une naissance
+    prématurée. Contraste, 41(1), 65-84. https://doi-org.ezproxy.u-paris.fr/10.3917/cont.041.0065.
+    Brunson, E., Thierry, A., Ligier, F., Vulliez-Coady, L., Novo, A., Rolland, A.,
+    &amp; Eutrope, J. (2021). Prevalences and predictive factors of maternal trauma
+    through 18 months after premature birth : A longitudinal, observational and descriptive
+    study. PLoS ONE, 16(2), e0246758. https://doi.org/10.1371/journal.pone.0246758
+    Fuertes, M., Martelo, I., Almeida, R., Gonçalves, J. L., &amp; Barbosa, M. (2024).
+    Attachment and mother-infant interactions in dyads with infants born full-term,
+    moderate-to-late preterm, and very-to-extreme preterm. Early Human Development,
+    189, 105943. https://doi.org/10.1016/j.earlhumdev.2024.105943 Hua, J., Barnett,
+    A. L., Lin, Y., Guan, H., Sun, Y., Williams, G. J., Fu, Y., Zhou, Y., &amp; Du,
+    W. (2022b). Association of Gestational Age at Birth With Subsequent Neurodevelopment
+    in Early Childhood : A National Retrospective Cohort Study in China. Frontiers
+    In Pediatrics, 10. https://doi.org/10.3389/fped.2022.860192 Naeem, A. T., Shariat,
+    M., Zarkesh, M. R., Abedinia, N., Teimoorybakhsh, S., &amp; Nayeri, F. (2019).
+    Posttraumatic Stress Disorder and Associated Risk Factors Among Parents of Hospitalized
+    Term and Preterm Neonates. Iranian Journal Of Pediatrics, 29(3). https://doi.org/10.5812/ijp.87799
+    Norman, M., &amp; Tomlinson, L. R. (1959). Personal-Social development. Review
+    Of Educational Research, 29(2), 197. https://doi.org/10.2307/1168959 Ohuma, E.
+    O., Moller, A., Bradley, E., Chakwera, S., Hussain-Alkhateeb, L., Lewin, A., Okwaraji,
+    Y. B., Mahanani, W. R., Johansson, E. W., Lavin, T., Fernandez, D. E., Domínguez,
+    G. G., De Costa, A., Cresswell, J. A., Krasevec, J., Lawn, J. E., Blencowe, H.,
+    Requejo, J., &amp; Moran, A. C. (2023). National, regional, and global estimates
+    of preterm birth in 2020, with trends from 2010 : a systematic analysis. The Lancet,
+    402(10409), 1261‑1271. https://doi.org/10.1016/s0140-6736(23)00878-4 Pau, J. C.,
+    López, J. P., Salinas, F. C., Garcia, O. S., Hoyos, S. P., &amp; Olivé, E. L.
+    (2015). Neurodevelopment in preterm infants with and without placenta-related
+    intrauterine growth restriction and its relation to perinatal and postnatal factors.
+    The Journal Of Maternal-Fetal &amp; Neonatal Medicine, 29(14), 2268‑2274. https://doi.org/10.3109/14767058.2015.1081893'
+  venue: OSF Preprints (OSF Preprints)
+- title: 'Why Risk it, When You Can {rix} it: A Tutorial for Computational Reproducibility
+    Focused on Simulation Studies'
+  date: 2026-07
+  url: https://doi.org/10.31234/osf.io/a3e8v_v2
+  category: nix-development
+  subcategory: ''
+  authors:
+  - Felipe Fontana Vieira
+  - Jason Geller
+  - Bruno Rodrigues
+  abstract: Computational reproducibility remains limited in psychological research,
+    despite widespread norms for sharing data and analysis code. One reason is that
+    reproducibility exists on a continuum, ranging from partial transparency—such
+    as providing scripts or software version numbers—to fully executable research
+    compendia that regenerate all results from raw code. In this article, we introduce
+    Nix and the {rix} R package as a practical framework for achieving full computational
+    reproducibility in simulation-based research. We provide a step-by-step tutorial
+    demonstrating how {rix} can be used to define, build, and share isolated, project-specific
+    software environments that precisely capture R versions, package dependencies,
+    system libraries, and integrated development environments. We further illustrate
+    this workflow by reproducing a complete manuscript using Quarto and the {apaquarto}
+    extension, showing how analyses, figures, and text can be regenerated in a single,
+    executable pipeline. Together, these tools lower the technical barrier to robust,
+    end-to-end reproducibility and offer a scalable solution for simulation studies
+    and methodological research in psychology and related fields.
+  venue: ''
+- title: An Evidence-driven Protocol for Trustworthy CI Pipelines
+  date: 2026-05
+  url: https://arxiv.org/abs/2605.21089
+  category: nix-ci-cd
+  subcategory: ''
+  authors:
+  - Fernando Castillo
+  - Eduardo Brito
+  - Pille Pullonen
+  abstract: Enterprise software supply chains are increasingly vulnerable to infrastructure
+    attacks, resulting in financial and reputational damage. Ensuring the integrity
+    and provenance of software artifacts remains a significant challenge, where re-execution
+    of the build and tests by every consumer to guarantee provenance produces a verification
+    bottleneck and credibility reduction. This paper presents an evidence-driven protocol
+    for trustworthy Continuous Integration (CI) pipelines that combines Deterministic
+    Build Systems (DBS) with Trusted Execution Environments (TEEs). The approach provides
+    cryptographically verifiable guarantees of integrity, authenticity, and attestation
+    for CI artifacts in distributed environments, reducing implicit trust without
+    requiring costly re-execution by consumers. We introduce a protocol that binds
+    deterministic builds with TEE-based attestations, formalizing the evidence life
+    cycle, together with a practical implementation using Nix and Intel TDX. Experimental
+    results show that artifact verification is reduced from redundant computation
+    to lightweight signature and policy checks. These findings demonstrate that evidence-driven
+    CI pipelines establish scalable and verifiable trust in digital infrastructure,
+    effectively amortizing the initial computational overhead introduced by TEEs.
+  venue: arXiv (Cornell University)
+- title: 'Editorial: Beyond energy production: exploring mitochondrial dynamics and
+    disease'
+  date: 2026-06
+  url: https://doi.org/10.3389/fcell.2026.1872916
+  category: nix-ci-cd
+  subcategory: ''
+  authors:
+  - Nahid A. Khan
+  - Ruben Torregrosa-Muñumer
+  abstract: 'Mitochondria are no longer viewed as static ATP-producing organelles,
+    but rather as dynamic, stress-responsive signaling hubs integrating metabolism,
+    quality control, inflammation, redox balance, cell fate decisions, and tissue
+    adaptation. The articles collected in Beyond Energy Production reflect this conceptual
+    shift, highlighting how mitochondrial biology extends far beyond ATP generation
+    into disease mechanisms, adaptive remodeling, and therapeutic opportunity. Studies
+    across cardiovascular biology, skeletal muscle aging, neurodegeneration, lung
+    disease, and ischemia-reperfusion injury, position mitochondria as an active signaling
+    center and not passive responders to damage. Together, these contributions highlight
+    key emerging questions: how mitochondrial dynamics are shaped by environment,
+    how mitochondria integrate stress and cell-fate signals, how mtDNA is regulated,
+    how metabolism is rewired in disease, and whether mitochondria themselves can
+    be harnessed therapeutically.A recurrent theme emerging from this collection is
+    that mitochondrial function is defined not just by biochemical activity, but also
+    by their internal organization and external context. Mitochondria form dynamic
+    networks continuously remodeled through fission/fusion events, processes tightly
+    linked to tissue homeostasis and disease [1,2]. The review by Zhang et al. synthesizes
+    how mitochondrial dynamics in cardiomyocytes coordinate energy production, quality
+    control, and survival signaling. Healthy hearts adapt to changing workload and
+    stress via fission and fusion, whereas, in disease, disturbed fission-fusion balance
+    can produce fragmented or hyperfused mitochondrial networks that are bioenergetically
+    inefficient, oxidatively stressed, and injury-prone. Importantly, mitochondrial
+    dynamics are not merely descriptive features of cardiac pathology; they are mechanistically
+    involved in disease progression and offer therapeutic targets although the context-dependent
+    pleiotropy of fission/fusion regulators complicates translation into interventions.
+    Perra et al. extend this theme by emphasizing that mitochondrial behavior is shaped
+    not only by intrinsic biology but also by experimental context. Their study shows
+    that culture configuration, oxygen availability, and model design can markedly
+    influence mitochondrial readouts in vitro. More broadly, this underscores that
+    mitochondrial phenotypes emerge from the interplay between cell-intrinsic programs
+    and the external constraints imposed by the microenvironment and experimental
+    systems. Together, these studies show that mitochondrial biology is shaped by
+    the interplay between intrinsic network dynamics and the surrounding cellular
+    environment.A second major theme from this collection is that mitochondria occupy
+    a central position at the intersection of stress signaling and cell-fate control,
+    integrating pro-survival and pro-death cues [3]. Petit et al. refines this idea
+    by focusing on a cardiolipin platform at the mitochondrial outer membrane, where
+    caspase-8 and BID generate truncated BID (tBID) driving BAX/BAK oligomerization,
+    mitochondrial outer membrane permeabilization, cytochrome c release, cristae remodeling,
+    ROS production, and bioenergetic collapse. Beyond apoptosis, the article describes
+    how BID shapes necroptosis, pyroptosis, and ferroptosis, positioning mitochondria
+    as multi-death integrators via lipid/protein assembly. Therefore, targeting mitochondrial
+    membrane biology may influence multiple death pathways. On the other hand, Huang
+    and colleagues extend the stresssignaling perspective into the setting of age-related
+    sarcopenia, bridging a key gap: treating mitochondrial dysfunction, impaired mitophagy,
+    oxidative stress, chronic inflammation, hormonal decline, and senescence as an
+    interconnected network rather than parallel defects. Focusing on mitochondrial
+    quality control, this framework links AMPK/SIRT1/PGC-1α and mTORC1 signaling,
+    together with PINK1/Parkin, BNIP3/NIX, and FUNDC1 pathways, to mitochondrial biogenesis,
+    mitophagy, oxidative stress, and muscle maintenance. By combining these mechanisms
+    with diagnostics and therapies, the authors move the field beyond descriptive
+    aging phenotypes toward a more coherent model of disease biology. They also point
+    toward an important future direction: biomarker-driven and precision-oriented
+    strategies that can stratify sarcopenia, not only by function and muscle mass,
+    but by the underlying mitochondrial defects sustaining disease progression.Mitochondrial
+    regulation extends beyond classical bioenergetics, encompassing multiple layers
+    of metabolic signaling that range from metabolites to the mitochondrial genome
+    itself. Metabolites such as NAD⁺ and TCA cycle intermediates function as signaling
+    hubs that couple metabolic state to redox balance, gene regulation, and cellular
+    responses [4,5], partly by shaping epigenetic landscapes through metabolite-dependent
+    enzymes [6]. In parallel, mitochondrial DNA (mtDNA), long considered epigenetically
+    inert, is now increasingly recognized as dynamically regulated, although the abundance,
+    distribution, and functional relevance of these modifications remain debated [7,8].
+    D''Alessandro et al. address a key question in Parkinson''s disease: whether restoring
+    mitochondrial NAD⁺ regeneration is sufficient to rescue Complex I dysfunction
+    in dopaminergic neurons. Using MCI-Park mice and mitochondria-targeted LbNOX,
+    they disentangle redox balance from electron transport function. Despite partially
+    restoring the mitochondrial NAD+/NADH balance, they observed no improvement in
+    motor behavior, tyrosine hydroxylase levels, or dopaminergic neuron survival.
+    These negative results are highly informative, demonstrating that preserving redox
+    balance alone does not reconstitute complex Idependent physiology in vivo. Moreover,
+    Lu and colleagues reframe TCA metabolites (citrate, succinate, fumarate, α-ketoglutarate,
+    and itaconate) as signaling hubs across lung diseases. Beyond metabolism, these
+    metabolites can regulate inflammation, hypoxia responses, immune activation, vascular
+    remodeling, and therapy resistance. This work integrates metabolic reprogramming
+    into a translational framework for biomarkers and targeted interventions, reframing
+    the TCA cycle as a disease-relevant signaling network. Finally, Shock and colleagues
+    provide evidence that mammalian mitochondria harbor active machinery for both
+    writing (mtDNMT1 and DNMT3b) and erasing (TET-like hydroxymethylase activity)
+    cytosine methylation on mtDNA. Interestingly, reduced promoter methylation correlates
+    with decreases transcription of mtDNA-encoded oxidative phosphorylation genes
+    and modest reductions in mtDNA copy number, implying that, unlike in the nucleus,
+    mtDNA methylation may support transcription. Together, these studies illustrate
+    mitochondrial regulation as an integrated system spanning membrane dynamics, genome
+    control and metabolite signaling, while emphasizing the importance of mechanistic
+    precision in defining both the potential and limits of mitochondrial interventions.Perhaps
+    the most translationally provocative theme in this collection is the idea that
+    mitochondria themselves may become therapeutic agents. Mitochondrial transplantation
+    builds on recognition that mitochondria can move between cells and alter recipient-cell
+    behavior [9,10]. In principle, delivery of healthy mitochondria could bypass intrinsic
+    defects in oxidative phosphorylation, redox balance, or quality control, offering
+    a direct organelle-level intervention. Yet despite growing interest, the field
+    remains scattered across experimental systems and disease contexts [11]. Chengze
+    Liang and colleagues provide a timely and comprehensive review that helps bring
+    this fragmented literature into focus, particularly in the settings of ischemia-reperfusion
+    injury across cardiac, cerebral, hepatic pulmonary, and renal tissues. A major
+    strength of the article is its integration of mechanisms, methodology, organ-specific
+    evidence, and translational challenges within a single framework, moving beyond
+    proof-of-concept efficacy and clarifying the practical barriers to clinical implementation.
+    Extending this perspective, work by He et al. highlights mitochondrial transfer
+    in osteoarthritis, underscoring that intercellular mitochondrial exchange may
+    also shape chronic degenerative disease by modulating inflammation, metabolism
+    and tissue homeostasis. Importantly, these works emphasize that mitochondrial
+    transplantation is not a single intervention but a chain of interdependent steps,
+    each of which may influence outcome. While preclinical studies suggest benefits
+    such as restored bioenergetics, reduced oxidative stress, limited calcium overload,
+    and limited cell death (particularly when delivery coincides with reperfusion)
+    critical questions remain unresolved regarding donor source, route and timing
+    of administration, intracellular uptake, persistence, and long-term immunological
+    compatibility. Together, these studies reinforce a broader conceptual shift: mitochondria
+    are not confined to the cell but can potentially function as transferable biological
+    units with roles in both acute injury and chronic disease.Taken together, the
+    contributions in this research topic reinforce a unifying view of mitochondria
+    as adaptive organelles that integrate structure, metabolism, signaling, and cell
+    fate. Beyond summarizing recent advances, the collection highlights key challenges
+    for the field: (1) advanced in vivo tools to study mitochondrial biology with
+    spatial and temporal precision, (2) modeling mitochondrial pathways as interconnected
+    systems rather than isolated modules, (3) defining therapeutic parameters (timing,
+    targeting, persistence, and safety), and (4) elevating negative and partial-rescue
+    studies to delineate mechanistic limits and sharpen translational strategy. In
+    this sense, "beyond energy production" is not simply a thematic label, but an
+    organizing principle for the next phase of mitochondrial research.'
+  venue: Frontiers in Cell and Developmental Biology
+- title: Coco-Artifact2026-2
+  date: 2026-05
+  url: https://doi.org/10.5281/zenodo.20017220
+  category: nix-containers
+  subcategory: ''
+  authors:
+  - Anon
+  abstract: 'Artifact Description Option 1 (Recommended): Minimal Setup, Larger Download
+    If you prefer an easier setup and don’t mind a larger download: Download testCoco-docker-before-setup.tar.gz.
+    Load the Docker image: docker load < testCoco-docker-before-setup.tar.gz Start
+    a container from the loaded image and enter it. Navigate to: cd /testCoco/ Run
+    the setup and showcase scripts: bash ./setup.shbash ./showcase.sh This will install
+    the required dependencies (including opam, Rocq, and the Lexa compiler). The scripts
+    will execute automatically, display output. During the execution of showcase.h,
+    it will pause in the middle, right before benchmarking, and then indicate: where
+    to find the verification examples where to find the benchmarking examples You
+    can then continue execution; the benchmarking process will reproduce the results
+    reported in the paper. Option 2: More Setup, Smaller Download If you are comfortable
+    with a bit more setup and prefer a smaller download: Download: flake.nix testCoco.zip
+    Build the Docker image: nix build . in a directory with flake.nix This will produce
+    a Docker image named cocosys:v3. Unzip testCoco.zip and move its contents to the
+    root directory of cocosys:v3. This setup corresponds exactly to the contents of
+    testCoco-docker-before-setup.tar.gz. Artifact Information All required source
+    code is included in testCoco.zip. All dependencies are specified in flake.nix.
+    The file testCoco-docker-before-setup.tar.gz is generated by: Running nix build
+    . in a directory containing flake.nix, and Placing the extracted contents of testCoco.zip
+    into the root directory of the resulting environment.'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: 'fractopo: A Python package for fracture network analysis'
+  date: 2026-05
+  url: https://doi.org/10.5281/zenodo.20340529
+  category: nix-containers
+  subcategory: ''
+  authors:
+  - Nikolas Ovaskainen
+  abstract: 'v0.9.2 (2026-05-22) Includes dependency updates of Python packages, marimo
+    entrypoint integration and inclusion of new command-line command, snap-traces.
+    Additionally, documentation now includes guides on how to digitize traces, as
+    well as instructions for validating and analyzing their network properties using
+    the fractopo web interface. 🚀 Features (marimos) Add API entrypoint which serves
+    both marimo apps so single Docker container contains both functionality, validation
+    and network analysis (cli) Add snap-traces command, which can be used to only
+    run the topological trace snapping heuristic implemented in fractopo. It outputs
+    the snapped traces without further edits. 💼 Other (per-system,pre-commit) Add
+    sphinx-lint as pre-commit check (pyproject) Add additional ruff lint and format
+    rules (poetry) Update dependencies (nix,flake) Update dependencies 🚜 Refactor
+    (branches_and_nodes) Take out snap traces heuristic function (general) Improve
+    geometry check function 📚 Documentation (README) Update container information
+    (examples) Add example of exporting traces with attributes (how_to_digitize_fractures_and_lineaments)
+    New guide with instructions on digitizing traces with QGIS is now provided with
+    the documentation (how_to_use_fractopo_web_interface) New guide with instructions
+    on how to use the fractopo marimo web interface for validation and network analysis
+    (examples) Demonstrate use of export_network_analysis Full set of changes: v0.9.1...v0.9.2'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: 'Artifact: A Design Space Exploration of Async/Await (v1.3)'
+  date: 2026-08
+  url: https://doi.org/10.5281/zenodo.21765916
+  category: nix-containers
+  subcategory: ''
+  authors:
+  - Gavin Gray
+  abstract: 'Artifact: A Design Space Exploration of Async/Await This artifact contains
+    the models described in Section 4 of the paper "A Design Space Exploration of
+    Async/Await". This artifact contains executable Redex semantics for the async/await
+    implementations of seven real runtimes --- Python asyncio, Python trio, JavaScript
+    (node), C# (.NET), Swift, Rust tokio, and Rust smol --- together with a differential
+    fuzzer that tests each model against its real runtime. The artifact and the included
+    source files are provided under MIT license. The repository hosting the code,
+    including how this artifact is built and distributed, is public online. The artifact
+    of record is archived on Zenodo: DOI 10.5281/zenodo.21764829. Getting Started
+    The only system requirement for running this artifact is Docker. The Docker image
+    is packaged and distributed on Zenodo. The archived record contains one image
+    tarball per architecture. Download the one matching your machine --- async-await-<version>-amd64.tar.gz
+    for Intel/AMD, or async-await-<version>-arm64.tar.gz for Apple Silicon and other
+    ARM --- then load and run it: docker load -i async-await-v1.3-arm64.tar.gz docker
+    run --rm -it ghcr.io/gavinleroy/async-await:v1.3-arm64 Memory requirements. Languages
+    are run in parallel and you''ll need to provision Docker with enough memory: at
+    least 8 GB, 16 GB for the full evaluation. Docker Desktop (macOS/Windows): Settings
+    → Resources → Memory. colima: colima start --cpu 4 --memory 16 (the default VM
+    is 2 GB, which is not enough). If output shows Killed or LANE DIED, the container
+    ran out of memory. The record''s third file, async-await-v1.3-source.tar.gz, is
+    the archival copy of the source tree --- you do not need it to run the artifact,
+    the image contains all source files. Once inside the artifact environment, the
+    Redex models are located under redex/, the figure programs under figs/ --- and
+    the three evaluation commands are provided on PATH: run-tests — every model''s
+    test suite (each async test also compiles and runs the real program, checked against
+    the model output) fuzz — the differential fuzzer, we''ll use this later All seven
+    real runtimes (Python 3.14, Node, .NET, Rust, Swift 6) are preinstalled at pinned
+    versions; nothing is downloaded at run time. The Docker container is automatically
+    generated by the release workflow in the online repository. Although we use Nix
+    to automatically generate the provided Docker container, Nix is not officially
+    supported as a means of distributing and testing the artifact. This is because
+    Swift 6 is not available on nixpkgs (tracked here and here). Kick the Tires (5
+    minutes) We will evaluate the stability of your environment by running a few small
+    programs with the fuzzer against the model. Run the following: fuzz -n 2 -r 2
+    You should see output like the following: fuzz: generating 2 programs x 2 runs
+    per lane fuzz: lanes: asyncio javascript trio smol tokio csharp swift fuzz: cache
+    dir /home/artifact/repo/artifact/fuzz-cache/20260803T000609Z (details per lane:
+    <lang>.log, records: <lang>.jsonl) asyncio [########################] 2/2 done
+    0:07 2 ok javascript [########################] 2/2 done 0:04 2 ok trio [########################]
+    2/2 done 0:09 2 ok smol [########################] 2/2 done 0:10 2 ok tokio [########################]
+    2/2 done 0:12 2 ok csharp [########################] 2/2 done 0:09 2 ok swift
+    [########################] 2/2 done 0:17 2 ok lane pass mism unconf crash wall
+    asyncio 2 0 0 0 0.1m javascript 2 0 0 0 0.1m trio 2 0 0 0 0.2m smol 2 0 0 0 0.2m
+    tokio 2 0 0 0 0.2m csharp 2 0 0 0 0.2m swift 2 0 0 0 0.3m total 14 0 0 0 fuzz:
+    results in /home/artifact/repo/artifact/fuzz-cache/20260803T000609Z You should
+    not see output that says ERROR or MISMATCH. In the second table printed, if any
+    column except pass contains a non-zero value, this could indicate that environment
+    is unstable or misconfigured. If that happens, there will be an output line such
+    as: smol: failure details in /home/artifact/repo/artifact/fuzz-cache/20260722T215342Z/smol.log
+    This could indicate that the environment is setup incorrectly. So please let me
+    know, including your architecture, and the contents of the printed log file. Evaluation
+    (45 minutes) The full evaluation follows the claims in the paper: we run fifty
+    random programs in each language against our models. In the kick-the-tires you
+    ran 2 programs. Specifically, for 50 generated programs, running the real-world
+    program 50 times produces an I/O output that the model can generate. Run the command:
+    fuzz -n 50 After about 45 to 60 minutes, you should see an output like the following:
+    lane pass mism unconf crash wall asyncio 50 0 0 0 16.4m javascript 50 0 0 0 8.0m
+    trio 50 0 0 0 15.6m smol 50 0 0 0 16.0m tokio 50 0 0 0 13.1m csharp 50 0 0 0 11.6m
+    swift 50 0 0 0 34.3m total 350 0 0 0 A note on what''s happening For each of the
+    7 runtimes, the fuzzer generates (a) a random type-correct program in the model
+    language, and (b) compiles that program into the respective real-world program.
+    The real program is run 50 times and each output observed is checked that it''s
+    in the set of model outputs. This command will take quite a while to complete,
+    not only because it''s running real-world programs with sleeps, it also runs the
+    Redex model that models fine-grained concurrency and thread interleaving. The
+    entire set of model outputs is not generated, instead, we lazily search through
+    the model space for the real outputs observed. (Generating the full model search
+    space is infeasible.) In some rare circumstances you may see a case in the unconf
+    column, which means the exhaustiveness checker ran out of fuel. I have seen this
+    occur infrequently. Of course, the full artifact is the actual Redex models as
+    written, which you can find in the redex/ directory, as well as published on the
+    Racket Package Index. Racket Package Index The Redex models are additionally distributed
+    on the Racket Package Index. Using them to build your own language semantics would
+    look like the following: raco pkg install oopsla26-async-await A user can then
+    import and build on the languages like so: (require oopsla26-async-await/swift)
+    Documentation for the models is provided online here.'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: The Virtual Recency Abstraction (Artifact and Supplementary Material)
+  date: 2026-04
+  url: https://doi.org/10.5281/zenodo.19704087
+  category: nix-containers
+  subcategory: ''
+  authors:
+  - Sven Keidel
+  - Raphaël Monat
+  - Sebastian Erdweg
+  abstract: 'Artifact and Supplementary Material for "The Virtual Recency Abstraction
+    (Strong Updates for Abstract Interpreters with Shared State)" Scope This artifact
+    contains instructions to reproduce Figures 2 and 3 in Section 5 Table 1 in Section
+    6.1 Figure 4 in Section 6.2 Table 2 in Section 6.3 Content The artifact contains
+    source code for the Tip and Wasm analyses described in the paper, as well as evaluation
+    scripts that reproduce the graphs in Sections 5 and 6. Figure 2: Modularity and
+    Reuse The source code of the Tip analysis can be found in `/evaluation/sturdy.scala/sturdy-tip/src/main/scala/sturdy/language/tip/analysis/RelationalAnalysis.scala`
+    The figure is generated with Jupyter notebook `count_reuse.ipynb` Figure 3: Modularity
+    and Reuse The source code of the Wasm analysis can be found in `~/evaluation/sturdy.scala/sturdy-wasm/src/main/scala/sturdy/language/wasm/analyses/RelationalAnalysis.scala`.
+    The figure is generated with Jupyter notebook `count_reuse.ipynb` Table 1: Soundness
+    of the Relational Wasm Analysis The source code of the WebAssembly 1.0 specification
+    test suite can be found in `/evaluation/sturdy.scala/sturdy-wasm/src/test/resources/sturdy/language/wasm/spec-test-suite-wasm1/`.
+    The scala test harness can be found in `/evaluation/sturdy.scala/sturdy-wasm/src/test/scala/sturdy/language/wasm/specification/RelationalAnalysisTestScript.scala`.
+    The data is written in CSV format to `/evaluation/sturdy.scala/soundness.csv`
+    The table is generated with Jupyter notebook `soundness.ipynb` Figure 4: Scalability
+    of the Relational Wasm Analysis The benchmarks can be found in `/evaluation/sturdy.scala/sturdy-wasm/src/test/resources/sturdy/language/wasm/benchmarksgame/src`.
+    The Scala test harness can be found in `/evaluation/sturdy.scala/sturdy-wasm/src/test/scala/sturdy/language/wasm/benchmarksgame/BenchmarksgameRelationalPerformanceTest.scala`
+    The data is written in CSV format to `/evaluation/sturdy.scala/scalability.csv`
+    The figure is generated with Jupyter notebook `scalability.ipynb` Table 2: Precision
+    of the Relational Wasm Analysis The WebAssembly code of the precision test can
+    be found in `/evaluation/sturdy.scala/sturdy-wasm/src/test/resources/sturdy/language/wasm/precision.wast`.
+    The C code of the precision test can be found in `/evaluation/sturdy.scala/sturdy-wasm/src/test/resources/sturdy/language/wasm/precision.c`.
+    The data is written in CSV format to `/evaluation/sturdy.scala/precision.csv`,
+    `/evaluation/goblint/precision.csv`, `/evaluation/mopsa/precision.csv`. The table
+    is generated with Jupyter notebook `precision.ipynb`. Reusability The source code
+    of the analyses presented in this paper is open-source and available on GitHub
+    (https://github.com/sturdy-analysis/sturdy/tree/relational-wasm). The code can
+    be recompiled using the Scala built tool SBT and the nix package manager:git clone
+    --recursive https://github.com/sturdy-analysis/sturdycd sturdygit checkout relational-wasmcd
+    sturdy-apronnix build .#numerical-analysis-librariesln -s result/lib libcd ..sbt
+    compileWe recommend to develop the analyses within the IntelliJ IDE. Getting Started
+    To get started, first load the docker image of the artifact:docker load -i virtual-recency-abstraction.tar.gzdocker
+    load -i goblint/goblint.tardocker load -i mopsa/mopsa.tarThen start the docker
+    container:docker run -it --rm -p 8888:8888 virtual-recency-abstraction:latestOpen
+    the link http://127.0.0.1:8888/tree?token=... shown in the command line output
+    in a web browser. This will open Jupyter included in the docker image.Within Jupyter
+    file browser, open the `soundness.ipynb` notebook.Evaluate each cells in the order
+    how they appear in the notebook with `ctrl+enter`. Alternative press the fast-forward
+    button (⏩). To get shell access to the container rundocker run -it --rm --entrypoint
+    bash virtual-recency-abstraction:latest Platforms The artifact is built for X86
+    CPU architecture and has been tested on linux devices.Since the artifact contains
+    compiled native code, it cannot be executed on other CPU architectures, such as
+    ARM-based Macs. We ran the benchmarks (Figure 4) on a machine with an AMD Ryzen
+    Threadripper PRO 5975WX CPU, Ubuntu 24.0, and OpenJDK 21.0.9 with 100GB heap space
+    and 1GB stack space.For the artifact we excluded benchmarks for Polyhedra and
+    Octagons, such that the experiment runs with 8GB RAM. Appendix Figures 2 and 3:
+    Modularity and Reuse Figures 2 and 3 can be reproduced with Jupyter notebook `count_reuse.ipynb`:
+    Open the Jupyter notebook `count_reuse.ipynb` following the steps in the getting
+    started section. Reexecute each cell in the order how they appear in the notebook
+    with `ctrl+enter`. Alternative press the fast-forward button (⏩). The cells return
+    latex commands we used to generate Figures 2 and 3 in our paper. Table 1: Soundness
+    of the Relational Wasm Analysis Please note that the analysis of `float_exprs.wast`
+    requires a lot of RAM. Therefore, we recommend the reviewers exclude this test.
+    This is explained in more detail in the Jupyter notebook. Table 1 can be reproduced
+    with Jupyter notebook `soundness.ipynb`: Open notebook `soundness.ipynb` following
+    the steps in the getting started section. Reexecute each cell in the order how
+    they appear in the notebook with `ctrl+enter`. Alternative press the fast-forward
+    button (⏩). Table 1 can be found at the bottom of the notebook. Figure 4: Scalability
+    of the Relational Wasm Analysis Please note that the benchmarks for Polyhedra
+    and Octagons require a lot of RAM to run. We ran the benchmarks on a machine with
+    100GB RAM. Therefore, we recommend the reviewers only reexecute the benchmarks
+    for intervals. This is explained in more detail in the Jupyter notebook. Figure
+    4 can be reproduced with Jupyter notebook `scalability.ipynb`. Open notebook `scalability.ipynb`
+    following the steps in the getting started section. Reexecute each cell in the
+    order how they appear in the notebook with `ctrl+enter`. Alternative press the
+    fast-forward button (⏩). The parts of Figure 4 can be found within the evaluated
+    notebook. Table 2: Precision of the Relational Wasm Analysis To repeat the precision
+    tests with the MOPSA analyzer run on the host machine:cd goblintdocker load -i
+    goblint.tardocker run -it --rm -v $(pwd):/data --workdir=/data --entrypoint bash
+    ghcr.io/goblint/analyzer ./analyze_tests.sh To repeat the precision tests with
+    the MOPSA analyzer run on the host machine:cd mopsadocker load -i mopsa.tardocker
+    run --rm -it --mount type=bind,src=`pwd`,target=/home/mopsa/workspace --workdir=/home/mopsa/workspace
+    mopsa/mopsa-analyzer ./analyze_tests.sh Table 2 can be reproduced with Jupyter
+    notebook `precision.ipynb` Open notebook `precision.ipynb` following the steps
+    in the getting started section. Reexecute each cell in the order how they appear
+    in the notebook with `ctrl+enter`. Alternative press the fast-forward button (⏩).
+    Table 2 can be found at the bottom of the evaluated notebook.'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: The Virtual Recency Abstraction (Artifact)
+  date: 2026-04
+  url: https://doi.org/10.5281/zenodo.19614696
+  category: nix-containers
+  subcategory: ''
+  authors:
+  - Sven Keidel
+  - Raphaël Monat
+  - Sebastian Erdweg
+  abstract: 'Artifact for "The Virtual Recency Abstraction (Strong Updates for Abstract
+    Interpreters with Shared State)" Scope This artifact contains instructions to
+    reproduce Figures 2 and 3 in Section 5 Table 1 in Section 6.1 Figure 4 in Section
+    6.2 Table 2 in Section 6.3 Content The artifact contains source code for the Tip
+    and Wasm analyses described in the paper, as well as evaluation scripts that reproduce
+    the graphs in Sections 5 and 6. Figure 2: Modularity and Reuse The source code
+    of the Tip analysis can be found in `/evaluation/sturdy.scala/sturdy-tip/src/main/scala/sturdy/language/tip/analysis/RelationalAnalysis.scala`
+    The figure is generated with Jupyter notebook `count_reuse.ipynb` Figure 3: Modularity
+    and Reuse The source code of the Wasm analysis can be found in `~/evaluation/sturdy.scala/sturdy-wasm/src/main/scala/sturdy/language/wasm/analyses/RelationalAnalysis.scala`.
+    The figure is generated with Jupyter notebook `count_reuse.ipynb` Table 1: Soundness
+    of the Relational Wasm Analysis The source code of the WebAssembly 1.0 specification
+    test suite can be found in `/evaluation/sturdy.scala/sturdy-wasm/src/test/resources/sturdy/language/wasm/spec-test-suite-wasm1/`.
+    The scala test harness can be found in `/evaluation/sturdy.scala/sturdy-wasm/src/test/scala/sturdy/language/wasm/specification/RelationalAnalysisTestScript.scala`.
+    The data is written in CSV format to `/evaluation/sturdy.scala/soundness.csv`
+    The table is generated with Jupyter notebook `soundness.ipynb` Figure 4: Scalability
+    of the Relational Wasm Analysis The benchmarks can be found in `/evaluation/sturdy.scala/sturdy-wasm/src/test/resources/sturdy/language/wasm/benchmarksgame/src`.
+    The Scala test harness can be found in `/evaluation/sturdy.scala/sturdy-wasm/src/test/scala/sturdy/language/wasm/benchmarksgame/BenchmarksgameRelationalPerformanceTest.scala`
+    The data is written in CSV format to `/evaluation/sturdy.scala/scalability.csv`
+    The figure is generated with Jupyter notebook `scalability.ipynb` Table 2: Precision
+    of the Relational Wasm Analysis The WebAssembly code of the precision test can
+    be found in `/evaluation/sturdy.scala/sturdy-wasm/src/test/resources/sturdy/language/wasm/precision.wast`.
+    The C code of the precision test can be found in `/evaluation/sturdy.scala/sturdy-wasm/src/test/resources/sturdy/language/wasm/precision.c`.
+    The data is written in CSV format to `/evaluation/sturdy.scala/precision.csv`,
+    `/evaluation/goblint/precision.csv`, `/evaluation/mopsa/precision.csv`. The table
+    is generated with Jupyter notebook `precision.ipynb`. Reusability The source code
+    of the analyses presented in this paper is open-source and available on GitHub
+    (https://github.com/sturdy-analysis/sturdy/tree/relational-wasm). The code can
+    be recompiled using the Scala built tool SBT and the nix package manager:git clone
+    --recursive https://github.com/sturdy-analysis/sturdycd sturdygit checkout relational-wasmcd
+    sturdy-apronnix build .#numerical-analysis-librariesln -s result/lib libcd ..sbt
+    compileWe recommend to develop the analyses within the IntelliJ IDE. Getting Started
+    To get started, first load the docker image of the artifact:docker load -i virtual-recency-abstraction.tar.gzdocker
+    load -i goblint/goblint.tardocker load -i mopsa/mopsa.tarThen start the docker
+    container:docker run -it --rm -p 8888:8888 virtual-recency-abstraction:latestOpen
+    the link http://127.0.0.1:8888/tree?token=... shown in the command line output
+    in a web browser. This will open Jupyter included in the docker image.Within Jupyter
+    file browser, open the `soundness.ipynb` notebook.Evaluate each cells in the order
+    how they appear in the notebook with `ctrl+enter`. Alternative press the fast-forward
+    button (⏩). To get shell access to the container rundocker run -it --rm --entrypoint
+    bash virtual-recency-abstraction:latest Platforms The artifact is built for X86
+    CPU architecture and has been tested on linux devices.Since the artifact contains
+    compiled native code, it cannot be executed on other CPU architectures, such as
+    ARM-based Macs. We ran the benchmarks (Figure 4) on a machine with an AMD Ryzen
+    Threadripper PRO 5975WX CPU, Ubuntu 24.0, and OpenJDK 21.0.9 with 100GB heap space
+    and 1GB stack space.For the artifact we excluded benchmarks for Polyhedra and
+    Octagons, such that the experiment runs with 8GB RAM. Appendix Figures 2 and 3:
+    Modularity and Reuse Figures 2 and 3 can be reproduced with Jupyter notebook `count_reuse.ipynb`:
+    Open the Jupyter notebook `count_reuse.ipynb` following the steps in the getting
+    started section. Reexecute each cell in the order how they appear in the notebook
+    with `ctrl+enter`. Alternative press the fast-forward button (⏩). The cells return
+    latex commands we used to generate Figures 2 and 3 in our paper. Table 1: Soundness
+    of the Relational Wasm Analysis Please note that the analysis of `float_exprs.wast`
+    requires a lot of RAM. Therefore, we recommend the reviewers exclude this test.
+    This is explained in more detail in the Jupyter notebook. Table 1 can be reproduced
+    with Jupyter notebook `soundness.ipynb`: Open notebook `soundness.ipynb` following
+    the steps in the getting started section. Reexecute each cell in the order how
+    they appear in the notebook with `ctrl+enter`. Alternative press the fast-forward
+    button (⏩). Table 1 can be found at the bottom of the notebook. Figure 4: Scalability
+    of the Relational Wasm Analysis Please note that the benchmarks for Polyhedra
+    and Octagons require a lot of RAM to run. We ran the benchmarks on a machine with
+    100GB RAM. Therefore, we recommend the reviewers only reexecute the benchmarks
+    for intervals. This is explained in more detail in the Jupyter notebook. Figure
+    4 can be reproduced with Jupyter notebook `scalability.ipynb`. Open notebook `scalability.ipynb`
+    following the steps in the getting started section. Reexecute each cell in the
+    order how they appear in the notebook with `ctrl+enter`. Alternative press the
+    fast-forward button (⏩). The parts of Figure 4 can be found within the evaluated
+    notebook. Table 2: Precision of the Relational Wasm Analysis To repeat the precision
+    tests with the MOPSA analyzer run on the host machine:cd goblintdocker load -i
+    goblint.tardocker run -it --rm -v $(pwd):/data --workdir=/data --entrypoint bash
+    ghcr.io/goblint/analyzer ./analyze_tests.sh To repeat the precision tests with
+    the MOPSA analyzer run on the host machine:cd mopsadocker load -i mopsa.tardocker
+    run --rm -it --mount type=bind,src=`pwd`,target=/home/mopsa/workspace --workdir=/home/mopsa/workspace
+    mopsa/mopsa-analyzer ./analyze_tests.sh Table 2 can be reproduced with Jupyter
+    notebook `precision.ipynb` Open notebook `precision.ipynb` following the steps
+    in the getting started section. Reexecute each cell in the order how they appear
+    in the notebook with `ctrl+enter`. Alternative press the fast-forward button (⏩).
+    Table 2 can be found at the bottom of the evaluated notebook.'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: A Decade of Software Reproducibility in the Nix Package Ecosystem
+  date: 2026-05
+  url: https://hal.science/hal-05630285
+  category: nix-reproducibility
+  subcategory: ''
+  authors:
+  - Julien Malka
+  - Stefano Zacchiroli
+  - Théo Zimmermann
+  abstract: <div> We report a large-scale empirical study of two aspects of software
+    reproducibility-rebuildability and bitwise reproducibility-in the Nix package
+    ecosystem. Using 29 evenly spaced historical snapshots over a decade of history
+    of the nixpkgs repository (2015-2024) we attempted to rebuild and bitwise-compare
+    the build outputs of tens of thousands of packages per snapshot. Our experiment
+    produced a dataset of build metadata and logs for 1 321 000 package builds and
+    preserved 166 523 diffoscopes for unreproducible outputs. We find that functional
+    package management enables extremely high rebuildability over time (near-universal
+    ability to reconstitute historical build environments and rebuild software packages),
+    while bitwise reproducibility has steadily improved and reaches a high point in
+    recent years (up to 93% in 2024). Early years show substantially lower bitwise
+    reproducibility, indicating that functional package management alone does not
+    guarantee bitwiseidentical outputs, and that the observed high level of bitwise
+    reproducibility is not solely due to the package management approach. Common causes
+    of unreproducibility, both in the rebuildability and bitwise reproducibility dimensions,
+    include management of dates in build and test processes; we quantify their prevalence
+    and other common causes using manual analysis of logs of rebuild failures and
+    automated analysis of diffoscopes. </div>
+  venue: HAL (Le Centre pour la Communication Scientifique Directe)
+- title: 'Supporting material to: Shape preserving interpolation with arbitrary smoothness
+    based on mollification'
+  date: 2026-07
+  url: https://doi.org/10.17632/dsfjwzsdhv
+  category: nix-reproducibility
+  subcategory: ''
+  authors:
+  - Michele Guerini Rocco
+  - Federico Scioscioli
+  - Lorenzo Figini
+  abstract: 'This archive contains the example datasets, implementations of the rational
+    splines and P-spline methods, along with code to reproduce the benchmark and the
+    generate the figures in the publication "Shape preserving interpolation with arbitrary
+    smoothness based on mollification". Archive structure ----------------- - `interp.py`:
+    implementation of the interpolation methods - `benchmark.py`: program that benchmarks
+    the interpolation code - `plots.py`: program that generates the figures of the
+    article - `proofs.py`: mathematical proofs in [SymPy][1] of some results used
+    to implement the rational splines - `shell.nix`: [Nix][2] expression that builds
+    a reproducible environment to run the programs'
+  venue: Mendeley Data
+- title: 'NICE: A Framework for Declarative and Machine-Checkable Vulnerability Reproduction'
+  date: 2026-05
+  url: https://arxiv.org/abs/2606.00625
+  category: nix-reproducibility
+  subcategory: ''
+  authors:
+  - Minh-Luan Nguyen
+  - Olivier Levillain
+  - Julien Malka
+  abstract: Reproducing software vulnerabilities is fundamental to security researchers,
+    open-source maintainers, and educators. Yet, vulnerabilities remain hard to reproduce
+    today, and even when they can be reproduced, recreating a software environment
+    where the vulnerability can be exploited becomes harder and harder over time.
+    We present NICE, the NIx CvE reproduction framework, which uses declarative recipes
+    to build and automatically validate vulnerable environments. In NICE, a reproduced
+    CVE comprises one or more NixOS virtual machine configurations, a scripted exploitation
+    scenario, and machine-checkable assertions that provide factual evidence of exploitation.
+    This design facilitates sharing, validation, review, and long-term reproducibility.
+    We evaluate NICE on 19 diverse real-world CVEs spanning multiple CWE categories,
+    attack vectors, and target types (user-space, system software, kernel, and graphical
+    applications). We show that NICE allows to produce concise recipes and integration
+    tests that reproduce vulnerable environments and provide proofs of exploitation.
+    NICE is applicable to security education and training (e.g., creating cyber ranges),
+    but also to vulnerability reporting, where its reproducibility and reviewability
+    properties can make reports easier to audit and verify.
+  venue: arXiv (Cornell University)
+- title: 'kmein/shloka: v1.0.0'
+  date: 2026-03
+  url: https://doi.org/10.5281/zenodo.19358320
+  category: nix-reproducibility
+  subcategory: ''
+  authors:
+  - Kierán Meinhardt
+  abstract: 'This dataset and software package provide a comprehensive metrical analysis
+    of the Anuṣṭubh verses found in the great Indian epic, the Mahābhārata. Using
+    a computational approach, the project extracts, scans, and categorizes verses
+    to identify patterns, variations, and statistical distributions of the most common
+    Sanskrit meter. The repository includes the full pipeline for: Metrical Scansion:
+    Algorithmic identification of light (laghu) and heavy (guru) syllables. Comparative
+    Analysis: Data generation for both the Mahābhārata and Rāmāyaṇa in CSV format.
+    Statistical Visualization: A Jupyter Notebook detailing the findings through descriptive
+    statistics and visualizations. Technical Infrastructure To ensure high scientific
+    reproducibility, this project uses: Nix: For deterministic builds and environment
+    management. Haskell: For the core scansion logic and data processing. Jupyter/Python:
+    For statistical analysis and plotting.'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: 'mihem/cerebroAppLite: v1.6.0'
+  date: 2026-05
+  url: https://github.com/mihem/cerebroAppLite/tree/v1.7.8
+  category: nix-reproducibility
+  subcategory: ''
+  authors:
+  - Roman Hillje
+  - mihem
+  abstract: 'cerebroAppLite 1.6.0 Bug fixes Fixed all errors and warnings identified
+    by R CMD CHECK, making the package ready for CRAN submission Fixed Seurat v5 API:
+    replaced deprecated slot access (@counts, @data) with GetAssayData() across multiple
+    functions Fixed addPercentMtRibo, calculatePercentGenes, getMostExpressedGenes,
+    performGeneSetEnrichmentAnalysis, getMarkerGenes, getEnrichedPathways, exportFromSCE,
+    exportFromSeurat Fixed GSVA v2.x API compatibility: now uses gsvaParam() with
+    version check for backward compatibility Fixed class(x) == "..." checks replaced
+    with inherits() across all relevant functions Fixed require() replaced with requireNamespace()
+    throughout Fixed cross-references and examples in documentation Testing Added
+    unit tests for all core R functions Added shinytest2 integration tests for the
+    full Cerebro interface, covering gene expression, group/marker genes, color management,
+    and more Tests run in a reproducible Nix environment via GitHub Actions CI/CD
+    Added Nix-based GitHub Actions workflows for R CMD CHECK, R tests, pkgdown, code
+    style, and automatic default.nix updates Added update-nix workflow: regenerates
+    default.nix weekly via create_env.R and opens a PR automatically; BPCells commit
+    SHA is now auto-fetched from GitHub Added style workflow: formats R code via air
+    on every PR Added sync-dev workflow: automatically merges master back into dev
+    after every merge to keep branches in sync Switched Nix environment to bleeding-edge
+    for always up-to-date CRAN packages Branch protection rulesets configured for
+    both master and dev with required status checks and auto-merge Documentation Added
+    pkgdown site at https://mihem.github.io/cerebroAppLite/ with light/dark/auto theme
+    switch, search, and all vignettes as articles Site automatically builds and deploys
+    to GitHub Pages on push to master What''s Changed use personal token for github
+    bot by @mihem in https://github.com/mihem/cerebroAppLite/pull/9 chore: update
+    default.nix by @mihem in https://github.com/mihem/cerebroAppLite/pull/10 improve
+    gh workflows by @mihem in https://github.com/mihem/cerebroAppLite/pull/11 workflow
+    pkgdown: remove duplicate job, build on push needed by @mihem in https://github.com/mihem/cerebroAppLite/pull/12
+    github workflow improvements by @mihem in https://github.com/mihem/cerebroAppLite/pull/13
+    chore: update default.nix by @mihem in https://github.com/mihem/cerebroAppLite/pull/14
+    use bleeding edge and bpcells auto update by @mihem in https://github.com/mihem/cerebroAppLite/pull/15
+    revert "try to avoid note in r-cmd-check with chromium detruitus" by @mihem in
+    https://github.com/mihem/cerebroAppLite/pull/16 bump version 1.6.0 by @mihem in
+    https://github.com/mihem/cerebroAppLite/pull/17 New Contributors @mihem made their
+    first contribution in https://github.com/mihem/cerebroAppLite/pull/9 Full Changelog:
+    https://github.com/mihem/cerebroAppLite/compare/v1.5.3...v1.6.0'
+  venue: Open MIND
+- title: 'EA-HK-INFRA-01: The Infrastructure Holographic Kernel — Infrastructure That
+    Survives Its Own Deprecation'
+  date: 2026-04
+  url: https://doi.org/10.5281/zenodo.19769562
+  category: nix-reproducibility
+  subcategory: ''
+  authors:
+  - Lee Sharks
+  abstract: 'EA-HK-INFRA-01 applies the Holographic Kernel specification (EA-HK-01)
+    to operational infrastructure. It defines an infrastructure holographic kernel
+    as a DOI-anchored git repository in which any clone contains the role definitions,
+    dependency rules, configuration templates, provenance chain, and verification
+    tests needed to reconstruct the system''s architecture after provider failure,
+    service deprecation, or substrate loss. The document situates this contribution
+    relative to existing software citation, reproducible build, and supply-chain provenance
+    practices (SLSA, Nix, Zenodo/GitHub releases); applies the Three Compressions
+    Theorem to infrastructure systems (Regime 1 lossy drift, Regime 2 platform extraction,
+    Regime 3 kernel preservation); and specifies the Back-Projection Test as a pre-deployment
+    gate. The praxademic.com case study grounds the problem in real architectural
+    erasure. All kernel scripts (kernel.sh, verify.sh, health.sh, fetch-secrets.sh,
+    topology.sh) are provided as reference implementations. The implementation maturity
+    level is v0.1 (structural presence verification). A production-grade v1.0 is specified
+    as the target for Phase 3 deployment. Novel contribution: DOI anchoring at the
+    architecture level; Back-Projection Test as pre-deployment gate; role operators
+    rather than fixed service identity; self-projection of missing roles; holographic
+    receipt per deployment. Live URLs: holographickernel.org · crimsonhexagonal.org
+    · spxi.dev Hex: 06.SEI.HK.INFRA.01 · ORCID: 0009-0000-1599-0703 · Version: 1.1
+    · ∮ = 1'
+  venue: Zenodo (CERN European Organization for Nuclear Research)

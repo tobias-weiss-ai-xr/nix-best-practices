@@ -1,31 +1,471 @@
 {
  "categories": [
   {
-   "id": "unknown",
-   "name": "unknown",
-   "count": 0,
-   "trajectory": {},
+   "id": "nix-ci-cd",
+   "name": "nix-ci-cd",
+   "count": 2,
+   "trajectory": {
+    "2026": 2
+   },
    "momentum": {
-    "id": "unknown",
-    "name": "Unknown",
-    "total": 0,
-    "recent": 0,
+    "id": "nix-ci-cd",
+    "name": "Nix Ci Cd",
+    "total": 2,
+    "recent": 2,
     "prior": 0,
     "growth_pct": null,
-    "recent_share": 0,
-    "papers_per_month": 0.0,
-    "score": 0
+    "recent_share": 1.0,
+    "papers_per_month": 0.2,
+    "score": 100.0
+   }
+  },
+  {
+   "id": "nix-containers",
+   "name": "nix-containers",
+   "count": 5,
+   "trajectory": {
+    "2026": 5
+   },
+   "momentum": {
+    "id": "nix-containers",
+    "name": "Nix Containers",
+    "total": 5,
+    "recent": 5,
+    "prior": 0,
+    "growth_pct": null,
+    "recent_share": 1.0,
+    "papers_per_month": 0.4,
+    "score": 100.0
+   }
+  },
+  {
+   "id": "nix-development",
+   "name": "nix-development",
+   "count": 2,
+   "trajectory": {
+    "2026": 2
+   },
+   "momentum": {
+    "id": "nix-development",
+    "name": "Nix Development",
+    "total": 2,
+    "recent": 2,
+    "prior": 0,
+    "growth_pct": null,
+    "recent_share": 1.0,
+    "papers_per_month": 0.2,
+    "score": 100.0
+   }
+  },
+  {
+   "id": "nix-devops",
+   "name": "nix-devops",
+   "count": 1,
+   "trajectory": {
+    "2026": 1
+   },
+   "momentum": {
+    "id": "nix-devops",
+    "name": "Nix Devops",
+    "total": 1,
+    "recent": 1,
+    "prior": 0,
+    "growth_pct": null,
+    "recent_share": 1.0,
+    "papers_per_month": 0.1,
+    "score": 100.0
+   }
+  },
+  {
+   "id": "nix-flakes",
+   "name": "nix-flakes",
+   "count": 4,
+   "trajectory": {
+    "2026": 4
+   },
+   "momentum": {
+    "id": "nix-flakes",
+    "name": "Nix Flakes",
+    "total": 4,
+    "recent": 4,
+    "prior": 0,
+    "growth_pct": null,
+    "recent_share": 1.0,
+    "papers_per_month": 0.3,
+    "score": 100.0
+   }
+  },
+  {
+   "id": "nix-packages",
+   "name": "nix-packages",
+   "count": 11,
+   "trajectory": {
+    "2026": 11
+   },
+   "momentum": {
+    "id": "nix-packages",
+    "name": "Nix Packages",
+    "total": 11,
+    "recent": 11,
+    "prior": 0,
+    "growth_pct": null,
+    "recent_share": 1.0,
+    "papers_per_month": 0.9,
+    "score": 100.0
+   }
+  },
+  {
+   "id": "nix-reproducibility",
+   "name": "nix-reproducibility",
+   "count": 6,
+   "trajectory": {
+    "2026": 6
+   },
+   "momentum": {
+    "id": "nix-reproducibility",
+    "name": "Nix Reproducibility",
+    "total": 6,
+    "recent": 6,
+    "prior": 0,
+    "growth_pct": null,
+    "recent_share": 1.0,
+    "papers_per_month": 0.5,
+    "score": 100.0
+   }
+  },
+  {
+   "id": "nixos",
+   "name": "nixos",
+   "count": 2,
+   "trajectory": {
+    "2026": 2
+   },
+   "momentum": {
+    "id": "nixos",
+    "name": "Nixos",
+    "total": 2,
+    "recent": 2,
+    "prior": 0,
+    "growth_pct": null,
+    "recent_share": 1.0,
+    "papers_per_month": 0.2,
+    "score": 100.0
    }
   }
  ],
  "subcategories": [
   {
-   "id": "unknown",
-   "name": "unknown",
-   "count": 0
+   "id": "",
+   "name": "",
+   "count": 33
   }
  ],
- "timeline": [],
- "venues": [],
- "keyword_bursts": []
+ "timeline": [
+  [
+   "2026-03",
+   "nix-devops",
+   ""
+  ],
+  [
+   "2026-03",
+   "nix-reproducibility",
+   ""
+  ],
+  [
+   "2026-03",
+   "nixos",
+   ""
+  ],
+  [
+   "2026-04",
+   "nix-containers",
+   ""
+  ],
+  [
+   "2026-04",
+   "nix-containers",
+   ""
+  ],
+  [
+   "2026-04",
+   "nix-packages",
+   ""
+  ],
+  [
+   "2026-04",
+   "nix-packages",
+   ""
+  ],
+  [
+   "2026-04",
+   "nix-packages",
+   ""
+  ],
+  [
+   "2026-04",
+   "nix-reproducibility",
+   ""
+  ],
+  [
+   "2026-05",
+   "nix-ci-cd",
+   ""
+  ],
+  [
+   "2026-05",
+   "nix-containers",
+   ""
+  ],
+  [
+   "2026-05",
+   "nix-containers",
+   ""
+  ],
+  [
+   "2026-05",
+   "nix-development",
+   ""
+  ],
+  [
+   "2026-05",
+   "nix-packages",
+   ""
+  ],
+  [
+   "2026-05",
+   "nix-packages",
+   ""
+  ],
+  [
+   "2026-05",
+   "nix-reproducibility",
+   ""
+  ],
+  [
+   "2026-05",
+   "nix-reproducibility",
+   ""
+  ],
+  [
+   "2026-05",
+   "nix-reproducibility",
+   ""
+  ],
+  [
+   "2026-06",
+   "nix-ci-cd",
+   ""
+  ],
+  [
+   "2026-07",
+   "nix-development",
+   ""
+  ],
+  [
+   "2026-07",
+   "nix-flakes",
+   ""
+  ],
+  [
+   "2026-07",
+   "nix-flakes",
+   ""
+  ],
+  [
+   "2026-07",
+   "nix-flakes",
+   ""
+  ],
+  [
+   "2026-07",
+   "nix-flakes",
+   ""
+  ],
+  [
+   "2026-07",
+   "nix-packages",
+   ""
+  ],
+  [
+   "2026-07",
+   "nix-packages",
+   ""
+  ],
+  [
+   "2026-07",
+   "nix-packages",
+   ""
+  ],
+  [
+   "2026-07",
+   "nix-packages",
+   ""
+  ],
+  [
+   "2026-07",
+   "nix-reproducibility",
+   ""
+  ],
+  [
+   "2026-07",
+   "nixos",
+   ""
+  ],
+  [
+   "2026-08",
+   "nix-containers",
+   ""
+  ],
+  [
+   "2026-08",
+   "nix-packages",
+   ""
+  ],
+  [
+   "2026-08",
+   "nix-packages",
+   ""
+  ]
+ ],
+ "venues": [
+  {
+   "name": "Zenodo (CERN European Organization for Nuclear Research)",
+   "papers": 18
+  },
+  {
+   "name": "Open MIND",
+   "papers": 4
+  },
+  {
+   "name": "arXiv (Cornell University)",
+   "papers": 3
+  },
+  {
+   "name": "HAL (Le Centre pour la Communication Scientifique Directe)",
+   "papers": 2
+  },
+  {
+   "name": "Repository of the University of Ljubljana (University of Ljubljana)",
+   "papers": 1
+  },
+  {
+   "name": "OSF Preprints (OSF Preprints)",
+   "papers": 1
+  },
+  {
+   "name": "Frontiers in Cell and Developmental Biology",
+   "papers": 1
+  },
+  {
+   "name": "Mendeley Data",
+   "papers": 1
+  }
+ ],
+ "keyword_bursts": [
+  {
+   "keyword": "system",
+   "recent": 17,
+   "total": 17,
+   "burst_score": 1.0,
+   "recent_share": 0.5152
+  },
+  {
+   "keyword": "tool",
+   "recent": 15,
+   "total": 15,
+   "burst_score": 1.0,
+   "recent_share": 0.4545
+  },
+  {
+   "keyword": "analysis",
+   "recent": 10,
+   "total": 10,
+   "burst_score": 1.0,
+   "recent_share": 0.303
+  },
+  {
+   "keyword": "method",
+   "recent": 9,
+   "total": 9,
+   "burst_score": 1.0,
+   "recent_share": 0.2727
+  },
+  {
+   "keyword": "review",
+   "recent": 8,
+   "total": 8,
+   "burst_score": 1.0,
+   "recent_share": 0.2424
+  },
+  {
+   "keyword": "framework",
+   "recent": 7,
+   "total": 7,
+   "burst_score": 1.0,
+   "recent_share": 0.2121
+  },
+  {
+   "keyword": "benchmark",
+   "recent": 6,
+   "total": 6,
+   "burst_score": 1.0,
+   "recent_share": 0.1818
+  },
+  {
+   "keyword": "application",
+   "recent": 5,
+   "total": 5,
+   "burst_score": 1.0,
+   "recent_share": 0.1515
+  },
+  {
+   "keyword": "dataset",
+   "recent": 4,
+   "total": 4,
+   "burst_score": 1.0,
+   "recent_share": 0.1212
+  },
+  {
+   "keyword": "evaluation",
+   "recent": 4,
+   "total": 4,
+   "burst_score": 1.0,
+   "recent_share": 0.1212
+  },
+  {
+   "keyword": "model",
+   "recent": 3,
+   "total": 3,
+   "burst_score": 1.0,
+   "recent_share": 0.0909
+  },
+  {
+   "keyword": "real-world",
+   "recent": 2,
+   "total": 2,
+   "burst_score": 1.0,
+   "recent_share": 0.0606
+  },
+  {
+   "keyword": "scalable",
+   "recent": 2,
+   "total": 2,
+   "burst_score": 1.0,
+   "recent_share": 0.0606
+  },
+  {
+   "keyword": "novel",
+   "recent": 2,
+   "total": 2,
+   "burst_score": 1.0,
+   "recent_share": 0.0606
+  },
+  {
+   "keyword": "human",
+   "recent": 1,
+   "total": 1,
+   "burst_score": 1.0,
+   "recent_share": 0.0303
+  }
+ ]
 }
