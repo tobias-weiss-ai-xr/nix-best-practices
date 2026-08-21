@@ -1,13 +1,25 @@
-# Topic-based research taxonomy for nix-best-practices
+# Topic-based research taxonomy for Nix/NixOS best practices
 openalex_queries:
-  - category: best-practices
-    query: "nix best practices"
-  - category: state-of-the-art
-    query: "nix state of the art"
-  - category: survey
-    query: "nix survey"
-  - category: trends
-    query: "nix trends"
+  - category: nix-language
+    query: "Nix language functional deployment"
+  - category: nixos
+    query: "NixOS operating system"
+  - category: nix-packages
+    query: "Nix package manager"
+  - category: nix-flakes
+    query: "Nix flakes reproducible"
+  - category: nix-devops
+    query: "Nix infrastructure as code"
+  - category: nix-security
+    query: "NixOS security hardening"
+  - category: nix-development
+    query: "Nix development environment"
+  - category: nix-ci-cd
+    query: "Nix continuous integration"
+  - category: nix-containers
+    query: "Nix containers Docker"
+  - category: nix-reproducibility
+    query: "Nix reproducible builds"
 arxiv_queries: []
 other_sources_queries: []
-topic: "nix best practices"
+topic: "Nix and NixOS best practices"
