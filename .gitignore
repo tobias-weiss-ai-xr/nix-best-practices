@@ -1,19 +1,9 @@
-# Nix
-result
-result-*
-*.drv
-.direnv/
-
-# Editor
-*.swp
-*.swo
-*~
-.vscode/
-.idea/
-
-# OS
+__pycache__/
+*.pyc
+.venv/
 .DS_Store
-Thumbs.db
 
-# Backup files
-*.bak
+# Pipeline outputs (generated — never commit)
+papers.json
+statistics.json
+docs/topics/

@@ -1,0 +1,13 @@
+# Topic-based research taxonomy for nix-best-practices
+openalex_queries:
+  - category: best-practices
+    query: "nix best practices"
+  - category: state-of-the-art
+    query: "nix state of the art"
+  - category: survey
+    query: "nix survey"
+  - category: trends
+    query: "nix trends"
+arxiv_queries: []
+other_sources_queries: []
+topic: "nix best practices"
