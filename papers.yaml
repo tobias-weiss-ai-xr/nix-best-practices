@@ -4,7 +4,7 @@ papers:
   date: 2026-07
   url: https://repozitorij.uni-lj.si/IzpisGradiva.php?id=185108
   category: nixos
-  subcategory: ''
+  subcategory: pattern
   authors:
   - Miha Krumpestar
   abstract: 'Every mainstream operating system and configuration manager treats the
@@ -20,7 +20,7 @@ papers:
   date: 2026-03
   url: https://myweirdprompts.com/episode/desktop-automation-reproducible-linux
   category: nixos
-  subcategory: ''
+  subcategory: pattern
   authors:
   - Daniel Rosehill
   - Gemini 3.1 (Flash)
@@ -81,7 +81,7 @@ papers:
   date: 2026-04
   url: https://arxiv.org/abs/2604.11398
   category: nix-packages
-  subcategory: ''
+  subcategory: tool
   authors:
   - Matias Zwinger
   abstract: Software deployment suffers from numerous problems pertaining, for example,
@@ -107,7 +107,7 @@ papers:
   date: 2026-04
   url: https://doi.org/10.5281/zenodo.19487292
   category: nix-packages
-  subcategory: ''
+  subcategory: tool
   authors:
   - Kevin Deldycke
   - Björn Torkelsson
@@ -160,7 +160,7 @@ papers:
   date: 2026-05
   url: https://doi.org/10.5281/zenodo.20026631
   category: nix-packages
-  subcategory: ''
+  subcategory: tool
   authors:
   - Kevin Deldycke
   - Björn Torkelsson
@@ -208,7 +208,7 @@ papers:
   date: 2026-04
   url: https://doi.org/10.5281/zenodo.19813169
   category: nix-packages
-  subcategory: ''
+  subcategory: tool
   authors:
   - Kevin Deldycke
   - Björn Torkelsson
@@ -253,7 +253,7 @@ papers:
   date: 2026-08
   url: https://doi.org/10.5281/zenodo.21777789
   category: nix-packages
-  subcategory: ''
+  subcategory: tool
   authors:
   - Kevin Deldycke
   - Björn Torkelsson
@@ -278,7 +278,7 @@ papers:
   date: 2026-07
   url: https://doi.org/10.5281/zenodo.21567645
   category: nix-packages
-  subcategory: ''
+  subcategory: tool
   authors:
   - Kevin Deldycke
   - Björn Torkelsson
@@ -409,7 +409,7 @@ papers:
   date: 2026-07
   url: https://doi.org/10.5281/zenodo.21245491
   category: nix-packages
-  subcategory: ''
+  subcategory: tool
   authors:
   - Kevin Deldycke
   - Björn Torkelsson
@@ -501,7 +501,7 @@ papers:
   date: 2026-08
   url: https://doi.org/10.5281/zenodo.21871441
   category: nix-packages
-  subcategory: ''
+  subcategory: tool
   authors:
   - Kevin Deldycke
   - Björn Torkelsson
@@ -609,7 +609,7 @@ papers:
   date: 2026-07
   url: https://doi.org/10.5281/zenodo.21416617
   category: nix-packages
-  subcategory: ''
+  subcategory: tool
   authors:
   - Kevin Deldycke
   - Björn Torkelsson
@@ -663,7 +663,7 @@ papers:
     call of an internal escalator that goes silent for 30 seconds on a terminal, with
     no warm credential cache, now logs a warning that it may be waiting on a hidden
     password prompt, quoting its last output line. Addresses #1938. [mpm] --verbosity
-    INFO now discloses every package manager CLI invocation as a reproducible $-prompt
+    INFO now discloses every package manager CLI invocation as a reproducible -prompt
     line, forced environment variables included. Version-detection probes stay at
     DEBUG. [mpm] The output of package manager CLIs now streams to DEBUG logs live,
     line by line and tagged with the manager ID, instead of being dumped once the
@@ -672,10 +672,10 @@ papers:
     Could not list installed packages.), making logs grep-able by manager. Closes
     #530. [mpm] Disclosed CLI invocations are themed by token family: dim prompt sigil,
     environment name/value assignment pairs, highlighted binary name (directory plain,
-    in the $-prompt and spawn-trace lines), option-styled flags. [mpm] --no-color
-    now also strips the color of log lines emitted from background threads (streamed
-    subprocess output, concurrent fan-outs). [mpm] The capability probe logs one answered
-    DEBUG line per manager (brew implements installed.) instead of an unanswered question
+    in the -prompt and spawn-trace lines), option-styled flags. [mpm] --no-color now
+    also strips the color of log lines emitted from background threads (streamed subprocess
+    output, concurrent fan-outs). [mpm] The capability probe logs one answered DEBUG
+    line per manager (brew implements installed.) instead of an unanswered question
     exposing the raw class repr. [mpm] Add -0/--zero-exit: action commands then report
     per-package failures without gating automation on a non-zero exit code. Usage
     and configuration errors keep exiting 2. [mpm] Add a --columns option to the table-rendering
@@ -724,14 +724,14 @@ papers:
   date: 2026-05
   url: https://doi.org/10.5281/zenodo.20119319
   category: nix-packages
-  subcategory: ''
+  subcategory: tool
   authors:
   - Kevin Deldycke
   - Björn Torkelsson
   - Sid
   abstract: '[mpm] Compile version_regexes with re.MULTILINE only, dropping re.VERBOSE.
     Under re.VERBOSE, unescaped whitespace in the pattern is silently ignored, so
-    patterns like r"guix \(GNU Guix\) (?P<version>...)" would never match guix --version
+    patterns like r"guix GNU Guix (?P<version>...)" would never match guix --version
     output and the manager was reported as unavailable with could not parse version
     from <path> output. Affected guix, nix, and stew, all of which now correctly detect
     their installed version. steamcmd, which used \ escapes to work around the same
@@ -741,7 +741,7 @@ papers:
   date: 2026-07
   url: https://doi.org/10.1145/3822163.3827939
   category: nix-packages
-  subcategory: ''
+  subcategory: tool
   authors:
   - Benedikt Spies
   - Marcin Bosk
@@ -767,7 +767,7 @@ papers:
   date: 2026-07
   url: https://arxiv.org/abs/2607.26688
   category: nix-flakes
-  subcategory: ''
+  subcategory: method
   authors:
   - Wenke Du
   - Jean-Marc Gratien
@@ -792,7 +792,7 @@ papers:
   date: 2026-07
   url: https://github.com/LoganEvans/chiral-gauge-dynamics/tree/v1.0.0
   category: nix-flakes
-  subcategory: ''
+  subcategory: method
   authors:
   - L. Evans
   abstract: 'This release marks the initial public publication of the Chiral Gauge
@@ -815,7 +815,7 @@ papers:
   date: 2026-07
   url: https://doi.org/10.5281/zenodo.21432195
   category: nix-flakes
-  subcategory: ''
+  subcategory: method
   authors:
   - L. Evans
   abstract: 'v1.0.0: Initial Release This is the initial public release of Litlib4,
@@ -847,7 +847,7 @@ papers:
   date: 2026-07
   url: https://resolver.tudelft.nl/uuid:cb5c40f9-449b-4bf7-ba8a-e65c76e3a45a
   category: nix-flakes
-  subcategory: ''
+  subcategory: method
   authors:
   - D.J. Bettencourt de Freitas
   abstract: 'This dataset contains the software developed for the master''s thesis
@@ -884,7 +884,7 @@ papers:
   date: 2026-03
   url: https://doi.org/10.5281/zenodo.19023251
   category: nix-devops
-  subcategory: ''
+  subcategory: practice
   authors:
   - The Futhark Hackers
   abstract: 'Bug Fixes all each anySize is distinct (Troels Henriksen) Continuous
@@ -962,21 +962,21 @@ papers:
     Temporarily disable cachix. (Troels Henriksen) e1174ad: Track local function name
     location precisely. (Troels Henriksen) 9fe9d44: Remove spurious import. (Troels
     Henriksen) 8397178: Add unit tests for DataDependencies. (Troels Henriksen) b0b50b7:
-    futhark script: add $restore, improve $store. (#2312) (Troels Henriksen) #2312
-    5d4828a: Fix #2314. (#2315) (Troels Henriksen) #2315 f8bbbed: Simplification rule
-    for condition function. (Troels Henriksen) c9afb04: Fix derivatives of power.
-    (Troels Henriksen) bd8a956: futhark fmt: improve printing of assert. (Troels Henriksen)
-    491dc05: Remove "unsafe" syntax from documentation. (Troels Henriksen) b80f86b:
-    Make assert more syntactically flexible. (Troels Henriksen) e1cbe8d: Bump Nix
-    and Hackage snapshot. (Troels Henriksen) 4597906: This is 0.25.33. (Troels Henriksen)
-    c0ad584: Onwards! (Troels Henriksen) 55cecaf: Avoid generating zero-length arrays.
-    (Troels Henriksen) 892a9d9: Add simplification rule for doomed expressions. (Troels
-    Henriksen) cdd88e0: Simplify away indexes into Scratch. (Troels Henriksen) 1a7651e:
-    Fix typo. (Troels Henriksen) a9b3d1b: This now optimises better. (Troels Henriksen)
-    61e57c4: This also needs unsafe. (Troels Henriksen) 3da1182: Fix #2316. (#2317)
-    (Troels Henriksen) #2317 19b51c6: Update doc link. (Troels Henriksen) 2ceacbc:
-    Neater return type. (Troels Henriksen) 53f029e: Maximise disk space when testing
-    ISPC. (#2318) (Troels Henriksen) #2318 161ffc8: Do not delete CACHEDIR.TAG. (Troels
+    futhark script: add restore, improve store. (#2312) (Troels Henriksen) #2312 5d4828a:
+    Fix #2314. (#2315) (Troels Henriksen) #2315 f8bbbed: Simplification rule for condition
+    function. (Troels Henriksen) c9afb04: Fix derivatives of power. (Troels Henriksen)
+    bd8a956: futhark fmt: improve printing of assert. (Troels Henriksen) 491dc05:
+    Remove "unsafe" syntax from documentation. (Troels Henriksen) b80f86b: Make assert
+    more syntactically flexible. (Troels Henriksen) e1cbe8d: Bump Nix and Hackage
+    snapshot. (Troels Henriksen) 4597906: This is 0.25.33. (Troels Henriksen) c0ad584:
+    Onwards! (Troels Henriksen) 55cecaf: Avoid generating zero-length arrays. (Troels
+    Henriksen) 892a9d9: Add simplification rule for doomed expressions. (Troels Henriksen)
+    cdd88e0: Simplify away indexes into Scratch. (Troels Henriksen) 1a7651e: Fix typo.
+    (Troels Henriksen) a9b3d1b: This now optimises better. (Troels Henriksen) 61e57c4:
+    This also needs unsafe. (Troels Henriksen) 3da1182: Fix #2316. (#2317) (Troels
+    Henriksen) #2317 19b51c6: Update doc link. (Troels Henriksen) 2ceacbc: Neater
+    return type. (Troels Henriksen) 53f029e: Maximise disk space when testing ISPC.
+    (#2318) (Troels Henriksen) #2318 161ffc8: Do not delete CACHEDIR.TAG. (Troels
     Henriksen) 5b11588: futhark literate: print tuples and records properly. (#2321)
     (Troels Henriksen) #2321 permit decomposition of server-side tuples. (Troels Henriksen)
     support projection. (Troels Henriksen) 9a19fa7: Maintain all aux information here.
@@ -1013,7 +1013,7 @@ papers:
   date: 2026-05
   url: https://osf.io/cxdv8
   category: nix-development
-  subcategory: ''
+  subcategory: method
   authors:
   - Annaël Rocher
   - Laurine DUJARDIN
@@ -1067,7 +1067,7 @@ papers:
   date: 2026-07
   url: https://doi.org/10.31234/osf.io/a3e8v_v2
   category: nix-development
-  subcategory: ''
+  subcategory: method
   authors:
   - Felipe Fontana Vieira
   - Jason Geller
@@ -1092,7 +1092,7 @@ papers:
   date: 2026-05
   url: https://arxiv.org/abs/2605.21089
   category: nix-ci-cd
-  subcategory: ''
+  subcategory: method
   authors:
   - Fernando Castillo
   - Eduardo Brito
@@ -1119,7 +1119,7 @@ papers:
   date: 2026-06
   url: https://doi.org/10.3389/fcell.2026.1872916
   category: nix-ci-cd
-  subcategory: ''
+  subcategory: method
   authors:
   - Nahid A. Khan
   - Ruben Torregrosa-Muñumer
@@ -1250,7 +1250,7 @@ papers:
   date: 2026-05
   url: https://doi.org/10.5281/zenodo.20017220
   category: nix-containers
-  subcategory: ''
+  subcategory: method
   authors:
   - Anon
   abstract: 'Artifact Description Option 1 (Recommended): Minimal Setup, Larger Download
@@ -1278,7 +1278,7 @@ papers:
   date: 2026-05
   url: https://doi.org/10.5281/zenodo.20340529
   category: nix-containers
-  subcategory: ''
+  subcategory: method
   authors:
   - Nikolas Ovaskainen
   abstract: 'v0.9.2 (2026-05-22) Includes dependency updates of Python packages, marimo
@@ -1304,7 +1304,7 @@ papers:
   date: 2026-08
   url: https://doi.org/10.5281/zenodo.21765916
   category: nix-containers
-  subcategory: ''
+  subcategory: method
   authors:
   - Gavin Gray
   abstract: 'Artifact: A Design Space Exploration of Async/Await This artifact contains
@@ -1388,7 +1388,7 @@ papers:
   date: 2026-04
   url: https://doi.org/10.5281/zenodo.19704087
   category: nix-containers
-  subcategory: ''
+  subcategory: method
   authors:
   - Sven Keidel
   - Raphaël Monat
@@ -1475,7 +1475,7 @@ papers:
   date: 2026-04
   url: https://doi.org/10.5281/zenodo.19614696
   category: nix-containers
-  subcategory: ''
+  subcategory: method
   authors:
   - Sven Keidel
   - Raphaël Monat
@@ -1562,7 +1562,7 @@ papers:
   date: 2026-05
   url: https://hal.science/hal-05630285
   category: nix-reproducibility
-  subcategory: ''
+  subcategory: method
   authors:
   - Julien Malka
   - Stefano Zacchiroli
@@ -1591,7 +1591,7 @@ papers:
   date: 2026-07
   url: https://doi.org/10.17632/dsfjwzsdhv
   category: nix-reproducibility
-  subcategory: ''
+  subcategory: method
   authors:
   - Michele Guerini Rocco
   - Federico Scioscioli
@@ -1610,7 +1610,7 @@ papers:
   date: 2026-05
   url: https://arxiv.org/abs/2606.00625
   category: nix-reproducibility
-  subcategory: ''
+  subcategory: method
   authors:
   - Minh-Luan Nguyen
   - Olivier Levillain
@@ -1636,7 +1636,7 @@ papers:
   date: 2026-03
   url: https://doi.org/10.5281/zenodo.19358320
   category: nix-reproducibility
-  subcategory: ''
+  subcategory: method
   authors:
   - Kierán Meinhardt
   abstract: 'This dataset and software package provide a comprehensive metrical analysis
@@ -1656,7 +1656,7 @@ papers:
   date: 2026-05
   url: https://github.com/mihem/cerebroAppLite/tree/v1.7.8
   category: nix-reproducibility
-  subcategory: ''
+  subcategory: method
   authors:
   - Roman Hillje
   - mihem
@@ -1701,7 +1701,7 @@ papers:
   date: 2026-04
   url: https://doi.org/10.5281/zenodo.19769562
   category: nix-reproducibility
-  subcategory: ''
+  subcategory: method
   authors:
   - Lee Sharks
   abstract: 'EA-HK-INFRA-01 applies the Holographic Kernel specification (EA-HK-01)

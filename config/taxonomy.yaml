@@ -3,6 +3,54 @@ topic:
   name: "Nix and NixOS Best Practices"
   short: nix
   description: Research on Nix package manager, NixOS, and functional deployment patterns
+
+# ── Taxonomy ────────────────────────────────────────────────────────────────
+taxonomy:
+  categories:
+    - id: nix-language
+      display: "Nix Language"
+      description: "Nix expression language, functional package definitions"
+    - id: nixos
+      display: "NixOS"
+      description: "NixOS operating system, configuration management"
+    - id: nix-packages
+      display: "Nix Packages"
+      description: "Nixpkgs, package management"
+    - id: nix-flakes
+      display: "Nix Flakes"
+      description: "Flakes, reproducible builds, inputs"
+    - id: nix-devops
+      display: "Nix DevOps"
+      description: "Infrastructure as code, deployment"
+    - id: nix-security
+      display: "Nix Security"
+      description: "Hardening, sandboxing, supply chain"
+    - id: nix-development
+      display: "Nix Development"
+      description: "Development environments, shells"
+    - id: nix-ci-cd
+      display: "Nix CI/CD"
+      description: "Continuous integration, hydra, build farms"
+    - id: nix-containers
+      display: "Nix Containers"
+      description: "Docker, OCI, container images"
+    - id: nix-reproducibility
+      display: "Nix Reproducibility"
+      description: "Reproducible builds, provenance"
+  subcategories:
+    - id: method
+      display: "Method"
+      category: nix-language
+    - id: tool
+      display: "Tool"
+      category: nix-packages
+    - id: pattern
+      display: "Pattern"
+      category: nixos
+    - id: practice
+      display: "Practice"
+      category: nix-devops
+
 openalex_queries:
   - category: nix-language
     query: "Nix language functional deployment"
