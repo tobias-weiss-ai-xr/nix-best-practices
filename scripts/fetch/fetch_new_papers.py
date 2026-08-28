@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Discover new papers from arXiv API (topic configurable via config/taxonomy.yaml)."""
 import argparse
+import random
 import re
 import subprocess
 import sys
@@ -11,7 +12,15 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import requests
+import hashlib
+import os
+import pickle
+
 import yaml
+try:
+    from yaml import CSafeLoader as _LOADER
+except ImportError:
+    _LOADER = yaml.SafeLoader
 
 import research_config
 
@@ -44,22 +53,41 @@ def get_queries(cfg):
     return out
 
 
-def classify_subcategory(title, abstract="", cfg=None):
+def classify_subcategory(title, abstract="", cfg=None, category=None):
     """Assign a subcategory using config keyword rules, then heuristics.
 
     Reads ``subcategory_keywords`` from taxonomy.yaml (via research_config).
-    Falls back to a generic heuristic ordering when no config rules match.
+    Falls back to a generic heuristic ordering when no config rules match,
+    then to the paper's own category default.  The return value is always a
+    subcategory id declared in taxonomy.yaml — never a template-only label
+    (so downstream validation never rejects the classification).
+
+    When ``category`` is given AND subcategories declare a ``category`` field,
+    keyword rules are narrowed to subcategories of that category (e.g. a paper
+    in "equivalences" can never be tagged "l-functions").
     """
     if cfg is None:
         cfg = research_config.load_config()
     text = f"{title} {abstract}".lower()
-    title_lower = title.lower()
-    # 1. Config-driven rules (first match wins)
+    subs = research_config.get_subcategories(cfg)
+    sub_ids = {s.get("id") for s in subs}
+    # Category-scoped defaults from the taxonomy (if subcategories carry one)
+    cat_defaults = {}
+    cat_subs = {}
+    for s in subs:
+        scat = s.get("category", "")
+        if scat:
+            cat_defaults.setdefault(scat, s["id"])
+            cat_subs.setdefault(scat, []).append(s["id"])
+    allowed = set(cat_subs.get(category, [])) if category and cat_subs else None
+    # 1. Config-driven rules (first match wins; narrowed to the paper's category)
     for sid, keywords in research_config.get_subcategory_keywords(cfg):
+        if allowed and sid not in allowed:
+            continue
         for kw in keywords:
             if kw.lower() in text:
                 return sid
-    # 2. Generic heuristic fallback (same ordering as fetch_other_sources)
+    # 2. Generic heuristic fallback (only if the label exists in the taxonomy)
     heuristic = [
         ("theory", ["theory", "theoretical", "formal", "proof", "convergence", "bound"]),
         ("mechanism", ["mechanism", "explainab", "interpretab", "attention", "saliency"]),
@@ -71,19 +99,35 @@ def classify_subcategory(title, abstract="", cfg=None):
         ("review", ["survey", "review", "literature", "meta-analysis", "overview", "taxonomy"]),
     ]
     for sid, keywords in heuristic:
+        if sid not in sub_ids:
+            continue
         for kw in keywords:
             if kw in text:
                 return sid
-    # 3. First configured subcategory as last resort
-    subs = research_config.get_subcategories(cfg)
+    # 3. Category default (valid taxonomy value, never a template label)
+    if category and category in cat_defaults:
+        return cat_defaults[category]
+    # 4. First configured subcategory as last resort
     return subs[0]["id"] if subs else ""
 
+
+# ── Dedup cache (shared logic with fetch_openalex_bulk.py) ───────────────
+_DEDUP_DIR = Path(os.environ.get("XDG_CACHE_HOME", "~/.cache")) / "research-runner/dedup"
+
+def _cache_path(yaml_path):
+    st = yaml_path.stat()
+    h = f"{yaml_path}_{st.st_mtime:.0f}_{st.st_size}"
+    return _DEDUP_DIR / f"{hashlib.md5(h.encode()).hexdigest()}.pkl"
 
 def load_existing_papers(yaml_path):
     if not yaml_path.exists():
         return {}, []
-    with open(yaml_path, "r") as f:
-        data = yaml.safe_load(f) or {}
+    cp = _cache_path(yaml_path)
+    if cp.exists():
+        with open(cp, "rb") as f:
+            return pickle.load(f)
+    with open(yaml_path, "r", encoding="utf-8") as f:
+        data = yaml.load(f, Loader=_LOADER) or {}
     papers = data.get("papers", [])
     by_id = {}
     titles_lower = []
@@ -93,25 +137,49 @@ def load_existing_papers(yaml_path):
         if match:
             by_id[match.group(1)] = p
         titles_lower.append(p.get("title", "").lower().strip())
+    _DEDUP_DIR.mkdir(parents=True, exist_ok=True)
+    with open(cp, "wb") as f:
+        pickle.dump((by_id, titles_lower), f, protocol=pickle.HIGHEST_PROTOCOL)
     return by_id, titles_lower
 
 
-def search_arxiv(query, months, start=0, max_results=100):
+def search_arxiv(query, months, start=0, max_results=100, max_retries=4):
     now = datetime.now(timezone.utc).replace(tzinfo=None)
     cutoff = now - timedelta(days=months * 30)
     date_start = cutoff.strftime("%Y%m%d0000")
     date_end = now.strftime("%Y%m%d") + "2359"
 
     full_query = f"({query}) AND submittedDate:[{date_start} TO {date_end}]"
+    resp = None
+    for attempt in range(max_retries):
+        try:
+            r = requests.get(
+                ARXIV_SEARCH_API.format(
+                    requests.utils.quote(full_query), start, max_results
+                ),
+                timeout=30,
+            )
+            if r.status_code == 429:
+                base = 5 * (attempt + 1)
+                wait = min(int(r.headers.get("Retry-After", base)), 30)
+                print(f"  arXiv 429, waiting {wait}s (attempt {attempt + 1}/{max_retries})", flush=True)
+                time.sleep(wait + random.uniform(0, 2))
+                continue
+            r.raise_for_status()
+            resp = r
+            break
+        except Exception as e:
+            if attempt < max_retries - 1:
+                print(f"  WARNING: arXiv request error: {e} (retry {attempt + 1}/{max_retries})", flush=True)
+                time.sleep(2 * (attempt + 1))
+            else:
+                print(f"  WARNING: arXiv search failed after {max_retries} attempts: {e}", flush=True)
+                return []
+    if resp is None:
+        return []
+
+    entries = []
     try:
-        resp = requests.get(
-            ARXIV_SEARCH_API.format(
-                requests.utils.quote(full_query), start, max_results
-            ),
-            timeout=30,
-        )
-        resp.raise_for_status()
-        entries = []
         root = resp.text
         for match in re.finditer(r"<entry>(.*?)</entry>", root, re.DOTALL):
             entry_xml = match.group(1)
@@ -169,10 +237,10 @@ def search_arxiv(query, months, start=0, max_results=100):
             entry["project_url"] = project_url
             if entry.get("title") and entry.get("url"):
                 entries.append(entry)
-        return entries
     except Exception as e:
-        print(f"  WARNING: arXiv search error: {e}", flush=True)
+        print(f"  WARNING: arXiv parse error: {e}", flush=True)
         return []
+    return entries
 
 
 def format_yaml_entry(entry, cfg):
@@ -269,7 +337,7 @@ def main():
 
             # Auto-classify subcategory if no hint; always classify subcategory
             sub = q_hint or classify_subcategory(
-                entry.get("title", ""), entry.get("abstract", ""), cfg)
+                entry.get("title", ""), entry.get("abstract", ""), cfg, category=q_category)
             entry["category"] = q_category
             entry["subcategory"] = sub
             all_new.append(entry)
@@ -296,7 +364,7 @@ def main():
     if args.local:
         print(f"\nAppending {len(all_new)} new papers to papers.yaml locally...", flush=True)
         try:
-            with open(yaml_path, "r") as f:
+            with open(yaml_path, "r", encoding="utf-8") as f:
                 data = yaml.safe_load(f) or {}
             papers = data.get("papers", [])
             before = len(papers)
@@ -316,7 +384,7 @@ def main():
                     }
                 )
             data["papers"] = papers
-            with open(yaml_path, "w") as f:
+            with open(yaml_path, "w", encoding="utf-8") as f:
                 yaml.dump(
                     data,
                     f,
@@ -340,7 +408,7 @@ def main():
             subprocess.run(
                 ["git", "checkout", "-b", branch_name], check=True, cwd=yaml_path.parent
             )
-            with open(yaml_path, "r") as f:
+            with open(yaml_path, "r", encoding="utf-8") as f:
                 data = yaml.safe_load(f) or {}
             papers = data.get("papers", [])
             for entry in all_new:
@@ -359,7 +427,7 @@ def main():
                     }
                 )
             data["papers"] = papers
-            with open(yaml_path, "w") as f:
+            with open(yaml_path, "w", encoding="utf-8") as f:
                 yaml.dump(
                     data,
                     f,
