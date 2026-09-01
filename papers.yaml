@@ -1725,3 +1725,2059 @@ papers:
     · spxi.dev Hex: 06.SEI.HK.INFRA.01 · ORCID: 0009-0000-1599-0703 · Version: 1.1
     · ∮ = 1'
   venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: 'Modularity and Lazy Evaluation in Nixos: A Functional Approach to Operating
+    System Configuration'
+  date: 2025-01
+  url: https://doi.org/10.1109/ic3ecsbhi63591.2025.10991248
+  category: nixos
+  subcategory: ''
+  authors:
+  - Nikhil Singh
+  - Anurag Singh Baghel
+  - Priyanka Mishara
+  abstract: 'In contrast to traditional imperative models the Linux distribution known
+    as NixOS takes a purely functional declarative approach to system configuration.
+    Two important facets of NixOS that are essential to its distinctive design are
+    examined in this work: modularity and lazy evaluation. Users can create reusable
+    and adaptable modules by utilizing NixOS''s modularity which enables a clear division
+    of responsibilities in system configuration. A defining characteristic of functional
+    programming is lazy evaluation which guarantees that only essential components
+    are assessed resulting in effective resource management. These features provide
+    substantial advantages in practical situations especially with regard to the systems
+    repeatability dependability and maintainability. NixOS offers a deterministic
+    and atomic method of software deployment for sectors that depend on massive dispersed
+    systems like cloud infrastructure and continuous integration sectors. Reproducibility
+    across environments is ensured allowing for reliable rollback procedures and downtime-free
+    upgrades. This work also shows via real-world experience how the NixOS module
+    system abstracts complicated configuration sets facilitating quick setups and
+    streamlining the administration of complex systems. NixOS is very configurable
+    for both development and production environments because configurations are arranged
+    into readily accessible modules that allow users to quickly adapt to a variety
+    of environments without requiring manual intervention. Through real-world use
+    cases this work explores the architectural ideas underlying NixOS''s modular and
+    lazy configuration model. It also looks at how current industry issues like scalable
+    infrastructure management continuous deployment pipelines and repeatable builds
+    can be addressed by NixOS''s functional design.'
+  venue: ''
+- title: Toward Plausibly Deniable Dual-Environment Computing
+  date: 2026-01
+  url: https://urn.kb.se/resolve?urn=urn:nbn:se:su:diva-256198
+  category: nixos
+  subcategory: ''
+  authors:
+  - Janosch Noah Bühler
+  abstract: Journalists and activists may need to protect sensitive data even when
+    a device is searched or seized. Encrypted storage can protect data contents, but
+    it does not necessarily hide that sensitive activity occurred, which can still
+    put users in conflict with law enforcement. Plausible deniability systems such
+    as hidden volumes, where hidden data is stored inside the apparent free space
+    of an outer encrypted volume, address part of this problem by making hidden data
+    difficult to prove from ciphertext alone. However, prior forensic research shows
+    that operating systems and applications can still create persistent artifacts
+    that reveal hidden volume use. This thesis addresses the problem of reducing such
+    visible operating-system artifacts by adopting a dual-environment design, where
+    an ordinary decoy environment remains available while hidden activity is redirected
+    into hidden storage. Specifically, the thesis combines declarative NixOS configuration
+    and Linux overlay filesystems into a reproducible dual-environment artifact. A
+    dual environment lets the same machine present an ordinary decoy system while
+    hidden work is activated separately and written to a mounted hidden storage root.
+    The thesis applies Design Science Research through design, demonstration, and
+    evaluation. The main artifact is the NAILS tool, the NixOS Anti-forensics Isolation
+    & Layering System, implemented in Rust as a NixOS-only command-line interface
+    (CLI) and core orchestration layer. It activates a hidden environment from a mounted
+    hidden storage root, stages hidden NixOS configuration, mounts overlays, supports
+    standard and emergency deactivation, and verifies visible-system posture. The
+    NAILS operating system (NAILS OS) serves as the separate installable amnesic NixOS
+    reference platform used for demonstration and forensic evaluation. VeraCrypt provides
+    the evaluated plausible-deniability backend, but the architecture accepts any
+    mounted directory with the expected structure. The evaluation combines implementation
+    inspection, forensic analysis, and supporting automation evidence. The completed
+    VeraCrypt-backed forensic evaluation used The Sleuth Kit, file-listing diffs,
+    raw carving, raw iiistring searches, and targeted artifact checks. The results
+    show that selected user-facing artifacts were not identified after either standard
+    or emergency deactivation, including shell history, recent-file metadata, browser
+    state, Secure Shell (SSH) metadata, thumbnails, and visible text logs. Hidden
+    package and Nix store indicators were baseline-equivalent because the same /nix/store
+    and /persist/nix/store entries were already present at baseline and did not appear
+    in the baseline diffs. Mount indicators were also baseline-equivalent by count
+    and context. Selected raw-string indicators were baseline-equivalent across baseline,
+    post-standard, and post-emergency states, and workload canaries were not recovered
+    as active files in the checked outputs. Automated tests also exercise a Linux
+    Uni- fied Key Setup (LUKS) volume with the fourth extended filesystem (ext4) and
+    real-filesystem directory roots, which supports backend abstraction at regression-test
+    level. Here, reproducible refers to build and configuration determinism, while
+    the forensic evidence supports the state comparison. Performance benchmarking,
+    usability evaluation, memory forensics, and comparative external backend forensics
+    were not conducted. Project au- tomation provides regression assurance rather
+    than broader forensic proof and is documented separately as repository-hardening
+    evidence. The thesis concludes that the architecture is feasible and partially
+    ef- fective for reducing selected persistent artifacts in the tested setting,
+    but stronger plausible-deniability claims require broader forensic evaluation
+    across tools, backends, and usage conditions.
+  venue: KTH Publication Database DiVA (KTH Royal Institute of Technology)
+- title: 'rix: Reproducible Data Science Environments with ''Nix'''
+  date: 2024-09
+  url: https://doi.org/10.32614/cran.package.rix
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Bruno Rodrigues
+  - Philipp Baumann
+  abstract: Simplifies the creation of reproducible data science environments using
+    the 'Nix' package manager, as described in Dolstra (2006) . The included ‘rix()'
+    function generates a complete description of the environment as a 'default.nix'
+    file, which can then be built using ’Nix'. This results in project specific software
+    environments with pinned versions of R, packages, linked system dependencies,
+    and other tools or programming languages such as Python or Julia. Additional helpers
+    make it easy to run R code in 'Nix' software environments for testing and production.
+  venue: ''
+- title: Reproducibility of Build Environments through Space and Time
+  date: 2024-04
+  url: https://arxiv.org/abs/2402.00424
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Julien Malka
+  - Stefano Zacchiroli
+  - Théo Zimmermann
+  abstract: Modern software engineering builds up on the composability of software
+    components, that rely on more and more direct and transitive dependencies to build
+    their functionalities. This principle of reusability however makes it harder to
+    reproduce projects' build environments, even though reproducibility of build environments
+    is essential for collaboration, maintenance and component lifetime. In this work,
+    we argue that functional package managers provide the tooling to make build environments
+    reproducible in space and time, and we produce a preliminary evaluation to justify
+    this claim. Using historical data, we show that we are able to reproduce build
+    environments of about 7 million Nix packages, and to rebuild 99.94% of the 14
+    thousand packages from a 6-year-old Nixpkgs revision.
+  venue: ''
+- title: Does Functional Package Management Enable Reproducible Builds at Scale? Yes.
+  date: 2025-04
+  url: https://arxiv.org/abs/2501.15919
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Julien Malka
+  - Stefano Zacchiroli
+  - Théo Zimmermann
+  abstract: 'Reproducible Builds (R-B) guarantee that rebuilding a software package
+    from source leads to bitwise identical artifacts. R-B is a promising approach
+    to increase the integrity of the software supply chain, when installing open source
+    software built by third parties. Unfortunately, despite success stories like high
+    build reproducibility levels in Debian packages, uncertainty remains among field
+    experts on the scalability of R-B to very large package repositories. In this
+    work, we perform the first large-scale study of bitwise reproducibility, in the
+    context of the Nix functional package manager, rebuilding 709816 packages from
+    historical snapshots of the nixpkgs repository, the largest cross-ecosystem open
+    source software distribution, sampled in the period 2017-2023. We obtain very
+    high bitwise reproducibility rates, between 69 and $91 \%$ with an upward trend,
+    and even higher rebuildability rates, over $99 \%$. We investigate unreproducibility
+    causes, showing that about $15 \%$ of failures are due to embedded build dates.
+    We release a novel dataset with all build statuses, logs, as well as full “diffoscopes”:
+    recursive diffs of where unreproducible build artifacts differ.'
+  venue: ''
+- title: An Evaluation of Nix Principles for Automotive Software Package management
+  date: 2025-01
+  url: https://urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-568294
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Jagadish Kamini, Adarsh
+  abstract: This thesis addresses software environment management challenges in the
+    automotive industry through Micronix, a lightweight, Nix-inspired package manager
+    designed for QNX 8, a real-time operating system. Following design science research
+    principles, we investigate the adaptation of Nix principles for automotive software
+    package management, emphasizing feasibility, reproducibility, and applicability
+    to resource-constrained environments. Performance evaluation is deferred to future
+    work. A qualitative evaluation documents Micronix's behavior in managing a small
+    set of cross-compiled packages. Through comparative analysis between QNX 8 and
+    Linux, we identified specific configuration requirements for cross-platform package
+    deployment. Initial testing demonstrated basic functionality for package installation,
+    profile management, and dependency tracking. No formal safety certification or
+    performance benchmarking was conducted, as these are required for production use.
+    The research contributes a prototype implementation exploring package management
+    in the QNX environment and documents technical challenges encountered when adapting
+    Nix concepts to embedded systems. Case studies with three test packages provide
+    initial evidence for the feasibility of implementing basic Nix-inspired package
+    management features on QNX 8.
+  venue: KTH Publication Database DiVA (KTH Royal Institute of Technology)
+- title: Evaluating Nix for automotive embedded targets
+  date: 2025-01
+  url: https://urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-568601
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Akula, Ashwini Sandeep
+  abstract: 'This thesis evaluates the performance of software deployment and runtime
+    behavior on different computing platforms used in automotive systems. The study
+    compares the Nix package manager with the traditional APT system on both Linux
+    and QNX operating systems, using x86 and ARM architectures. This thesis benchmarks
+    performance using four key performance indicators (KPIs): installation time, memory
+    usage, application startup time, and cache behavior. In addition to package management,
+    the evaluation includes systematic experiments on symlink resolution and dynamic
+    library loading — two critical factors affecting application startup latency and
+    real-time responsiveness. The findings reveal distinct differences in how these
+    operating systems and package managers handle caching, dependency isolation, and
+    symbol resolution. These insights contribute to understanding the practical implications
+    of adopting Nix in safety-critical, resource-constrained environments, and inform
+    best practices for improving development efficiency and product reliability in
+    the automotive domain.'
+  venue: Diva portal (Dalarna University Library)
+- title: 'Nix: Ratkaisu onglemilla'
+  date: 2025-12
+  url: https://aaltodoc.aalto.fi/handle/123456789/142000
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Matias Zwinger
+  abstract: Software deployment suffers from numerous problems pertaining, for example,
+    to reproducibility and dependency resolution. Many of these problems have been
+    successfully solved by the purely functional approach to package management implemented
+    in the Nix project. However, Nix does not solve all issues, and it does introduces
+    some novel problems of its own. Therefore, the aim of this thesis is to conduct
+    a literature review on the current state of research on Nix and to determine the
+    direction of future research. The first part of this paper explores the problems
+    historically faced in different areas of software deployment, e.g., irreproducibility
+    and dependency resolution issues. The main four categories of software deployment
+    tools analyzed are build systems, package managers, configuration management,
+    and development environments. Popular software from each category serve as case
+    studies to illustrate the problems. The second part introduces Nix and explains
+    the methods utilized to solve some of the problems introduced in the earlier part.
+    Because Nix is the first large project to utilize the purely functional approach,
+    it is far from a perfect solution. Thus, the third part is dedicated to analyzing
+    the new problems that Nix introduces, as well as old problems, which Nix has been
+    unable to solve, such as trust and granular incremental builds. Furthermore, some
+    proposed state of the art solutions put forth by the Nix community are discussed.
+  venue: Aaltodoc (Aalto University)
+- title: RubyGems with Nix
+  date: 2025-01
+  url: https://doi.org/10.1007/979-8-8688-1802-8_5
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - David Berube
+  abstract: So far, we’ve discussed a number of different ways to install Ruby—via
+    a system package manager like apt or rpm, via rbenv, and via asdf-ruby. We’ve
+    discussed the advantages and disadvantages of each at length and even mentioned
+    in passing several package management systems from other programming languages—like
+    conda.
+  venue: Apress eBooks
+- title: Nix for Polyglot, Reproducible Data Science Workflows
+  date: 2026-01
+  url: https://doi.org/10.5281/zenodo.18138617
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Bruno Rodrigues
+  - Philipp Baumann
+  abstract: Reproducible analysis requires more than clean, well-documented code;
+    it demands the precise management of software dependencies, computational environments,
+    and workflow execution. While researchers can combine tools like [Docker]{.pkg},
+    [renv]{.pkg} for [R]{.proglang} packages (or [uv]{.pkg} for [Python]{.proglang}
+    packages) and [Make]{.pkg} to address these needs, the resulting toolchain is
+    often complex and fragile, requiring the coordination of multiple disparate systems.
+    This paper introduces a unified framework built on the [Nix]{.pkg} package manager,
+    made accessible through two [R]{.proglang} packages. The first, [rix]{.pkg}, generates
+    declarative [Nix]{.pkg} expressions to define version-pinned, reproducible environments
+    that encompass [R]{.proglang}, [Python]{.proglang}, [Julia]{.proglang}, and system-level
+    dependencies. The second, [rixpress]{.pkg} (and its [Python]{.proglang} port,
+    [ryxpress]{.pkg}), leverages these environments to orchestrate polyglot pipelines
+    where each computational step runs in a hermetically sealed, language-specific
+    environment with automatic caching. By treating the entire computational environment
+    as code, this integrated approach ensures a high degree of reproducibility, supports
+    collaboration across heterogeneous systems, and helps guarantee that analyses
+    remain executable long into the future.
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: Opam's Nix system dependency mechanism
+  date: 2025-04
+  url: https://doi.org/10.59350/rpf2m-9er76
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Ryan Gibb
+  abstract: 'On 22 Apr 2022, three years ago, I opened an issue in the OCaml package
+    manager, opam, ''[[https://github.com/ocaml/opam/issues/5124][depext does not
+    support nixOS]]''. Last week, my pull request fixing this got [[https://github.com/ocaml/opam/pull/5982][merged]]!
+    #+begin_export html #+end_export ** Let''s Encrypt Example Before, if we tried
+    installing an OCaml package with a system dependency we would run into: #+begin_example
+    $ opam --version'
+  venue: ''
+- title: Verified Interpreters for Dynamic Languages with Applications to the Nix
+    Expression Language
+  date: 2025-08
+  url: https://doi.org/10.1145/3747537
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Rutger Broekhoff
+  - Robbert Krebbers
+  abstract: To study the semantics of a programming language, it is useful to consider
+    different specification forms— e.g ., a substitution-based small-step operational
+    semantics and an environment-based interpreter—because they have mutually exclusive
+    benefits. Developing these specifications and proving correspondences is challenging
+    for ‘dynamic’/‘scripting’ languages such as JavaScript, PHP and Bash. We study
+    this challenge in the context of the Nix expression language, a dynamic language
+    used in the eponymous package manager and operating system. Nix is a Turing-complete,
+    untyped functional language designed for the manipulation of JSON-style attribute
+    sets, with tricky features such as overloaded use of variables for lambda bindings
+    and attribute members, subtle shadowing rules, a mixture of evaluation strategies,
+    and tricky mechanisms for recursion. We show that our techniques are applicable
+    beyond Nix by starting from the call-by-name lambda calculus, which we extend
+    to a core lambda calculus with dynamically computed variable names and dynamic
+    binder names, and finally to Nix. Our key novelty is the use of a form of deferred
+    substitutions , which enables us to give a concise substitution-based semantics
+    for dynamic variable binding. We develop corresponding environment-based interpreters,
+    which we prove to be sound and complete (for terminating, faulty and diverging
+    programs) w.r.t. our operational semantics based on deferred substitutions. We
+    mechanize all our results in the Rocq prover and showcase a new feature of the
+    Rocq-std++ library for representing syntax with maps in recursive positions. We
+    use Rocq’s extraction mechanism to turn our Nix interpreter into executable OCaml
+    code, which we apply to the official Nix language tests. Altogether this gives
+    rise to the most comprehensive formal semantics for the Nix expression language
+    to date.
+  venue: Proceedings of the ACM on Programming Languages
+- title: Pitch Presentations
+  date: 2026-01
+  url: https://doi.org/10.5281/zenodo.18429091
+  category: nix-packages
+  subcategory: ''
+  authors:
+  - Bjoern Ole Mussmann
+  - Andrés Felipe Ramos Padilla
+  - Frank Ostermann
+  abstract: 'Pitch Presentations by: Ole Mussman, eScienceCenter, Nix Package manager
+    Andrés Felipe Ramos Padilla, RIVM, Interactive Mini-Reprohack workshops with Lego
+    Frank O Ostermann, University of Twente, Reproducibility in the University Classroom
+    Stefan Kirsch, Tilburg University, From Policy to something small but practical?
+    Bjorn Bartholdy, TU Delft, Brewing Collaboration: building a Network of Programming
+    CAFEs Eduard Klapwijk, SURF, Reproducible Research through reusable code in 1
+    day tDCC-SSH, Better together, Solving data challenges through collaboration and
+    transparency Jack Fitzgerald, VU Amsterdam, The Amsterdam RepliClub'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: Sex-disaggregated analysis of neutropenic fever in high-risk patients with
+    hematological malignancies - a pooled re-analysis - analysis code
+  date: 2025-10
+  url: https://doi.org/10.5281/zenodo.17416061
+  category: nix-flakes
+  subcategory: ''
+  authors:
+  - Seltmann, Alva
+  - Sachs, Tobias
+  abstract: 'Analysis code in R accompanying the paper "Sex-disaggregated analysis
+    of neutropenic fever in high-risk patients with hematological malignancies - a
+    pooled re-analysis" by Alva Seltmann, Tobias Sachs, Karin Mayer, Corinna Hahn-Ast,
+    Annamaria Brioli, Maria Madeleine Rüthrich, Peter Brossart, Andreas Hochhaus and
+    Marie von Lilienfeld-Toal. Reproducible Environment Setup The original environment
+    was set up using conda / mamba and the conda-env.yml file. After setting up conda
+    / mamba on your system, navigate to the project directory containing conda-env.yml
+    and use conda env create -f conda-env.yml to create the conda environment. For
+    further details, check the conda documentation. Alternatively, we provide an environment
+    setup via a nix flake. After setting up nix on your system, navigate to the project
+    directory containing flake.nix and set up the environment andautostart a jupyter
+    lab instance via nix develop For further details, check the nix documentation.
+    Note: While constructing the nix flake, there were some build problems using the
+    exact versions given in the original conda environment, thus we had to move to
+    R 4.5.0. Also, some minor version differences are possible (e.g. officer 0.6.9
+    instead of 0.6.8). All results were reproducible using both approaches. Literate
+    org mode document The analysis files are provided in the src-R directory. Additionally,
+    we provide a literate org mode document (feb-neutro-reproduce.org) which references
+    these scripts (via "transclusion", see the org-transclusion repository) and executes
+    jupyter-R source blocks (see the emacs-jupyter repository). The org document provides
+    an interactive way of executing scripts and saving the output, simular to a jupyter
+    notebook. It also annotates the source files and makes it clear in which order
+    to execute them to get to the desired outputs. For further details, check the
+    org-mode documentation. Additionally, we provide a HTML export of the document
+    (feb-neutro-reproduce.html), which is not interactive, but provides an easily
+    accessible view of the literate document. Open this file in any browser. Output
+    files We currently provide the raw .rds files of the tables, as well as the supplementary
+    correlation plots in this repository. For .docx outputs and main and supplementary
+    figures, we refer to the connected publication.'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: Open science falling behind in the era of artificial intelligence
+  date: 2025-07
+  url: https://doi.org/10.3389/frma.2025.1595824
+  category: nix-devops
+  subcategory: ''
+  authors:
+  - Guanxiong Pei
+  - Huajian Huang
+  abstract: 'Generative Artificial Intelligence (AI) refers to a new generation of
+    content generation technologies that emerged after the rise of Transformer architecture
+    in 2017, characterized by its core technical features of "compute-intensive architecture,
+    model-driven paradigm, and data closed-loop system" (Table 1). AI is accelerating
+    scientific discoveries and reshaping the research process, propelling AI for science
+    towards becoming a novel research paradigm. There is a pressing demand for open
+    science due to these advancements, yet the development of open science lags considerably
+    behind the AI era. This disparity arises from the loss of academic leadership
+    and insufficient motivation to pursue openness within the industrial sector, which
+    could hinder AI empowerment and scientific innovation. Effective intervention
+    by the public sector and policymakers becomes crucial when the "invisible hand"
+    fails.A new stage of open scienceAI technology has given rise to AI for science
+    as a new research paradigm and pushed open science from the consensus-based 1.0
+    stage into the platform-based 2.0 stage (Table 1). How?First, the data and computational
+    resources needed to train competitive scientific models are increasing rapidly,
+    as seen in fields such as materials science (Lei et al., 2024), quantum computing
+    (Huang et al., 2023), and weather forecasting (Conklin and Kumar, 2023), among
+    others. It is impractical for individual research teams to independently deploy
+    large-scale computing power and construct high-quality scientific databases and
+    corpora. This necessitates the development of open scientific infrastructure that
+    integrates computing power, data, and models into a unified supply system. Such
+    infrastructure would enable the efficient organization of scientific innovation
+    resources, enhance the overall quality and efficiency of AI resources, reduce
+    operational costs, and minimize redundant efforts. Much like electricity or the
+    internet, this new infrastructure will become an essential public good.Second,
+    responsible and trustworthy AI urgently requires a more open and transparent environment
+    for model development. The proprietary nature of many AI models and the uncertain
+    origins of their training data have raised concerns about the reproducibility,
+    fairness, and reliability of AI-enabled scientific research. A majority of scientists
+    (55%) have expressed concerns that AI model deployment may facilitate fraud (Van
+    Noorden and Perkel, 2023). There is an urgent need to establish a more open and
+    transparent environment for model development, providing avenues for public scrutiny,
+    opportunities for result reproducibility and validation, and avenues for model
+    refinement (Aspesi and Brand, 2020; Wang et al., 2023). These efforts aim to foster
+    high-quality, replicable, and responsible research. According to research data
+    from the Hugging Face platform, open model development is showing explosive growth
+    trends. As of the end of August 2023, the number of pre-trained models on the
+    platform has achieved leapfrog growth, skyrocketing from a cumulative total of
+    100,000 to over 300,000; the dataset scale has also expanded simultaneously, increasing
+    from 10,000 to 58,000. This trend is equally evident in the scientific community:
+    the Materials Project platform in materials science has made quantum mechanics
+    calculation datasets accessible for over 154,000 inorganic compounds, thereby
+    supporting global researchers in the development of new materials (Riebesell et
+    al., 2023). Meanwhile, the Protein Data Bank (PDB) in structural biology has shared
+    more than 220,000 three-dimensional protein structure datasets through standardized
+    formats, providing essential foundational data for AI-driven drug discovery research
+    (Liu et al., 2024).Third, AI for science is inherently interdisciplinary. The
+    primary motivation for the classification of disciplines lies in human cognitive
+    limitations, and with the advancement of AI research tools, human understanding
+    of the world will tend to be integrated. However, differences in knowledge systems
+    and thinking habits create barriers between AI experts and domain scientists and
+    require innovative collaboration models and the removal of walls between disciplines.
+    This transformation fundamentally shifts research organizational paradigms from
+    closed, fragmented small workshops to open, collaborative large platforms. Open
+    science platforms enable AI experts to provide AI research tools and training
+    and enable other experts to share domain-specific knowledge. This bidirectional
+    collaborative approach aids in breaking down disciplinary barriers.The problem
+    of industry dominanceIndustry is becoming increasingly influential compared to
+    academia. It dominates three key elements of AI research: computing power (Ali
+    et al., 2025), large datasets (Hartmann and Henkel, 2020), and highly skilled
+    researchers (Ahmed et al., 2023). According to the Artificial Intelligence Index
+    Report 2025, industry developed 55 notable AI models. In contrast, academia released
+    none (HAI, 2025). Furthermore, the rate at which AI doctoral graduates in the
+    United States are migrating to industry continues to accelerate. In 2011, new
+    AI PhDs took jobs in industry (40.9%) and academia (41.6%) in roughly equal proportions.
+    However, by 2022, a considerably larger proportion (70.7%) chose industry compared
+    to academia (20.0%) (Ahmed et al., 2023). With extremely high salaries and expensive
+    computing power to back them up, technology giants around the world are attracting
+    top talent and producing world-shaking achievements such as AlphaFold and ChatGPT.
+    Such a profound and systemic change is taking place that the "godmother of AI"
+    Fei-Fei Li has made an urgent appeal to US President Joe Biden for funding to
+    prevent Silicon Valley from pricing academics out of AI research (Nix et al.,
+    2024). Why is industry dominance problematic?Industrial innovators may seek to
+    erect barriers by controlling computing resources and datasets, closing off source
+    code, and making models proprietary to maintain their competitive advantage. This
+    closed strategy stems from the fundamental conflict between industry''s pursuit
+    of maximizing shareholder value and academia''s commitment to public knowledge
+    sharing, though concerns about potential risks introduced by model open-sourcing
+    also play a role. For instance, releasing model weights may create risks of AI
+    misuse (Kim et al., 2025). While such risks could be mitigated through technical
+    approaches like federated learning (Xu et al., 2020), these safety measures might
+    increase model development costs. After weighing the scientific value of openness
+    against commercial risks, industry continues to prioritize proprietary control
+    over open science principles. These entities generally lack interest in creating
+    public scientific goods and often exclude scientists not driven by shareholder
+    value from AI research endeavors.Notably, open science practices are not without
+    benefits. Taking talent acquisition as an example, after Meta open-sourced LLaMA
+    and LLaMA 2, it attracted top AI researchers from Google DeepMind, OpenAI, and
+    academia, with many open-source contributors eventually joining Meta''s AI teams.
+    Concurrently, over 100,000 derivative models based on LLaMA emerged on Hugging
+    Face, fostering a robust developer ecosystem. While many companies recognize that
+    openness can yield long-term competitive advantages—such as attracting talent,
+    fostering synergy between industry and academia, and building robust ecosystems—they
+    often choose closed approaches motivated by short-term commercial interests, including
+    the protection of proprietary technologies and the pursuit of first-mover advantages.
+    This "knowing-but-not-doing" paradox highlights the fundamental conflict between
+    research ethics and business logic.Lack of resources in academia and lack of motivation
+    in industry may slow the open science process and hinder the value output of AI
+    for science. According to the Artificial Intelligence Index Report 2024, while
+    65.7% of foundational models were open-source in 2023—an increase from 44.4% in
+    2022—the highest-performing models, such as GPT-4 and Gemini Ultra, continue to
+    be predominantly closed-source and controlled by industry players (HAI, 2024).
+    A survey of 1,600 scientists highlighted lack of computational resources, funding
+    for research activities, and access to scientific platforms and high-quality data
+    essential for AI applications (Van Noorden and Perkel, 2023). A number of important
+    studies are hampered by the lack of access to advanced models. Large-scale and
+    powerful AI models and tools are often proprietary, large amounts of valuable
+    data are stored in repositories with restricted access, incompatible software
+    formats hinder scientific collaboration, complex communication channels delay
+    knowledge sharing, and AI tools are relatively expensive to use, with only a fraction
+    of researchers being able to access the resources and afford the associated costs.Recommendations
+    for policymakersA systematic policy framework in two dimensions is proposed. Vertically,
+    synergies are formed between top-down AI for science cloud infrastructure initiatives
+    driven by the public sector and bottom-up efforts to cultivate a widespread awareness
+    of open science. Horizontally, incentive policies act as accelerators while governance
+    policies serve as safeguards to ensure efficient and reliable operation.Top-down
+    initiatives: AI for science cloud infrastructureUNESCO''s initiative calls on
+    the public sector to play a leading role in implementing open science (Das, 2021),
+    and initiatives like the White House Office of Science and Technology Policy (OSTP)
+    Memo on Advancing Open Science reinforce this mandate. International organizations
+    play a crucial role in enabling open data sharing by fostering the necessary technical
+    and social infrastructures; the Research Data Alliance (RDA) exemplifies this
+    by building the vital bridges. Now is the time to develop AI for science cloud
+    infrastructure to enhance equitable access to AI technologies, resources, and
+    tools. Our recommendations are: (a) Establish an AI resource base aggregating
+    computing power (e.g., GPU clusters), scientific datasets, pre-trained models,
+    and software tools tailored to scientific research. This addresses common issues
+    such as insufficient large-scale and high-performance computing capabilities and
+    the scarcity of high-quality scientific datasets, and achieves the large-scale
+    aggregation, high-efficiency allocation, and open sharing of AI public research
+    resources. This infrastructure should be designed and operated in accordance with
+    the FAIR Data Principles (Wilkinson et al., 2016) to maximize the discoverability,
+    accessibility, interoperability, and reusability of its resources, particularly
+    for both human researchers and automated systems. (b) Develop science foundation
+    models and domain-specific models to enhance the underlying technology development
+    and original innovation capabilities of AI for science and form modular and component-based
+    applications that support secondary development (Moor et al., 2023). (c) Establish
+    an open science cloud portal to provide scientific AI tools and intelligent agent
+    services, research work space, and high-quality, integrated solutions and collaboration
+    platforms for international big science research plans and projects as well as
+    the global scientific community.The development of an open ecosystem and comprehensive
+    infrastructure for AI for science could impact scientific advancement as much
+    as the late 20th-century Information Superhighway initiative impacted the development
+    of the internet. Once necessary infrastructure is in place, an AI "moonshot" will
+    become possible (PCAST, 2024). The U.S. NAIRR pilot exemplifies this direction,
+    demonstrating potential through lowering access barriers to computing resources
+    and datasets. However, its pilot scale limits reach, and integrating specialized
+    tools and ensuring sustainable funding remain hurdles, partly due to cross-agency
+    coordination complexity. Considering economic efficiency and sustainable development,
+    it will be prudent to refurbish and upgrade existing open science cloud platforms
+    as well as build new ones. For example, the AI4EOSC project enhances services
+    with artificial intelligence for the European Open Science Cloud, facilitating
+    its transition into the AI-driven era of open science (Vollmer, 2025).Bottom-up
+    initiatives: Popularizing open science across societyIn 2023, the White House
+    Office of Science and Technology Policy launched the "Year of Open Science" in
+    collaboration with federal agencies, universities, and other organizations. This
+    initiative is a high-profile and high-impact effort, but the "Year of Open Science"
+    raised awareness at top levels; sustained cultural change across society and grassroots
+    research communities remains limited, hindered by its short duration and insufficient
+    mechanisms for long-term embedding. Initiatives should therefore also focus on
+    the regularity and continuity of the push for universal awareness of open science.
+    Our recommendations are: (a) Advance popular science by encouraging scientists,
+    AI experts, and science journalists to provide more and better popular science
+    through websites, podcasts, and social media to effectively disseminate exemplary
+    AI for science innovations and scientific achievements beyond academia and increase
+    opportunities for public engagement (Fuentes, 2024). (b) Establish open courses
+    covering spirits and practical knowledge of open science, fostering critical thinking
+    and creativity to mitigate risks associated with overreliance on AI automation
+    in innovation. (c) Promote the development of AI for science open-source communities
+    like DeepModeling and the Generative Toolkit for Scientific Discovery, creating
+    collaborative platforms for diverse disciplines and backgrounds to cultivate a
+    collaborative, transparent, and inclusive open science culture. Ultimately, these
+    bottom-up initiatives aim to make the transformative potential of scientific knowledge
+    and AI tools accessible equitably across different races, ages, genders, and income
+    levels and ensure that open science becomes a universal norm rather than an exception.
+    Incentive policiesOur recommendations for incentive policies in industry are:
+    (a) Conditionally open government-owned data repositories and international statistical
+    databases (potentially involving enhanced privacy technologies and trusted research
+    environments to improve access to sensitive data, or providing access through
+    synthetic data methods). Similarly, high-quality scarce data from national laboratories,
+    national large-scale scientific facilities, etc., could be opened for exchange,
+    inviting reciprocal openness of private sector resources via central agreements
+    to establish an open data network. (b) Provide incentives such as tax breaks,
+    technology subsidies, and certification programs to guide industry participation
+    in investment and development of AI for science infrastructure. (c) Promote collaboration
+    between academia and industry by establishing national key R&D projects for AI
+    for science, encouraging joint development of models and tools like AlphaFold
+    (Jumper et al., 2021), GNoME (Merchant et al., 2023), GraphCast (Lam et al., 2023),
+    with project proponents committing to open sharing of research outputs within
+    AI for science infrastructure.Our recommendations for incentive policies in academia
+    are: (a) Encourage universities and research institutes to integrate activities
+    such as managing public datasets, constructing large pre-trained science models,
+    and related initiatives into performance assessments and promotion criteria for
+    researchers to reward and recognize contributions to open science. (b) Encourage
+    employers to establish roles such as AI infrastructure engineers, data pipeline
+    specialists, and data openness managers, to contribute to the professionalization
+    of open science management in the era of AI.Governance policiesPolicy makers should
+    systematically and comprehensively consider various dimensions of responsible
+    artificial intelligence, such as reproducibility, interpretability, fairness,
+    and transparency (Ahmed et al., 2023; Costes et al., 2024), in alignment with
+    frameworks like the EU AI Act, when developing guidelines and regulatory principles
+    for the AI era. Our recommendations are: (a) Promote open science practices in
+    academic publishing by requiring open access to code, data, and computing environments
+    (hardware, software, etc.) to address challenges of irreproducibility and ensure
+    transparency in the research process or presentation of findings. (b) Prioritize
+    methods to enhance model interpretability, such as integrating attention mechanisms,
+    modular structures, and visualization tools, thereby improving reliability and
+    transparency of models (Lam et al., 2023). (c) Emphasize the development of scientific
+    benchmarks for evaluating large science models to provide a fair, open, and replicable
+    standard for assessing model capabilities in scientific reasoning, knowledge extraction,
+    and complex system simulations. Consider mandating industry to responsibly release
+    model benchmarks, training data, validation procedures, etc., to prevent the development
+    of closed ecosystems in the scientific domain. (d) Support the establishment of
+    FAIR-aligned data pipeline standards to ensure data findability, accessibility,
+    interoperability, and reusability throughout the research lifecycle, thereby mitigate
+    issues like data bias, privacy breaches, and model hallucinations. This should
+    be reinforced by national legislation mandating open access for publicly funded
+    research data, exemplified by France’s Digital Republic Law (Loi République numérique).
+    (e) Strengthen collaboration between AI experts, scientists, and social experts
+    from legal, psychological, and public administration fields to study the interaction
+    between open science and AI for science, explicitly addressing ethical risks such
+    as algorithmic bias exacerbating scientific inequality and proprietary barriers
+    impeding knowledge-sharing. This collaboration should minimize potential security
+    and ethical risks while ensuring clear channels for public oversight.The novelty
+    of our proposal lies in a pioneering "vertical-horizontal" dual-track framework
+    for AI-driven open science, integrating: Vertical coherence bridging top-down
+    AI infrastructure (e.g., NAIRR) with bottom-up cultural cultivation (e.g., open
+    science initiatives); Horizontal synergy coupling incentive accelerators (tax
+    benefits, data reciprocity) with governance stabilizers (refer to EU AI Act);
+    Cross-layer permeation embedding FAIR principles throughout infrastructure/governance
+    to resolve implementation gaps in cross-agency coordination, sustained adoption,
+    and tool integration—strategically advancing EU Open Science Policy objectives.'
+  venue: Frontiers in Research Metrics and Analytics
+- title: Toward reproducibility. Making an Atlas run on your laptop
+  date: 2025-10
+  url: https://doi.org/10.5281/zenodo.18240221
+  category: nix-devops
+  subcategory: ''
+  authors:
+  - Goran Sterjov
+  abstract: Abstract Making software reproducible is hard. Making an entire Atlas
+    reproducible makes it even harder. At the Australian Reference Genome Atlas we
+    ve wrestled with tools and technologies to do just that. From making our code
+    run within a Nix environment, writing declarative schema migrations, importing
+    data relying on eventual consistency, and using declarative infrastructure configurations
+    on Kubernetes, we will detail tips and tricks as well as some significant and
+    unexpected gains as a result of being a reproducible Atlas that can run on your
+    laptop. Australian Reference Genome Atlas (ARGA) is an NCRIS-enabled platform,
+    powered by Atlas of Living Australia (ALA), in collaboration with Bioplatforms
+    Australia and Australian BioCommons, with Australian Research Data Commons (ARDC).
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: 'Lila: Decentralized Build Reproducibility Monitoring for the Functional
+    Package Management Model'
+  date: 2026-01
+  url: https://arxiv.org/abs/2601.20662
+  category: nix-devops
+  subcategory: ''
+  authors:
+  - Julien Malka
+  - Arnout Engelen
+  abstract: 'Ensuring the integrity of software build artifacts is an increasingly
+    important concern for modern software engineering, driven by increasingly sophisticated
+    attacks on build systems, distribution channels, and development infrastructures.
+    Reproducible builds $\unicode{x2013}$ where binaries built independently from
+    the same source code can be verified to be bit-for-bit identical to the distributed
+    artifacts $\unicode{x2013}$ provide a principled foundation for transparency and
+    trust in software distribution. Despite their potential, the large-scale adoption
+    of reproducible builds faces two significant challenges: achieving high reproducibility
+    rates across vast software collections and establishing reproducibility monitoring
+    infrastructure that can operate at very large scale. While recent studies have
+    shown that high reproducibility rates are achievable at scale $\unicode{x2013}$
+    demonstrated by the Nix ecosystem achieving over 90% reproducibility on more than
+    80,000 packages $\unicode{x2013}$ the problem of effective reproducibility monitoring
+    remains largely unsolved. In this work, we address the reproducibility monitoring
+    challenge by introducing Lila, a decentralized system for reproducibility assessment
+    tailored to the functional package management model. Lila enables distributed
+    reporting of build results and aggregation into a reproducibility database, benefiting
+    both practitioners and future empirical build reproducibility studies.'
+  venue: arXiv (Cornell University)
+- title: SIMULATED AEROMEDICAL EVACUATION EXACERBATES ACUTE LUNG INJURY VIA HYPOXIA-INDUCIBLE
+    FACTOR 1Α–MEDIATED BNIP3/NIX-DEPENDENT MITOPHAGY
+  date: 2024-01
+  url: https://doi.org/10.1097/shk.0000000000002306
+  category: nix-development
+  subcategory: ''
+  authors:
+  - Chunli Yin
+  - Xinyang Liu
+  - Yujie Ma
+  abstract: 'ABSTRACT: Background: With the advancement of medicine and the development
+    of technology, the limiting factors of aeromedical evacuation are gradually decreasing,
+    and the scope of indications is expanding. However, the hypobaric and hypoxic
+    environments experienced by critically ill patients in flight can cause lung injury,
+    leading to inflammation and hypoxemia, which remains one of the few limiting factors
+    for air medical evacuation. This study aimed to examine the mechanism of secondary
+    lung injury in rat models of acute lung injury that simulate aeromedical evacuation.
+    Methods: An acute lung injury model was induced in SD rats by the administration
+    of lipopolysaccharide (LPS) followed by exposure to a simulated aeromedical evacuation
+    environment (equivalent to 8,000 feet above sea level) or a normobaric normoxic
+    environment for 4 h. The expression of hypoxia-inducible factor 1α (HIF-1α) was
+    stabilized by pretreatment with dimethyloxalylglycine. The reactive oxygen species
+    levels and the protein expression levels of HIF-1α, Bcl-2-interacting protein
+    3 (BNIP3), and NIX in lung tissue were measured. Results: Simulated aeromedical
+    evacuation exacerbated pathological damage to lung tissue and increased the release
+    of inflammatory cytokines in serum as well as the reactive oxygen species levels
+    and the protein levels of HIF-1α, BNIP3, and NIX in lung tissue. Pretreatment
+    with dimethyloxalylglycine resulted in increases in the protein expression of
+    HIF-1α, BNIP3, and NIX. Conclusion: Simulated aeromedical evacuation leads to
+    secondary lung injury through mitophagy.'
+  venue: Shock
+- title: Antiretroviral Drugs Impact Autophagy Differently in Primary Human Astrocytes
+  date: 2025-12
+  url: https://doi.org/10.3390/cells14231904
+  category: nix-development
+  subcategory: ''
+  authors:
+  - Laura Cheney
+  - Grace McDermott
+  - Hillary Guzik
+  abstract: While antiretroviral therapy (ART) has significantly improved the morbidity
+    of HIV infection, ART may contribute to the pathogenesis of HIV associated neurocognitive
+    impairment (HIV-NCI) by interfering with autophagic processes in astrocytes. Autophagy
+    and mitophagy remove unwanted/damaged material and mitochondria from the intracellular
+    environment, respectively. Dysregulated autophagy in astrocytes, abundant CNS
+    cells with crucial homeostatic functions, contributes to many neurodegenerative
+    diseases. Few studies have examined effects of ART on autophagy in astrocytes.
+    We treated primary human astrocytes with a common ART regimen and performed LC3B-II
+    and p62 turnover assays. ART significantly inhibited both LC3B-II and p62 turnover.
+    Since p62, one autophagy receptor that mediates mitophagy, autophagic clearance
+    of mitochondria, turnover was inhibited, we also examined mitophagy. While ART
+    decreased BNIP3L/Nix homodimers, there were no changes in PINK1, Parkin, Mt-CO2,
+    mitochondrial mass, or mitochondria-lysosome colocalization, indicating that ART
+    did not inhibit mitophagy. We show that antiretroviral drugs have distinct effects
+    on autophagic processes in astrocytes, which represents an alteration in their
+    homeostasis, a major function of autophagy. This likely contributes to HIV-NCI.
+    Understanding these impacts is important for improving ART for PWH, who have,
+    by necessity, ongoing ART exposure. It also facilitates development of therapies
+    for HIV-NCI that may include modulation of autophagy.
+  venue: Cells
+- title: 'Emotional literacy as curriculum: a new paradigm for resilient classrooms'
+  date: 2025-06
+  url: https://doi.org/10.3389/feduc.2025.1610746
+  category: nix-development
+  subcategory: ''
+  authors:
+  - Putra Jaya
+  - Rinu V. Antony
+  - Jeena Joseph
+  abstract: 'The post-pandemic classroom has become an emotional battlefield. Educators
+    report rising levels of anxiety, isolation, and burnout among students across
+    age groups. Standardized tests, remote learning fatigue, and performance pressures
+    have exposed the systemic gaps in how we address the emotional needs of learners
+    (Yang, 2021). It is no longer enough to advocate for mental health support at
+    the margins of the curriculum. We must reimagine emotional literacy not as an
+    extracurricular benefit, but as the curriculum itself. This article argues that
+    emotional literacy should be embedded across disciplines, ages, and assessments,
+    shifting the paradigm from performance-based education to resilience-based learning.
+    As educators, psychologists, and policymakers reflect on the purpose of education
+    in the 21st century, a critical realization emerges: the ability to manage one''s
+    emotions, collaborate empathetically, and persevere in the face of setbacks is
+    not a "nice to have"-it is a necessity (Quílez-Robres et al., 2023;Nalipay et
+    al., 2024;Savina et al., 2025). Emotional literacy is not just about emotional
+    awareness; it is about survival, sustainability, and success in an unpredictable
+    world (Zeidner, 2013). In the face of ecological crises, artificial intelligence,
+    and socio-political instability, students need emotional tools as much as they
+    need academic knowledge (Popa, 2024). Yet our systems continue to treat these
+    tools as optional. This calls for an urgent and systemic shift in how we integrate
+    emotional tools into educational practices.Although Social and Emotional Learning
+    (SEL) frameworks have gained traction globally, most implementations remain fragmented-delivered
+    as weekly modules, isolated programs, or reactive interventions rather than foundational
+    curriculum components. Previous studies have explored SEL as an adjunct to academic
+    learning (Newman and Dusenbury, 2015;Zieher et al., 2024), but few have argued
+    for emotional literacy as the central curricular paradigm across all subjects,
+    age levels, and assessments. This paper addresses that critical gap by proposing
+    an integrated, cross-disciplinary model where emotional literacy is not a support
+    system, but the structural core of educational practice. Furthermore, while existing
+    literature focuses on SEL outcomes or teacher competencies, this article expands
+    the discourse to include systemic reform, cultural responsiveness, family engagement,
+    and global policy inspiration (e.g., Bhutan''s Gross National Happiness, UNESCO''s
+    Happy Schools). It aims to reframe emotional literacy as a necessary and measurable
+    academic standard-shifting the educational narrative from performance to resilience.The
+    Case for Emotional Literacy in EducationOften treated as an adjunct to "real"
+    academic content, emotional literacy has been mischaracterized as a soft skill-important,
+    perhaps, but secondary. Such a dichotomy is not only inaccurate but potentially
+    detrimental to educational outcomes. Emotional literacy, defined as the capacity
+    to recognize, understand, express, and regulate emotions, is foundational to learning.
+    While emotional literacy focuses on the ability to recognize, understand, express,
+    and regulate emotions, it is often conflated with related terms such as Social
+    Emotional Learning (SEL), emotional intelligence (EI), and emotional learning.
+    Each has its own scope and purpose. SEL is a structured educational framework
+    aimed at developing social and emotional skills through programs and curricula.
+    Emotional intelligence refers to an individual''s capacity to manage emotions
+    effectively and is often viewed as a measurable trait, especially in adult and
+    professional contexts (Mayer et al., 2004). Emotional learning, meanwhile, is
+    a broader process that encompasses both formal and informal ways we acquire emotional
+    understanding (Immordino- Yang and Damasio, 2007). Emotional literacy stands apart
+    in its emphasis on language, expression, and critical awareness of emotions within
+    social and cultural contexts. It is foundational and ongoing, not tied to specific
+    programs like SEL or assessments like EI. While SEL can provide the framework
+    and EI the skillset, emotional literacy is the communicative and reflective process
+    that underpins them both (Price, 2009). Recognizing these distinctions allows
+    educators to more deliberately embed emotional literacy across disciplines and
+    ensure it is not reduced to a onesize-fits-all model.Neuroscience affirms that
+    emotional states directly impact cognitive processing, memory, and decision-making
+    (Naqvi et al., 2006). Emotional regulation is a prerequisite for deep and sustained
+    learning, as emotional disturbances hinder cognitive engagement. Consider a child
+    facing test anxiety.No matter how well the material has been taught, that child''s
+    ability to retrieve and apply knowledge is compromised by emotional overwhelm.
+    Similarly, a student navigating family conflict may find it difficult to engage
+    in collaborative tasks without tools for self-regulation or conflict resolution.
+    Such experiences are not exceptions but have become routine challenges encountered
+    in classrooms across the globe. By teaching emotional literacy as a cross-curricular
+    competency, schools can equip students with the tools to manage stress, build
+    relationships, and navigate conflict. Emotional literacy should be viewed not
+    as an isolated program, but as a lens through which all content is taught and
+    experienced.Although numerous schools have incorporated Social and Emotional Learning
+    (SEL) frameworks, they are more frequently used as short weekly sessions or standalone
+    modules, separated from the academic curriculum (Zieher et al., 2024). Teachers,
+    also already stretched, are responsible for conveying content for which they are
+    not adequately trained (Schiepe-Tiska et al., 2021). The consequence? SEL is a
+    checkbox, not a transformative experience. In addition, most of these assessments
+    still test rote memory, neglecting emotional intelligence altogether. This patchwork
+    design sustains the notion that learning and feeling are distinct undertakings
+    (Barłożek, 2014). In other instances, SEL is boiled down into scripted curricula,
+    removing authenticity, turning emotional engagement into a mechanical task (Newman
+    and Dusenbury, 2015). The problem lies not in the intent of SEL but in not treating
+    it as a foundation. Without embedding social-emotional objectives into learning
+    objectives, lesson planning, and school culture, SEL can never realize its full
+    potential. It then exists as a side track, separate from the everyday rhythm of
+    school.Resilience, often defined as the ability to adapt and thrive despite adversity,
+    is deeply intertwined with emotional literacy. By cultivating emotional awareness,
+    regulation, and empathy, students develop the inner strength to navigate stress,
+    setbacks, and uncertainty-hallmarks of resilience. This aligns with core goals
+    of Social and Emotional Learning (SEL), which research has shown to significantly
+    improve students'' emotional well-being, academic performance, and long-term success
+    (Newman and Dusenbury, 2015;Yang, 2021). Widely recognized SEL models, such as
+    the CASEL (Collaborative for Academic, Social, and Emotional Learning) framework,
+    emphasize five core competencies: selfawareness, self-management, social awareness,
+    relationship skills, and responsible decision-making (Ross and Tolan, 2018). These
+    competencies not only support academic learning but also foster resilience by
+    equipping students with lifelong tools for emotional navigation and interpersonal
+    effectiveness. Integrating such frameworks into daily classroom practices transforms
+    SEL from isolated sessions into a cohesive strategy for building both emotional
+    literacy and resilience.What would have integrated emotional literacy look like?
+    In English class, students would not just analyze plot and character but also
+    emotion arcs and empathy. They might write a journal entry from a character''s
+    point of view in order to gain a better sense of emotional awareness. In math
+    class, a study of frustration tolerance and problem-solving tenacity could be
+    incorporated into every topic. How does a student feel when they become stuck
+    on a problem? How do they get through it? Science courses might also involve explorations
+    of ethical questions and the affective impact of discovery. Think in terms of
+    the affective aspects of climate science-grief, hope, fear. Teachers might not
+    sidestep these, but instead make room for them, in addition to developing critical
+    thinking, also developing students'' affective strength (Nair and Bhandare, 2024).
+    There''s a similar potential for physical education. There''s a natural platform
+    in sports for affective regulation and empathy in teamwork. How students respond
+    when losing, playing with less experienced teammates, or enduring frustration
+    are rich fields of affective learning.Pedagogically, this calls for a shift from
+    the transmission of content to design of experience. The classrooms must become
+    fields of experimentation with emotion-places where failures are okay, selfknowledge
+    is cultivated, and creativity is nurtured (Guinard and and Lanne, 2023). Project-based
+    learning, reflective journaling, role-playing, and collaborative design challenges
+    all can be employed as a means of integrating emotional exploration with intellectual
+    rigor (Bolon et al., 2024). Teachers are not necessarily psychologists, but they
+    do require a mindset shift: from a focus on control of behavior, in this sense,
+    to a focus on awareness. Emotional check-ins, class norms of respect and compassion,
+    and reflection prompts in assignments can all become part of a new pedagogy of
+    emotion.For curricula to include emotional literacy, there must be systemic reform.
+    Teacher training courses must espouse pedagogical competence in emotion alongside
+    subject matter competence. Emotional awareness and regulation must be incorporated
+    into teacher training, not achievement. There must be funding in environments-physical,
+    as well as psychological-of belonging, safety, and openmindedness. Curriculum
+    standards should include affective learning outcomes as concrete and quantifiable
+    as academic ones (Nix et al., 2022). For instance, in addition to academic skills
+    such as "examine a primary source," we can include "exercise empathy for diverse
+    historical perspectives."The way we assess affective outcomes is through reflective
+    writing, peer feedback, and observations of behavior-not grading the students,
+    but informing student development.Models for UNESCO''s Happy Schools Project,
+    for example, or for Bhutan''s Gross National Happiness curriculum, present us
+    with visions for how emotionally responsive schooling can be scaled (Schuelka
+    et al., 2019;Nam-Phuong Nguyen et al., 2022). What these models illustrate is
+    that wellbeing is not a by-product of schooling but a purpose. Nations such as
+    Finland, where schooling focuses on student agency, trust in teachers, and development
+    of emotion, are demonstrating that academic achievement and well-being are not
+    in tension with each other; they are reinforcing (Jääskelä et al., 2021). This
+    change also demands a reframing of success. Rather than aiming solely for grades,
+    schools should create comprehensive portraits of students-measuring emotional
+    strengths, interpersonal development, and self-knowledge. Report cards may feature
+    stories of a student''s perseverance, collaborative spirit, or taking charge of
+    his or her own emotional growth. Bhutan''s GNH-based education system, on the
+    other hand, embeds emotional, spiritual, and communal well-being into formal education.
+    Teachers in Bhutan are trained not just in cognitive development but also in cultivating
+    compassion, mindfulness, and resilience in students. Studies show that students
+    under the GNH framework demonstrate improved attention, empathy, and collaboration-attributes
+    directly linked to academic success (Schuelka et al., 2019). These models underscore
+    that emotional literacy is not a trade-off with academic rigor but a catalyst
+    for it. They validate the idea presented in paragraph four of our article, where
+    integration of emotional awareness into disciplines such as English, math, and
+    science results in richer, more engaged learning experiences. By equipping students
+    with tools to navigate frustration, ethical dilemmas, and teamwork, these models
+    exemplify how emotional development enhances not only social outcomes but also
+    measurable academic progress.No discussion of emotional literacy in schools can
+    take place without reference to families and the role they must be involved in.
+    Emotional learning starts in the family and is influenced by social norms, cultural
+    values, and child-rearing approaches (Gonzalez et al., 2023). Educators, therefore,
+    need to work with families as allies-not merely through parent-teacher interviews
+    but through workshops, channels of information, and community activities with
+    a shared emotional vocabulary. Teachers should also be mindful of cultural difference
+    in the expression of emotion (Kozina et al., n.d.). What is understood by one
+    culture as emotional intelligence can be quite different in another. Emotional
+    literacy needs to be culturally responsive, leaving enough space for diverse norms
+    of emotion while maintaining a shared set of principles of empathy, respect, and
+    self-regulation.Community groups, mental health experts, and even artists can
+    contribute to emotionally rich learning.Collaborations among schools and outside
+    stakeholders can introduce new tools, insights, and arenas for emotional exploration-whether
+    in theater, peer mentoring, or storytelling sessions. One might contend that placing
+    emphasis on emotional literacy could weaken academic standards. Conversely, studies
+    demonstrate that safe spaces are most likely to support more in-depth learning,
+    creativity, as well as academic achievement (Danial and Hidayatullah, 2024). Emotional
+    intelligence is not a replacement for academic skills-it is where they flourish.
+    Instead of replacing academic toughness, emotional literacy transforms it. It
+    dispels the myth that achievement is a matter of speed, perfection, or compliance.
+    It values the emotional process leading up to every success: the frustration before
+    understanding, the bravery of questioning, the vulnerability of trying, then getting
+    it wrong, and trying again. By integrating emotional literacy, disruptions in
+    behavior, burnout among teachers, and absenteeism decrease-producing a better
+    learning environment for everyone. The schools that invest in emotional education
+    actually save time and funds in the long run. Research substantiates these claims.
+    For example, a meta-analysis by Durlak et al. (2011), which involved more than
+    270,000 students, reported that classroom behavior improved significantly, and
+    conduct problems and academic achievement improved through Social and Emotional
+    Learning (SEL) programs (Durlak et al., 2011). In a similar context, Jennings
+    and Greenberg (2009) identified that supportive classroom climates facilitated
+    by SEL decrease burnout and stress of teachers by enhancing student-teacher relationships
+    and cooperative classrooms (Jennings and Greenberg, 2009). These findings underscore
+    the transformative potential of emotional literacy not only for student outcomes
+    but also for educator wellbeing.With climate anxiety, digital saturation, and
+    global instability on the rise, today''s students urgently need a crucial literacy:
+    resilience. This article contributes to the ongoing discourse by reframing emotional
+    literacy not as an optional enrichment, but as the structural core of education.
+    By advocating for its integration across disciplines, alignment with pedagogical
+    practices, and inclusion in systemic reforms, the paper offers a new perspective
+    on how emotional development can be central to educational success in the 21st
+    century.The review emphasizes that emotional literacy should be recognized as
+    an academic standard rather than a supplemental skill. It extends the conversation
+    beyond traditional SEL frameworks by exploring how emotional literacy can be woven
+    into subject-specific content, embedded in classroom culture, and supported through
+    teacher training and institutional practices. Moreover, the article draws attention
+    to often-overlooked dimensions such as culturally responsive approaches to emotional
+    development and the essential role of family and community partnerships in fostering
+    emotional well-being in students.These discussions open important pathways for
+    future research. Further empirical studies are needed to examine how integrated
+    models of emotional literacy operate in diverse educational settings, how educators
+    can be effectively equipped to implement such models, and how educational policy
+    can'
+  venue: Frontiers in Education
+- title: USING FIREBASE STUDIO IN DEVELOPING REACT APPLICATIONS
+  date: 2025-05
+  url: https://doi.org/10.34132/mspc2025.01.14.14
+  category: nix-development
+  subcategory: ''
+  authors:
+  - Viktor Ralenko
+  - Yevhenii Stoiev
+  abstract: 'The theses focuses on Firebase Studio, Google’s cloud-based platform
+    for building web and mobile applications, specifically based on React, announced
+    on April 9, 2025. The platform addresses key development challenges: remote workspace
+    availability, limited hardware, paid integration of AI services, and limited number
+    of test devices. Firebase Studio supports importing projects with version control,
+    offers templates for popular frameworks (React, Next.js, Angular, Flutter), rapid
+    prototyping via Gemini with multimodal prompts, integration with Firebase and
+    Google Cloud, and setting up an environment based on Code OSS with Nix support.
+    The theses demonstrates building a React application with the People Data Generator
+    API, highlighting the limitations in supporting third-party libraries such as
+    Ant Design due to the experimental status of the platform. Firebase Studio has
+    significant potential for expanding functionality, facilitating the development
+    and testing of applications in the cloud, which increases the efficiency and scalability
+    of projects.'
+  venue: Scientific and Practical Journal "Materials of Scientific Conferences of
+    the Petro Mohyla Black Sea National University"
+- title: 'pythainer: composable and reusable Docker builders and runners for reproducible
+    research'
+  date: 2026-01
+  url: https://biblio.vub.ac.be/vubir/pythainer-composable-and-reusable-docker-builders-and-runners-for-reproducible-research(9dd0f8ec-3b1d-4305-8256-cc83af68a833).html
+  category: nix-development
+  subcategory: ''
+  authors:
+  - Antonio Paolillo
+  abstract: 'This release focuses on improving reproducibility, container build expressiveness,
+    and documentation in preparation for the JOSS submission. Highlights Enhanced
+    Docker build support with proper COPY handling and BuildKit RUN --mount support,
+    including SSH agent forwarding. Added Nix support to enable fully reproducible
+    development and build environments. Improved QEMU and profiling examples, including
+    reliable networking and minimal Intel VTune integration. Documentation updates
+    and cleanup following JOSS reviewer feedback. For full details, see the CHANGELOG.
+    What''s Changed Add RELEASING.md how-to document by @apaolillo in https://github.com/apaolillo/pythainer/pull/37
+    Add libslirp as a QEMU dependency by @apaolillo in https://github.com/apaolillo/pythainer/pull/43
+    Fix: allow Python ≥ 3.10 in install_venv.sh by @matsvanmolle in https://github.com/apaolillo/pythainer/pull/45
+    Add RUN --mount support and ssh forwarding by @apaolillo in https://github.com/apaolillo/pythainer/pull/44
+    Avoid 0 UID & GID being passed to docker build by @apaolillo in https://github.com/apaolillo/pythainer/pull/46
+    Expose mounts to run_multiple build command by @apaolillo in https://github.com/apaolillo/pythainer/pull/47
+    Delete user by UID instead of UID:GID by @EstAK in https://github.com/apaolillo/pythainer/pull/42
+    Add minimum support for VTune profiler by @aaronbog in https://github.com/apaolillo/pythainer/pull/14
+    Improve README.md according to JOSS review by @apaolillo in https://github.com/apaolillo/pythainer/pull/48
+    Make Docker COPY usable via builder.copy() by @aaronbog in https://github.com/apaolillo/pythainer/pull/28
+    Add Nix support by @EstAK in https://github.com/apaolillo/pythainer/pull/50 Add
+    source for JOSS''25 paper by @apaolillo in https://github.com/apaolillo/pythainer/pull/38
+    minor change in paper.md by @danielskatz in https://github.com/apaolillo/pythainer/pull/52
+    joss: Change bib file capitalization by @apaolillo in https://github.com/apaolillo/pythainer/pull/53
+    joss: Revert changes in the bib by @apaolillo in https://github.com/apaolillo/pythainer/pull/54
+    Introduce explicit build context for COPY by @apaolillo in https://github.com/apaolillo/pythainer/pull/49
+    Release 0.0.6 by @apaolillo in https://github.com/apaolillo/pythainer/pull/55
+    New Contributors @matsvanmolle made their first contribution in https://github.com/apaolillo/pythainer/pull/45
+    @EstAK made their first contribution in https://github.com/apaolillo/pythainer/pull/42
+    @aaronbog made their first contribution in https://github.com/apaolillo/pythainer/pull/14
+    Full Changelog: https://github.com/apaolillo/pythainer/compare/v0.0.5...v0.0.6'
+  venue: VUBIR (Vrije Universiteit Brussel)
+- title: A Deployment Tool for Large Scale Graph Analytics Framework Arachne
+  date: 2024-09
+  url: https://doi.org/10.1109/hpec62836.2024.10938515
+  category: nix-development
+  subcategory: ''
+  authors:
+  - Garrett Gonzalez-Rivas
+  - Zhihui Du
+  - David A. Bader
+  abstract: Data sets have grown exponentially in size, rapidly exceeding the scale
+    at which traditional exploratory data analysis (EDA) tools can be used effectively
+    to analyze real-world graphs. This led to the development of Arachne, a user-friendly
+    tool enabling interactive graph analysis at terabyte scales while using familiar
+    Python code and utilizing a high-performance back-end powered by Chapel that can
+    be run on nearly any *nix-like system. Various disciplines, including biological,
+    information, and social sciences, use large-scale graphs to represent the flow
+    of information through a cell, connections between neurons, interactions between
+    computers, relationships between individuals, etc. However, to take advantage
+    of Arachne, a new user has to go through a long and convoluted installation process,
+    which often takes a week or more to complete, even with assistance from the developers.
+    To support Arachne's mission of being an easy-to-use exploratory graph analytics
+    tool that increases accessibility to high performance computing (HPC) resources,
+    a better deployment experience was needed for users and developers. In this paper,
+    we propose a tool specially designed to greatly simplify the deployment of Arachne
+    for users and offer the ability to rapidly and automatically test the software
+    for compatibility with new releases of its dependencies. The highly portable nature
+    of Arachne necessitates that this deployment tool be able to install and configure
+    the software in diverse combinations of hardware, operating system, initial system
+    environment, and handle evolving packages and libraries in Arachne. The tool was
+    tested in virtual and real-world environments, where its success was evaluated
+    by an improvement to efficiency and productivity for both users and developers.
+    Current results show that the installation and configuration process has been
+    greatly improved, with a significant reduction in the time and effort spent by
+    both users and developers.
+  venue: ''
+- title: Effect of D on the microstructure evolution and hardness of W-Re films deposited
+    by magnetron sputtering
+  date: 2025-12
+  url: https://doi.org/10.1016/j.jnucmat.2025.156395
+  category: nix-development
+  subcategory: ''
+  authors:
+  - Wenjie Zhang
+  - Zhenyu Jiang
+  - Honghui Zhang
+  abstract: ''
+  venue: Journal of Nuclear Materials
+- title: Embedded Operating Systems in IoT Edge Computing
+  date: 2024-12
+  url: https://doi.org/10.31861/sisiot2024.2.02001
+  category: nix-development
+  subcategory: ''
+  authors:
+  - Yurii Herman
+  - Halyna Lastivka
+  - Andrii Samila
+  abstract: Embedded systems and Edge Computing in Internet of Things (IoT) represent
+    a special approach to creating systems for collecting, processing and analyzing
+    data in an unstable environment. This article examines the benefits of Linux in
+    this context, highlighting its flexibility, robust software ecosystems, and scalability,
+    which are critical for a variety of IoT applications. The question of the operation
+    of devices in an environment with a weak and/or unstable network is also raised,
+    the general development of IoT/Internet-of-Everything (IoE) as a technology in
+    the conditions of various distribution of high-speed networks is considered. Edge
+    Computing technology, its use and areas of application in the need for rapid adaptation
+    to the environment are also taken into account. Because the ability to calculate
+    and analyze data on a local network can be critical for simplifying infrastructure
+    in remote areas or in environments where access to an external network is difficult
+    or impossible. We focus on the Linux kernel because its versatility in IoT is
+    highlighted by its ability to handle a variety of workloads and seamlessly integrate
+    with services, increasing adaptability to changing environmental conditions and
+    ensuring reliable data processing at the edge. This adaptability is critical to
+    mitigating the challenges caused by unreliable network infrastructure, thereby
+    facilitating real-time decision-making and increasing operational efficiency.
+    In addition, the open nature of Linux fosters innovation, allowing developers
+    to create solutions tailored to the specific needs of edge computing, from industrial
+    automation to smart city initiatives. By allowing devices to operate autonomously
+    and efficiently manage resources at the network edge, Linux significantly optimizes
+    latency, resource utilization, and overall system performance. Use of edge computing
+    with correctly set-up embedded operating system (OS) allows to avoid issues common
+    in IoT field and related to environment change. Article provides insight into
+    pros and cons edge computing, its implementation in IoT and IoE by embedded Linux
+    based OS. We will go through most common use-cases and market shares of common
+    OS options. While IoT takes part in most industries by storm, there are still
+    problems common for new industry. The primary advantage of using embedded *nix
+    OS is the agility and ease of incorporation of those devices into edge computing
+    systems, allowing to deal with network issues. Due to IoT/IoE being a new industry
+    where many technologies are combined there are a lot of different approaches and
+    frameworks that are used in it, but some of them are more popular and common than
+    other ones. While going through the IoT/IoE data in the article, we will focus
+    on embedded edge computing as one of the most efficient ways in building IoT solutions.
+    Especially in perspective of OS market changes now and in near future. The result
+    of that study will provide insight into possible trends and positives of the use
+    of embedded OS with edge computing.
+  venue: Security of Infocommunication Systems and Internet of Things
+- title: 'Urban Archipelago: An Environmental History of the Boston Harbor Islands
+    by Pavla Šimková'
+  date: 2026-01
+  url: https://doi.org/10.1162/jinh.r.2059
+  category: nix-development
+  subcategory: ''
+  authors:
+  - Laura Dierksmeier
+  abstract: 'Šimková’s Urban Archipelago is an elegantly argued contribution to environmental
+    history, urban history, and the interdisciplinary field of island studies. Focusing
+    on the Boston Harbor Islands, Šimková challenges the long-standing dichotomy between
+    city and nature. By tracing how the islands were used, imagined, polluted, protected,
+    and reclaimed, she shows the entanglements of ecological and urban processes across
+    four centuries.The book succeeds in turning often-overlooked landmasses into a
+    lens for understanding broader dynamics of urban expansion, waste management,
+    public health, exclusion, and conservation. The author brings to life the shifting
+    meanings of the islands, such as sites of quarantine, incarceration, recreation,
+    and restoration, grounding her account in archival sources and oral histories.
+    Sources range from pilgrim chronicles and board of health reports to newspapers,
+    contracts, development plans, maps, and archaeological surveys. The breadth of
+    evidence allows her to demonstrating how the decisions of settlers, planners,
+    politicians, entrepreneurs, and activists reshaped both the islands and the surrounding
+    metropolis.One of the book’s strengths lies in its attention to the political
+    ecology of marginal spaces. In the seventeenth century, deforestation and gravel
+    extraction left the islands vulnerable to erosion, causing Deer Island and Nixes
+    Mate nearly to disappear. “The more the port of Boston expanded, the more the
+    harbor islands shrunk” (44). Yet the islands were not just spaces defined by exploitation
+    from afar. The people who lived there took great delight in their gardens, flowers,
+    and swimming spots, and the popularity of the skating pond on Spectacle Island
+    contradicted the mainland perception of Spectacle as Boston’s refuse site. Šimková
+    illustrates how places could hold contradictory meanings and functions simultaneously.She
+    also refuses to romanticize the islands, describing them as dumping grounds for
+    the urban poor, prisoners, patients with contagious diseases, and the city’s waste.
+    With meticulous detail, she recounts the waste businesses on Spectacle, including
+    the rendering of dead animals, especially horses in the nineteenth century, into
+    grease, candles, soap, glue, fertilizer, and dog food. “The island became the
+    default solution for relocating the city’s nuisances” (71). But relocation was
+    never final; tides returned refuse to Boston’s shores, underscoring the limits
+    of treating islands as disposable.Meanwhile, the mainland struggled to see the
+    islands as anything other than functional spaces. “Leaving them alone felt like
+    failing to collect revenue that the city was rightfully due” (112). Developers
+    and planners proposed housing, airport extensions, and even a site for the 1975
+    World’s Fair. One designer of the failed World’s Fair plan captured the tension
+    between urban pragmatism and island exceptionalism: “The city of tomorrow on its
+    island site will be physically as well as conceptually a world unto itself. …
+    Between it and the mainland there will be a border; to cross it will be an experience
+    in itself” (121). As Šimková shows, the islands were conceived as places of special
+    use, but never separate from the city that depended on them.The narrative culminates
+    in a shift from exploitation to conservation. Beginning in the 1970s, groups such
+    as “Friends of the Boston Harbor Islands” (1979) and “Save the Bay” (1986) pressed
+    for preservation. “Within only a decade, the islands went from Boston’s dumping
+    ground … to places that it seemed almost a crime not to protect and cherish as
+    natural enclaves and cultural heritage” (175). Congressional designation of the
+    Boston Harbor Islands as a national recreation area in 1996 marked the culmination
+    of decades of advocacy, aimed especially at providing public space for those “who
+    could not afford exotic vacations” (195). On Spectacle Island, this initiative
+    meant reconstructing the landscape and erasing much of its waste-processing past:
+    “Reminders of its past as a working landscape were largely unwelcome” (203). Today,
+    visitors encounter a scenic park, while the island’s longer history remains obscured,
+    making Šimková’s book all the more valuable.Urban Archipelago is a meticulously
+    researched and beautifully written study that will resonate with historians of
+    environment, cities, and social life. By situating the Boston Harbor Islands at
+    the intersection of urban and ecological histories, Šimková demonstrates that
+    islands, even those in the shadows of skyscrapers, were integral to the making
+    of metropolitan Boston.'
+  venue: The Journal of Interdisciplinary History
+- title: 'What We Can Learn from an Olympics That Never Happened: A Review Essay of
+    Adam Berg, The Olympics That Never Happened'
+  date: 2025-01
+  url: https://doi.org/10.5406/26396025.6.1.07
+  category: nix-development
+  subcategory: ''
+  authors:
+  - Matthew J. Burbank
+  abstract: 'Why a book about an Olympics that never actually occurred? The reason,
+    as Adam Berg''s terrific book illustrates, is that there is a lot to be learned
+    about growth and resistance to growth by examining how and why a city pursues
+    the Olympics—even an Olympics that never was. Berg''s carefully crafted narrative
+    tells the story of how Denver pursued the 1976 Olympic Games, how the city won
+    the International Olympic Committee''s (IOC) bidding contest, and how and why
+    opposition emerged that ultimately led to successful referenda, both state and
+    citywide, preventing public funds from being used to host the Games. Although
+    this book is a case study of a single American city, it does a masterful job of
+    illuminating how Olympic bids come together, how these bids are intricately intertwined
+    in local politics, how opponents can emerge, and how the politics of urban growth
+    plays out in the American context generally.Fittingly for events that occurred
+    primarily in the 1960s and 1970s, Berg approaches the Denver Olympic bid from
+    a historical perspective, drawing heavily on archival materials from city, state,
+    and IOC sources as well as media reports. Berg makes use of existing oral histories
+    with Denver Olympic proponents and conducted his own interviews with key actors
+    who opposed public funding for the 1976 Winter Games. Berg''s work draws on the
+    extensive research on sports tourism, economic development and the Olympics, and
+    development in Colorado and the American West. What emerges is a book that is
+    both scholarly and captivating as Berg''s narrative traverses the politics of
+    economic growth in Colorado, racial and ethnic inequities in Denver, an emerging
+    environmental movement, a tax revolt, and demands for greater democratic participation.
+    For these reasons, this book will be of interest to scholars, students, and activists
+    interested in the Olympics, urban politics, economic development, social movements,
+    or democratic politics.Berg opens with the story of economic development in Colorado
+    and its capital city of Denver. The dream of hosting the Olympics emerged from
+    an urban growth coalition featuring local business leaders and politicians and
+    the desire to draw tourists to the area to spark development in the emerging ski
+    industry. The bid for the 1976 games began in earnest in 1963 when “investors
+    in ski resorts, bankers, utility providers, construction companies, politicians
+    at all levels, newspaper editors, and others worked in unison to bring the sports
+    mega-event to the state” (25). Berg makes effective use of Clarence Stone''s concept
+    of an “urban growth regime” to identify the key actors present as part of the
+    effort to bring the Olympics to Denver to promote growth in the city and region.1
+    A growth regime, in Stone''s view, is a loose network of business leaders and
+    local and state elected officials who desire economic development and see it as
+    good business and good politics. “While the business community provided the impetus
+    for Denver''s Olympic bid, counterparts in the public sector remained essential.
+    Although private and public funds paid for Denver''s forthcoming attempt to gain
+    the games, the bidders always expected public financing to carry the brunt of
+    the load when it came time to actually run the show” (32). As Berg notes of the
+    members of the growth regime: “They were business partners, associates, and probably
+    friends, with a shared sense of entitlement in their political authority and trust
+    in one another, as well as a common understanding of the promise of skiing, the
+    potential of the games, and the mutual benefits of growth” (39).The Olympic bid
+    was created and promoted by the Denver Organizing Committee (DOC). While all Olympic
+    bids tell a story that is too good to be true, a striking feature of the Denver
+    Games was just how willing the local bid committee was to “fake” an Olympic city:
+    “Colorado''s Olympic bid for the 1976 Winter Games had no basis in reality. It
+    was designed purely to satisfy the IOC and represented probably the most dishonest
+    proposal in Olympic history” (40). To lay claim to the “most dishonest” Olympic
+    bid is a bold assertion, but Berg backs it up with clear evidence of how the DOC
+    presented false, misleading, or exaggerated information about locations that were
+    not suitable to be Olympic venues and financing that was uncertain at best. Later
+    in the book, Berg details an even more astounding contention that far from the
+    Denver bidders duping the IOC, the organization''s president at the time, Avery
+    Brundage, appeared to have known about the problems but hoped to use Denver''s
+    dodgy bid for his own purposes. “In truth, Brundage''s behavior appears consistent
+    with the hope that the DOC would crash, burn, and consume the entire Winter Olympics”
+    (145). Brundage preferred that the Olympics should be only the summer games with
+    no winter sports event: “Brundage would use his last speech as IOC president,
+    at the 1972 Munich Summer Games, to recommend the Winter Olympics—meaning the
+    institution as a whole—be ‘given a decent burial in Denver’” (145).Despite the
+    problems with its bid—or perhaps because of them—Denver won the IOC vote for the
+    1976 Winter Games in May 1970. As Berg points out, historical context is important
+    as the Denver Games were secured during the period before Montreal went heavily
+    into debt hosting the 1976 Summer Games and well before Los Angeles showed American
+    cities in 1984 how to host the Games with corporate sponsors paying the bills
+    instead of local taxpayers. The assumption of Olympic bidders in Denver was that
+    most of the costs of hosting a future event would be paid for by state, local,
+    and federal taxpayers. “The DOC and its supporters desired Olympic spectators,
+    publicity, new sports facilities, and tourists. However, they also grasped that
+    it would not be wise to host the games if they themselves had to pay for it” (55).The
+    issue of how the Games would be financed ultimately led to the demise of the Denver
+    ’76 Olympics. Yet local opposition to the Denver Games emerged from various sources
+    with varying degrees of intensity. Berg argues that there were three primary sources
+    of discontent with the DOC and its plans for the Olympics: minoritized residents
+    in urban Denver, middle-class residents of exurban areas, and aspiring politicians
+    who raised difficult questions about who would pay for the Games and how decisions
+    about Colorado''s future should be made.In an era of post-civil rights and federally
+    funded urban renewal, Berg argues that “Brown and Black residents of Denver came
+    to see the Winter Olympics as a vehicle for combating these challenges. The question
+    at first was not whether Denver should host the Games. Instead, the city''s minoritized
+    citizens wondered how to use the event to their advantage. Whereas the DOC meant
+    to enhance the wealth of Colorado powerbrokers through tourism and commercial
+    growth, Denverites of color ultimately looked to gain access to Olympic planning
+    to address a systematic housing shortage that threatened low-income families”
+    (71). One manifestation of this discontent with the Olympics when there were more
+    pressing problems impacting Denver residents was the creation of a group called
+    Citizens Interested in Equitable Olympics (CIEO): “As CIEO declared, its goal
+    was to advocate for ‘black and brown participation’ in the planning of the games”
+    (77–78). CIEO attempted to get the mayor of Denver to reconstitute the DOC with
+    representatives chosen from the Brown and Black communities in Denver. While CIEO
+    was an important entry into coalition and identity politics, it did not enjoy
+    the support of more pragmatic community activists and ultimately was not especially
+    successful. “Nevertheless,” Berg writes, “Chicanos, Black Panthers, moderate politicians,
+    pragmatic community leaders, and others held two things in common. Each recognized
+    the political capital that the games created, and all involved thus tried to appropriate
+    the event to highlight and address ethnic and racial marginalization manifested
+    through the dire state of housing options. Albeit in different and sometimes conflicting
+    ways, Mexican Americans and African Americans in the Mile High City aimed to use
+    the Olympics to remedy an urgent civic challenge” (87–88).Another source of local
+    Olympic resistance came from “white middle-class exurbanites in the Jefferson
+    County foothills west of the city” (89). Like the urban residents of Denver, these
+    folks were not against the Olympics initially but were intent on enjoying their
+    semi-rural lifestyle and did not want to see growth, tourists, or Olympic development
+    around them. But, “with Nordic skiing, bobsled, luge, and ski jumping events slated
+    for their area, they became ardent DOC adversaries, embodying an obstinate and
+    unyielding environmental stance, which melded the language of ecology with notions
+    of social class, aesthetic value, and expectations for self-determination” (89).
+    One example of this emergent environmental opposition was the creation of an organization
+    called Protect Our Mountain Environment (POME). POME and other groups helped to
+    articulate the case against the development of Olympic venues in their area and
+    became one of the key constituents seeking to get a proposal on the ballot to
+    prohibit taxpayer money from being spent on the Olympics. As Berg concludes, “middle-class
+    environmentalism was far from the only reason Coloradans voted to banish the Olympics.
+    The foothills-born grassroots undertaking could not have caused that result on
+    its own. However, it became one of the essential pieces. . . . For many Coloradans,
+    excessive costs and DOC dishonesty became the primary motives for wanting to nix
+    the games. Yet concerns about environmental damage brought the issue to the forefront
+    for many” (105–6).A third, and crucial, element of what became the movement to
+    stop taxpayer funding for the Denver Olympics was the involvement of aspiring
+    politicians. Two recently elected Democratic members of the Colorado state legislature,
+    Richard Lamm and Robert Jackson, started as supporters of the Denver Games but
+    began to question the costs and later the merits of hosting the Olympics at all.
+    Supporters of Lamm and Jackson created Citizens for Colorado''s Future (CCF),
+    an organization that would become critical to turning Olympic discontent into
+    political action. “CCF embraced the role of coalition-builder,” Berg writes, “hoping
+    to mold those aggrieved by the DOC''s action toward a common end. . . . CCF aimed
+    to appeal to minoritized Denverites, well-off exurbanites, tax revolters, and
+    especially a population it described as ‘Middle America.’ CCF thus positioned
+    itself as a moderate and mature organization while arguing that the Winter Games
+    represented foremost a subversion of democracy undertaken by a collection of wealth-seeking
+    elites. Through such means, the group enabled a viewpoint that allowed Coloradans
+    to override the DOC''s Olympic intentions” (123).Like other parts of the coalition,
+    the founders of CCF were not anti-Olympics, although they did share concerns over
+    socioeconomic inequality in Denver, potential environmental degradation, and profligate
+    spending of taxpayer money.2 “The CCF leaders had no hard feelings toward the
+    games generally. They were not even that concerned with its direct consequences
+    on Colorado. . . . [F]or them, these matters fed into larger aspirations” (126).
+    Those larger aspirations were a desire to change politics in a more inclusive
+    and participatory direction. Based on the interviews conducted with leaders of
+    this group, Berg states that “each conveyed a desire to import genuine democratic
+    practices into Colorado, challenge the state''s political authorities, and reorient
+    its overall trajectory” (126–27). For the leaders of CCF, the goal was not primarily
+    to stop the Olympics but rather to employ discontent about taxpayer spending on
+    the event to create a coalition to pursue a more democratic style of politics.The
+    opposition coalition was successful in getting an initiative to prohibit state
+    taxpayer funding on the statewide ballot in 1972 and a similar initiative on the
+    ballot in Denver. The voters of Colorado and in the city of Denver passed the
+    initiatives; in a stunning development, a loose coalition of civically minded
+    Olympic malcontents had won and the embodiment of the growth regime—the Denver
+    Olympic Organizing Committee—had lost. “The Denver Olympics would not bring the
+    people of the world together. Instead, it created a multifaceted alliance of Coloradans
+    who successfully undercut an advertising project produced by a governing regime
+    that included Colorado''s governor, Denver''s mayor, and the state''s most influential
+    businesspeople. In the context of Colorado''s history, the DOC had suffered a
+    stunning defeat” (170). Though CCF''s victory was impressive, it came with a cost
+    to the least powerful elements of the coalition: “Within CCF''s initiative to
+    defeat the DOC, allusions to racial justice and fair housing became a relatively
+    silent—or, perhaps more accurately, silenced—partner. The specific issues impacting
+    Mexican Americans and African Americans took a back seat to fears of environmental
+    damage, unjust taxation, and generalized worries about the integrity of citizenship”
+    (158).The coalition created by CCF sought to change politics in Colorado. While
+    this opposition coalition gained some short-term victories, Berg concludes that
+    they were not successful in bringing about the goals of their larger political
+    project. One short-term win was that there was no taxpayer-funded Olympics and
+    no white-elephant venues to deal with. After the results on the initiatives were
+    known, the IOC moved the 1976 Winter Games to Innsbruck, Austria, location of
+    the 1964 Winter Games. A second victory for Olympic opponents was that Richard
+    Lamm ran for governor of Colorado in 1974 and won. Lamm adapted the CCF leadership
+    into a ready-made campaign organization and used the issues raised during the
+    anti-spending initiative campaign to propel himself into the governor''s office.
+    Even with Lamm''s victory, the desire to remake Colorado politics did not go far.
+    As Berg summarizes: “any trace of the cohesiveness required to break up or even
+    check Colorado''s traditional regime evaporated. . . . The Olympic Games had enabled
+    activists to contend momentarily with the Colorado growth network. It did draw
+    together diverse groups who similarly couched anti-Olympics advocacy in discourses
+    of citizenship and democracy. But many of the central parties involved arrived
+    at their Olympic stances due to different underlying motivations. Their agendas
+    were discrete and their unity episodic. . . . [A]s a whole they proved ill-suited
+    to exert an equivalent collective influence on the future” (171–72). In sum, Berg
+    concludes that “anti-Olympic activists with far-reaching intentions should remain
+    wary. One ought not to confuse strength gained through anti-Olympic pacts with
+    the authentic, purposeful, and long-lasting partnerships needed for deep-seated
+    change. The legacy of Denver ’76 is multifaceted, but a part of the lesson is
+    that a common enemy does not mean a common cause” (188).The events surrounding
+    the Denver ’76 Olympics had an important impact on the politics of growth in Denver
+    and Colorado. But do the events so richly described in Berg''s book tell us anything
+    more broadly about cities, growth, and the Olympics? To put it another way, did
+    the truncated Denver Olympics leave a legacy? My sense is that the story of the
+    Denver Olympics underscores a couple of significant observations about growth
+    politics in American cities. One is that in Denver and in other American cities,
+    growth regimes are still central to the development dynamic and are still difficult
+    to defeat when it comes to matters of local economic development. It is true that
+    some of the key players have changed between the era Berg describes in Denver
+    and today. For example, local print newspapers no longer dominate the media environment
+    and globalization has changed the ownership of utility and construction companies
+    and thus the roles they play in encouraging growth in local economies. As Berg
+    describes in the epilogue, the Denver growth regime is no longer the classic set
+    of movers and shakers that they were in the 1960s and local political leaders
+    have changed to reflect, among other things, the growing importance of Latino
+    voters in cities like Denver. Still, as the development of Coors Field for a new
+    Major League Baseball team in Denver illustrated, the network of business and
+    political leaders was still vital to getting deals done and proponents of growth
+    clearly learned from having lost the Olympic funding initiative. Which is to say—in
+    Denver and in other American cities—the growth imperative continues, and proponents
+    of growth continue to learn and adapt to changing circumstances.A second observation
+    that Denver''s story illustrates is the potential for change among Olympic opponents.
+    As Berg''s narrative makes clear, local discontent with the bid or its impact
+    was framed not in terms of opposition to the Olympics themselves. Rather opposition
+    came in the form of disparate groups who objected to inequality in housing, the
+    environmental impact on specific locales, or the costs to be borne by the taxpayer
+    of staging a large-scale sporting event. Once the Games were gone, there was little
+    reason for the coalition of opponents to continue to work together. Yet again,
+    as Berg notes in the epilogue, the nature of opposition to hosting the Games is
+    also changing. “Anti-Olympic groups are calling out the predatory structures,
+    behaviors, and practices of capital and the state—practices that these groups
+    claim are increasing inequality and the precarity of everyday urban life.”3 In
+    the period since the Denver Olympics first raised the issues in the American context,
+    concerns about the costs and benefits of holding an Olympic mega-event have been
+    more robustly articulated in a number of cities around the world including Boston,
+    Budapest, Chicago, Calgary, Hamburg, Munich, Oslo, and Rome where bid proposals
+    have been withdrawn, voted down, or quietly dropped.4As growth proponents have
+    learned and adapted, so too have opponents. Opponents have learned to find common
+    ground and share knowledge in a transnational fashion about what issues and protest
+    techniques work and by making the Olympics themselves central to questions about
+    who benefits and to what end. Although the opposition coalition in Colorado in
+    the 1970s was not successful in fundamentally changing how decisions about growth
+    policy were made, it remains to be seen whether more recent transnational opposition
+    groups may be able to do so.'
+  venue: Journal of Olympic Studies
+- title: Nexed
+  date: 2025-01
+  url: https://doi.org/10.5406/19398298.138.1.06
+  category: nix-development
+  subcategory: ''
+  authors:
+  - Joachim I. Krueger
+  abstract: 'Most academic disciplines provide some sort of unique fantasy to their
+    practitioners. Many philosophers seek to be virtuous, psychologists to be rational
+    (and both aspire to be happy), and historians to predict the future. In each case,
+    these academics wish to go beyond what their discipline legitimately allows. Sometimes
+    this works, or at least it seems to work well enough, so that this sort of intellectual
+    self-gratification is unlikely to die out.Y. N. Harari is a historian who found
+    fame with his magnum opus Sapiens: A Brief History of Humankind (2014). Although
+    such a project might be said to toy with grandiosity, it certainly teaches some
+    important lessons, as do other works of this genre, such as Graeber and Wengrow''s
+    (2023) The Dawn of Everything: A New History of Humanity. Whereas Graeber and
+    Wengrow''s strategy is to make the reader question everything they thought they
+    knew, Harari''s strategy is to find patterns, tell stories, imagine dystopian
+    outcomes, and to call for self-reflection and wisdom. In his new book Nexus: A
+    Brief History of Information Networks From the Stone Age to AI, Harari acts much
+    like generative artificial intelligence would (Hofstadter, 1995). Yet imagining
+    sinister outcomes and calling for a human awakening and self-reform, he also casts
+    himself in the role of a prophet in the tradition of the Hebrew Bible. The people
+    have sinned by adoring false gods, he calls out. Unless they turn to the one true
+    God (He who represents rationality, sanity, moderation, self-correction), they
+    will be doomed.Harari seems a bit surprised by his global fame, and he is sensitive
+    to the irony of being considered a thought leader on AI when he is merely a country
+    historian. What makes his work so compelling? For one, Harari is a knowledgeable
+    historian and a gifted storyteller. His narrative shows that he was enjoying himself
+    writing it, so much so that the book is overwritten in parts, when Harari gets
+    carried away with the joy of telling his tale. A work shortened by about 30% might
+    have been just as effective. The main reason for the book''s appeal, though, is
+    the deft deployment of historical analogies, which, when heaped up one on top
+    of the other, bring a pattern into focus. Time and again, Harari reports, humans
+    have enhanced existing information networks or created entirely new ones: from
+    the dawn of all-purpose languages to written scripts to telecommunication to the
+    computer and now to the inevitable AI. Many of these revolutions of networked
+    information happened independently in more than one place, which suggests they
+    were “in the air.” It points to a deterministic causal ground and thereby questions
+    the idea that humans could have acted differently. Nonetheless, Harari pleads
+    with humanity to preserve and cultivate self-correcting institutions and practices—as
+    still exist in science and in some well-tempered democracies—in order to avert
+    the damages wrought by runaway technologies, technologies that threaten not only
+    to become an alien and uncontrollable intelligence but also to dominate an enslaved
+    humanity. Indeed, evidence for this development can readily be seen in the morning
+    paper or the click on the news app. Nexus is written to offer a fluent and fluid
+    reading experience. Observers from Aristotle to Unkelbach (2006) have found that
+    the experience of easy perception puts a few hedons in your account (i.e., it
+    feels good), but it also poses the risk of overestimating your comprehension of
+    the material.By going beyond the historical record, Nexus raises the question
+    of whether the flirtation with historicism goes too far. Historicism, Popper (1957)
+    taught, is fatally flawed by its assumption that the study of history can reveal
+    patterns that in turn reveal underlying laws of development. Once these laws are
+    understood—per historicism—the future can be forecast and its arrival can be hastened.
+    This error of false insight and fallacious agency was made by Hegel, and it was
+    taken to tragic conclusions by Marx and his acolytes. Unlike Marx, however, Harari
+    urges not the hastening of an inevitable future but the taming of an evitable
+    one. As with Marx and other historicists, this is all meant to be in the interest
+    of human welfare.What protects Harari''s message from devolving into mere storytelling?
+    The key operative concepts are information (and information networks) and intelligence.
+    As to information, the reader looks in vain for a crisp definition. Harari dedicates
+    Chapter 1 to laying the conceptual groundwork. He rejects the “naïve view” that
+    information consists of symbols that represent reality and nothing else. He broadens
+    the scope for information to include anything that can facilitate collective cognition
+    by way of an acceptance of shared meaning (“order”). Stories and myths are information
+    thanks to their intersubjectively achieved validity. They help hold a group or
+    society together, and they enable further information to flow without having to
+    internally represent anything existing externally. Before the advent of AI, state
+    and institutional bureaucracies have been the principal bearers of rationalized
+    mythologies. They bring order with the consent of those who are being ordered.The
+    danger of this conceptual expansion lies in its looseness. Harari misses the opportunity
+    to explain when data are no longer information. Because much depends on patterns
+    and thus multiple data points, it is interesting to see how the arrival of a single
+    pigeon in the fog of World War I is information about the enemy''s intentions.
+    The soldiers who received the pigeon knew enough to understand what it meant.
+    They constructed meaning from background knowledge. The pigeon was just one piece
+    of a puzzle, albeit a decisive one. The pigeon story is instructive with regard
+    to both native and artificial intelligence. Human perception is “theoretical”
+    in the sense that it is constitutes a “way of seeing,” a way that is shaped by
+    memories, expectations, and desires (Felin & Holweg, 2024; Felin et al., 2021).
+    Without the perceiver''s input, a pigeon is just a pigeon and a cigar is just
+    a cigar.Human perception is not always stable. The Necker cube and the duck–rabbit
+    figure show that reality is not just received but co-created by the viewer (Attneave,
+    1971). Every good joke is a multistable figure; the experience of the perceptual
+    flip makes us laugh. Consider the title of this review. Why might it make you
+    smile? Because you see, I propose, the multiple allusions from Nexed to Next (as
+    in prediction), to H. Miller''s novel Nexus, to the colloquialism Nixed (as in
+    cancellation). It is an informative title because it does not commit to one meaning.
+    Perhaps AI will soon be able to appreciate a good quip, or at least credibly pretend
+    that it can. Meanwhile, the psychological glory of information is that it is underdetermined.
+    To come into bloom, it requires a receptive and sensitive mind. Harari could have
+    made a better case for the role of information in the ongoing AI revolution had
+    he defined it more clearly. What is lacking is a criterion of demarcation. When
+    are data mere data but not information?Some classic theories of information are
+    overlooked, or their implications for Harari''s story are not probed. Shannon''s
+    (1948) theory remains an important guidepost today. Information is here conceptualized
+    as the complement of uncertainty. A fair coin allows no advantageous betting;
+    the more biased a coin is, the more certain is a win. This view is related to
+    the concepts of entropy, noise, and unpredictability. An information gain results
+    from any reduction in uncertainty. Parenthetically, we may consider the possibility
+    that any change in uncertainty can be regarded as an information gain. To take
+    a psychological example, it used to be thought that ordinary residents of New
+    Haven could not be brought to electrocute a fellow citizen. When Milgram found
+    that 60% of participants were willing to deliver lethal shocks, the old certainty
+    was gone. Human behavior had become less, not more, predictable (Krueger & Massey,
+    2009). Yet we learned something, just as we did when contemplating this review''s
+    title.Creating and appreciating humor and wit is the mark of intelligence, the
+    other key concept in play. Can AI do that? Perhaps it can, though without feeling.
+    One of the cornerstones of Harari''s exposition is referring to AI as an alien
+    form of intelligence. AI is alien in that it is not like human intelligence in
+    its inefficiency (energy and coolant consumption) and use of brute force processing
+    (the need for massive training data), and it is intelligent by virtue of being
+    an agent, a form or unity that makes decisions. Its decision making may be without
+    self-consciousness, intention, reflection, or affect, but at the output level
+    what AI does can look like intelligent behavior. It can beat a Go master, for
+    example. Victories like that make AI look agentic.As with his incomplete definition
+    of the concept of information, Harari again leaves readers wondering what to make
+    of the concepts of “intelligence” and “agency.” To say that we all know what we
+    mean is to beg the question. The two concepts seem tightly connected, one perhaps
+    even entailing the other. The very term “AI” claims that intelligence has been
+    achieved, not just a clever simulation thereof. But let''s remember Douglas Hofstadter,
+    the godfather of the term “AI” and a student of anthills. Consciousness arises,
+    Hofstadter (1979) held, from the massive, distributed, but individually simple
+    activity of neurons. The neurons are to the brain what the ants are to their hill.
+    Although anthills and AI networks may lack consciousness, the latter can look
+    like intelligent agents. Nature offers many examples of apparent intelligence.
+    Sparrow murmuration is regarded as a type of swarm intelligence where the agents
+    are the individual sparrows acting on simple rules (e.g., follow the sparrow ahead
+    of you and leave a little distance) without knowing what the whole does or what
+    the whole looks like to a sentient observer. If such natural phenomena are models
+    for algorithms, aren''t they subject to the same limitations (Chakraborty & Kar,
+    2017)? What does it mean to say that a computerized information network possesses
+    intelligent agency?As to the consequences of the AI revolution, Harari admits
+    to stressing the dystopia over the utopia. AI networks might spell the collapse
+    of civilization and humanity at large, unless we wise up, that is. Others, perhaps
+    in an effort to allay dystopic fears, have made a sport of showing how AI can
+    be fooled. To name three examples, Gigerenzer (2022; reviewed in Krueger, 2024)
+    notes that, being parasitically dependent on the data of the past, AI consumes
+    exorbitant amounts of energy and cooling water to achieve brute force optimization.
+    This works well in stable environments, but it is easily derailed by unpredictable
+    change or deliberate mischief. Smith (2025), inspired by Hofstadter, reports that
+    ChatGPT is so dumb, it doesn''t understand that the game of chess would not change
+    one bit if the bishop and the knight were to trade places and their permissible
+    moves. Wagner et al. (2025) finds that ChatGPT is culturally inept, not having
+    mastered the simple and commonsensical rules of good-faith communication laid
+    out by Grice (1975).Since the scientific community has not figured out what thinking
+    really is, it continually seeks refuge in analogy and metaphor (Krueger, 2007).
+    The cognitive revolution cast the human mind/brain as a computer; now the AI revolutionaries
+    want us to believe that artificial thinking will soon surpass native thinking
+    on all tasks that matter, at which point the study of psychology might be declared
+    moot were if not for a final trump card: How do we do it all with so much less
+    energy and coolant? Meanwhile, the efforts of those who point to AI''s embarrassing
+    or amusing failures are Nietzschean projects. If to Nietzsche God was being squeezed
+    into an ever-shrinking metaphysical gap by the advances of science, so has human
+    intelligence become an intelligence of the gaps, now being defined by whatever
+    the machines cannot do. Pragmatic and fluid types of intelligence still favor
+    humans, but for how long?To boost his claim that information is the one decisive
+    currency of the game, Harari notes en passant that some physicists now entertain
+    the notion that information, not energy or matter, is the ground of the universe.
+    Intriguing as this idea may be, it is probably metaphysical nonsense. There may
+    be data at the ground of the universe, but there is no information unless a sentient
+    perceiver takes a peek in search of meaning (recall the pigeon). If information
+    is the stuff of the universe, who is the observer? Oh wait . . . Like all reviews,
+    this commentary is a partial response to the author''s work. Nexus might be regarded
+    a postmodern product, floating, indeterminate, rich in hints and possibilities.
+    Some readers may prefer firmer ground. Still, Nexus is thought-provoking in a
+    way AI has not managed to be.'
+  venue: The American Journal of Psychology
+- title: mlgpx is the first Tangled-hosted package available on opam
+  date: 2025-08
+  url: https://doi.org/10.59350/7267y-nj702
+  category: nix-ci-cd
+  subcategory: ''
+  authors:
+  - Anil Madhavapeddy
+  abstract: 'Since I wrote about the new ATProto-powered Tangled Git forge a few months
+    ago, it''s come along by leaps and bounds! First, and most excitingly, they''ve
+    added continuous integration via Spindles which are built in a nice ATProto style:
+    The pipelines are Nix-only right now, so I braved using it [1] for a new GPS Exchange
+    Format library in OCaml that I wrote.'
+  venue: ''
+- title: 'ReproQuorum : Signed, Scope Deterministic Pipelines and Benchmark Quorums
+    for Verifiable ML Reproducibility'
+  date: 2026-01
+  url: https://doi.org/10.63328/ijcser-v3ri1p6
+  category: nix-ci-cd
+  subcategory: ''
+  authors:
+  - Surya Pavan Kumar Gudla
+  - Preeti Nutipalli
+  - Chalapathi Rao T
+  abstract: Reproducing machine learning results across teams and hardware often fails
+    due to hidden randomness, drifting datasets, and unstable environments that alter
+    metrics without visible changes to code or intent. ReproQuorum virtualizes randomness
+    with scoped, counter‑based generators, derives hash‑locked master seeds from commit,
+    dataset fingerprints, and canonicalized configuration, emits signed JSON‑LD provenance
+    receipts, and packages a Nix‑pinned OCI capsule for deterministic re‑execution.
+    Repository continuous integration targets a benchmark quorum of ≥ 2 public datasets
+    per task; the reported experiments enforce ≥ 1 dataset per task. Across named
+    entity recognition (WNUT 2017) and extractive question answering (SQuAD v1.1),
+    replication attains Tier‑A on matched architectures (byte‑identical) and Tier‑B
+    across CPU↔CUDA (metric‑identical with Δ≤10^(-6)). Performance improves by +1.1
+    F1 on WNUT and +0.7 F1 / +0.6 EM on SQuAD under equal budgets. Capsules and receipts
+    enable one‑command verification and reduce ambiguity about seeds, data, and environments.
+    Code, data manifests, checkpoints, capsules, and model cards are released with
+    signed receipts and container digests to support independent validation.
+  venue: International Journal of Computational Science and Engineering Research
+- title: Radiation Therapy in the Treatment of a Bleeding Pseudotumor
+  date: 2024-12
+  url: https://doi.org/10.22541/au.173392253.30552190/v1
+  category: nix-ci-cd
+  subcategory: ''
+  authors:
+  - Rakhi Kaila
+  - S.R. Miller
+  - Ramesh Boggula
+  abstract: 'Title Page1) Radiation Therapy in the Treatment of a Bleeding Pseudotumor2)
+    Rakhi Kaila, Steven Miller, Ahmad Hammoud, Ramesh Boggula,Nitin Vaishampayan3)
+    Department of Oncology, Wayne State University School of Medicine, Detroit, USA4)
+    Corresponding author: Steven Miller, srmiller@med.wayne.edu5) Contact info: srmiller@med.wayne.edu;
+    cell 248-404-75156) No funding or conflict of interest was present in the writing
+    of this paper7) Written informed consent from the legally authorized representative
+    of the DECEASED subject was obtained for the publication of this case reportAuthor
+    Contribution:Rakhi Kaila – 1) Substantial contributions to concept or design,
+    2) Acquisition, analysis, or interpretation of data, 3) drafting of the manuscript,
+    4) Has agreed to be accountable for all aspects of the work and will review the
+    final version to be published.Steven Miller - 1) Substantial contributions to
+    concept or design, 2) Acquisition, analysis, or interpretation of data, 3) drafting
+    of the manuscript, 4) Has agreed to be accountable for all aspects of the work
+    and will review the final version to be published. 5) Supervised the WorkAhmad
+    Hammoud – 1) Acquisition, analysis, or interpretation of data 2) Critical review
+    of the manuscript for important intellectual content 3) Has agreed to be accountable
+    for all aspects of the work and will review the final version to be published.Ramesh
+    Boggula – 1) Acquisition, analysis, or interpretation of data 2) Critical review
+    of the manuscript for important intellectual content 3) Has agreed to be accountable
+    for all aspects of the work and will review the final version to be published.Nitin
+    Vaishampayan - 1) Substantial contributions to concept or design, 2) Acquisition,
+    analysis, or interpretation of data, 3) drafting of the manuscript, 4) Has agreed
+    to be accountable for all aspects of the work and will review the final version
+    to be published. 5) Supervised the WorkRadiation Therapy in the Treatment of a
+    Bleeding PseudotumorKey Clinical MessageUncontrollable blood loss from a ’bleeding
+    pseudotumor’ in a patient diagnosed with lower-risk myelodysplastic syndrome (MDS)
+    represents a severe medical condition with scarce data on therapeutic options.
+    This case report describes a patient treated with radiation therapy for a “bleeding
+    pseudotumor” and reviews the available literature.IntroductionMyelodysplastic
+    syndromes (MDS) are characterized by ineffective hematopoiesis, leading to blood
+    cytopenias such as anemia, neutropenia, and thrombocytopenia [1-2]. As a result,
+    patients with MDS often do not have enough healthy blood cells and platelets and
+    subsequently experience low blood cell counts. Myelodysplastic syndromes can also
+    progress to the development of myeloid neoplasms such as acute myeloid leukemia
+    (AML) [1-2]. These myeloid neoplasms, in turn, can often be challenging to diagnose
+    and treat secondary to various factors, including their pathological and clinical
+    heterogeneity.Lower-risk MDS is included in the spectrum of MDS and is characterized
+    by low bone marrow blast percentage, low number and depth of cytopenia, and relatively
+    good-risk karyotypic and molecular abnormalities. The absence of excess blasts
+    presents a challenge in differentiating lower-risk MDS from other causes of cytopenia.
+    Diagnosing lower-risk MDS requires integrating information from the peripheral
+    blood, specifically a complete blood count, bone marrow morphology, genetic studies,
+    and interrogation of the clinical records to exclude secondary causes of cytopenia
+    [1].In lower-risk MDS, the main goal of therapy is to treat the underlying cytopenias,
+    particularly anemia, to improve the patient’s quality of life and avoid transfusion
+    dependence. Chronic transfusions are, unfortunately, one of the only treatments
+    for anemia of lower-risk MDS due to the limited number of treatments available
+    for this condition. So far, no treatment has shown an improvement in survival.
+    Chronic transfusions have been linked to various medical issues, such as increased
+    morbidity due to heart failure, falls, fatigue, and reduced quality of life. Transfusions
+    are also time-consuming for the patient and increase their ”dependence” on the
+    medical system. Hospital beds are frequently necessary for these patients, and
+    their costs, including patient transportation, serum testing, iron chelation,
+    and more, are crucial yet typically less than those associated with erythropoiesis-stimulating
+    agents (ESAs). Despite some debate, the iron overload resulting from blood transfusions
+    can potentially damage multiple organs. [2-3]. During treatment with ESAs, lower-risk
+    MDS patients did not experience an increase in thrombotic events compared with
+    non-treated patients, which is quite different from what was observed for other
+    hematologic neoplasms. [4]It has been documented that metal-on-metal hip arthroplasty
+    can cause adverse reactions to the surrounding tissues due to metal debris.[5].
+    This reaction can lead to local tissue necrosis, fluid collection, and the formation
+    of inflammatory soft tissue masses known as pseudotumors. A bleeding pseudotumor
+    is an uncommon condition characterized by progressive cystic swelling of muscle
+    and/or bone caused by recurrent bleeding [5-7]. These pseudotumors are not uncommon,
+    although reported incidences vary with different implants, ranging from 0.6% to
+    61% [5].Although pseudotumours have been studied extensively [6], little is known
+    about their natural history, and controversy exists over their management, especially
+    in asymptomatic patients. Reports in the literature show that pseudotumours can
+    grow in size, remain static, reduce in size, and spontaneously resolve. Because
+    of this varied natural history, it is difficult to decide how best to manage them
+    in the short and long term [5].In this case report, we present a patient with
+    a lower-risk MDS and a recent metal on metal hip arthroplasty who developed what
+    was termed a ‘bleeding pseudotumor’ or pseudotumor. The patient subsequently underwent
+    primary radiation therapy as a treatment to manage the bleeding pseudotumor.Case
+    History/ExaminationA male in his late sixties developed a spontaneous atraumatic
+    bleed involving his right hip while at home. He was initially treated at an outside
+    hospital, receiving 14 Units(U) of Packed Red Blood Cells (PRBC) and being transferred
+    to an academic hospital. He was admitted with a diagnosis of impending compartment
+    syndrome involving the right thigh with a history of a metal-on-metal hip replacement.The
+    patient states he does not remember when the total hip was placed. However, previous
+    records state that the total hip was likely done in the 1990s. The patient states
+    that the pain was likely present up to 5 years ago and was significant enough
+    that he currently walks with a walker or a cane at baseline; however, he has not
+    walked recently since he has been in the hospital. The pain is rated 10/10 in
+    intensity and guards upon any movement around the right hip.A CT scan of the pelvis
+    on admission revealed a large right-sided pelvic mass causing posterior lateral
+    urinary bladder compression with a hyperdense fluid collection in the right quadriceps
+    muscle without definite extravasation. (Figure 1)He underwent surgical evacuation
+    of the hematoma in the right thigh, and intraoperatively, approximately 1500cc
+    of the hematoma was removed, with an estimated acute blood loss of approximately
+    300cc. The hematoma site was explored, and no source of active bleeding was identified.
+    The bleeding was best described intra-operatively as diffuse oozing. He received
+    6U PRBCs and 2U fresh frozen plasma due to concern for hypotension following the
+    significant fluid shift from the evacuation of the hematoma. He tolerated the
+    procedure well and was transferred to the PACU in stable condition. Post-operatively,
+    he went into hypovolemic shock and was transferred to the surgical intensive care
+    unit. The bleeding persisted, and a CT scan of the pelvis showed a fluid collection
+    in the right gluteal region, which had slightly increased in size. There was also
+    a larger, low-density area within the anterior compartment of the thigh. The overall
+    length of the anterior compartment was unchanged. Interventional radiology was
+    consulted, but the patient was not deemed a candidate for an interventional procedure
+    since a bleeding vessel could not be identified on CT angiography.Surgery was
+    not recommended due to the concerns of massive bleeding, and medical oncology
+    was also asked to evaluate the patient. Laboratory values at that time revealed
+    a hemoglobin of 7.5 g/dl and a platelet count of 110. A Prothrombin time (PT)
+    was 11.5 seconds (normal 9.4-11.7), an Activated Partial Thromboplastin time (APTT)
+    was 25.5 seconds (normal 23 - 33), and an INR was 1.08 normal (0.87-1.1). A previous
+    bone marrow biopsy was consistent with a lower-risk MDS, but the myelodysplasia
+    was not considered severe enough to account for the current clinical presentation.
+    During the patient’s hospital course, he underwent extensive blood transfusions,
+    receiving over 50 units of packed red blood cells (PRBCs) during a 43-day hospitalization.Following
+    this, a repeated bone marrow biopsy was performed, demonstrating that 50 to 55%
+    of the marrow had been supplanted by hypercellular marrow with mid-erythroid and
+    myeloid hyperplasia. There was no increase in blast cells, and the differential
+    diagnosis included infection, effects of medication, peripheral destruction, and
+    low-risk MDS.A CT scan of the chest, abdomen, and pelvis revealed a significantly
+    enlarged complex cystic mass within the musculature surrounding the right hip.
+    Additionally, several lobulated low-density or cystic regions were observed in
+    the left gluteus medius muscle, possibly indicative of a resolving hematoma.A
+    consultation was requested with the radiation oncology team to determine if it
+    was possible to use radiation therapy as the primary treatment for the bleeding
+    pseudotumor in the patient’s right thigh. The patient was dependent on transfusions
+    and couldn’t be moved out of the ICU. Therefore, radiation therapy was proposed
+    as a potential treatment, referencing prior documented cases [7-10]. Upon initial
+    review, the patient was clinically stable hemodynamically, with surgical drains
+    already in place (Figure 2).The patient underwent a course of primary radiation
+    therapy to the right thigh encompassing the bleeding pseudotumor and received
+    a total dose of 2000 cGy in 10 fractions prescribed to the 100% isodose line.
+    The gross tumor volume (GTV) consisted of the pseudotumor covering the right hemipelvis
+    from the superior aspect of the iliac bone to just superior to the femoral condyles.
+    The clinical target volume (CTV), which accounts for setup errors and patient
+    motion and ensures coverage for any setup variability, was a 1 cm margin around
+    the GTV. The planning target volume (PTV), which accounts for planning or treatment
+    delivery uncertainties, consisted of a 0.5 cm expansion beyond the CTV.He was
+    treated using a two-field technique consisting of an anterior and posterior field.
+    The length of the PTV in the craniocaudal direction, which was over 46 cm, required
+    the use of an extended source skin distance (SSD) technique utilizing two isocenters
+    with an SSD of 120 cm for both the anterior (AP) and posterior (PA) fields. The
+    maximum collimator setting for most linear accelerators is 40 cm x 40 cm, and
+    extending the SSD allows the field to project larger so that a 46 cm field can
+    be treated. A multi-leaf collimator (MLC) was used to shape the treatment field
+    to ensure adequate target coverage. Medially, a strip of tissue was avoided to
+    prevent circumferential radiation treatment of an extremity and subsequently decrease
+    the risk of compartment syndrome and lymphedema. (Figure 3)Ten megavoltage photons
+    were chosen to obtain a homogenous dose distribution. A field-in-field technique
+    was used further to improve the treatment plan’s homogeneity and PTV coverage.
+    (Figure 4).After five days of treatment, a reduced amount of output from the surgical
+    drains was observed. One week after the initiation of radiation therapy, the drains
+    were noted to have minimal drainage and were subsequently removed. The patient’s
+    hemoglobin had been stable at around eight g/dL since the initiation of radiation
+    therapy, and he had not received any PRBC units since that day. A few days after
+    the completion of radiation therapy, the medical team described several episodes
+    in which the wound dressing was saturated with blood. One week after treatment,
+    the patient developed a dehiscence of the proximal portion of his right thigh
+    fasciotomy wound, with the pseudotumor capsule penetrating through the skin. The
+    patient’s wound was eventually stabilized, and he was discharged from the hospital.
+    He did not require any further blood transfusions, and he was discharged to rehabilitation
+    and underwent continued dressing changes and wound checks twice daily. He was
+    evaluated in the orthopedic clinic approximately a week after the completion of
+    the radiation therapy and was doing well with no significant bleeding. A six-week
+    follow-up was recommended to assess the impact of radiation therapy on the management
+    of bleeding.Approximately one month after treatment, the patient was readmitted
+    with swelling and bleeding from the right hip. A CT of the pelvis revealed an
+    extensive necrotizing gas-forming infection and abscess formations involving almost
+    the entire musculature in the right hemipelvis and multiple regions in the upper
+    and mid-thigh with underlying hematoma components and myositis. The ICU team was
+    consulted because of the patient’s severe anemia and treatment for the necrotizing
+    wound. The patient decided to pursue comfort care measures and not pursue surgical
+    management, so he was discharged to hospice care.Differential Diagnosis1.) acute
+    muscle hematoma, 2.) organizing hematoma-myositis ossificans 3.) Vascular Malformations-Hemangiomas
+    4.) Aneurysms-Pseudoaneurysms 5.) Lymph nodes 6.) Tumoral calcinosisDiscussionCurrently,
+    there are very few articles that have examined the role of radiation therapy as
+    a definitive treatment option for pseudotumors, especially bleeding pseudotumors.
+    Most studies have focused on managing pseudotumors, particularly highlighting
+    radiotherapy and arterial embolization as treatment options. Pseudotumors are
+    a rare but recognized complication in hemophilia, occurring in 1-2% of patients,
+    and treatment for these tumors has included external beam radiation therapy. [8]
+    The suggested mechanism for pseudotumors’ response to radiation therapy includes
+    inflammation and fibrinogenesis within the microvasculature of the pseudotumor,
+    which leads to thrombus formation, narrowing of the vessel lumen, and eventually
+    fibrosis, resulting in the cessation of bleeding [7]. The most common symptoms
+    described in relation to psuedotumors of the pelvis were hip pain, a palpable
+    mass, or paresthesia. [11]A study by Wiley et al. systematically reviewed the
+    peer-reviewed literature to determine a pooled estimate of the incidence of pseudotumor
+    and acute lymphocytic vasculitis-associated lesions (ALVAL) in adult patients
+    with primary metal-on-metal (MoM) total hip arthroplasty or resurfacing. Fourteen
+    eligible articles were identified, with a total of 13,898 MoM hips. The incidence
+    of pseudotumor/ALVAL ranged from 0% to 6.5% of hips with a mean follow-up ranging
+    from 1.7 to 12.3 years across the studies. The pooled estimated incidence of pseudotumor/ALVAL
+    was 0.6%. The rate of revision for any reason ranged from 0% to 14.3%[12]. Peri-articular
+    soft-tissue masses or pseudotumors can also occur after large-diameter metal-on-metal
+    (MoM) resurfacing of the hip and conventional total hip replacement (THR) [13].In
+    a study by Bosker, 119 patients who underwent 120 MoM THRs with large-diameter
+    femoral heads between January 2005 and November 2007 were evaluated. Outcome scores,
+    serum metal ion levels, radiographs, and CT scans were obtained. Patients with
+    symptoms or an identified pseudotumour were offered MRI and an ultrasound-guided
+    biopsy [13]. There were 108 patients (109 hips) eligible for evaluation by CT
+    scan at a mean follow-up of 3.6 years (2.5 to 4.5); 42 patients (39%) were diagnosed
+    with a pseudotumour. The hips of 13 patients (12%) were revised to a polyethylene
+    acetabular component with small-diameter metal head. Patients with elevated serum
+    metal ion levels had four times increased risk of developing pseudotumor [12].
+    Pseudotumour diagnosis is not easy as patients remain asymptomatic for a long
+    time. As it is a well-known complication, screening with images must be performed
+    on all prosthesis with a metal-bearing surface. [14] Also, delays in diagnosis
+    contribute to an increased size of the pseudotumour, leading to more bone and
+    soft tissue damage [11]An article by Espander et al. reviewed the literature on
+    pseudotumor cases and identified 28 patients who had been treated with radiation
+    therapy. Sixteen patients (57.1%) underwent radiation therapy as the sole treatment
+    for a pseudotumor, while the remaining twelve (42.9%) received factor replacement
+    therapy in addition to radiotherapy [7]. Patients treated with factor replacement
+    therapy and radiation therapy had fewer treatment failures than those patients
+    treated with radiation therapy alone. Only one out of seven (14.3%) treatment
+    failures occurred in patients who received both factor replacement and radiation
+    therapy, while the rest (85.7%) received only radiotherapy [7]. Radiotherapy,
+    in conjunction with replacement therapy, typically factor VIII, appears to be
+    especially effective for treating pseudotumors in certain regions. These include
+    the lower limb and masses near the pelvis, where most treatment failures have
+    been observed. Conversely, pseudotumors in the distal lower limb, upper limbs,
+    or skull are generally more responsive to radiotherapy alone [7].The preferred
+    treatment for pseudotumors is typically surgical excision. When complete removal
+    is not possible, alternative options, such as arterial embolization and, more
+    recently, radiation therapy, should be considered [8]. The of radiotherapy for
+    pseudotumors, as reported in the on the treatment the and the of radiation and
+    various have been used to treat pseudotumors. A has yet to be studied [7]. A literature
+    review significant in studies radiotherapy ranging from as low as cGy to as as
+    with or without factor replacement therapy, have treated patients with resulting
+    in the complete of lesions Additionally, the size of the pseudotumor the response
+    to treatment, with lesions than 10 cm typically a complete response to treatment,
+    while of lesions larger than 10 cm to to treatment this case the patient was not
+    diagnosed with factor but with a lower-risk myelodysplastic syndrome and a metal-on-metal
+    left hip there is limited data or case studies on the radiation treatment of pseudotumors
+    in patients with lower-risk MDS and metal-on-metal hip the patient due to bleeding
+    from the pseudotumor, radiation therapy have the bleeding the patient to be discharged
+    from the hospital and possibly some quality time with his and literature limited
+    information on managing pseudotumors, especially ’bleeding pseudotumors’ that
+    are not associated with factor and after a metal-on-metal hip The case an to managing
+    bleeding pseudotumors, which initially showed a response with of bleeding and
+    a cessation of transfusions during radiation therapy. This case the of radiation
+    therapy in bleeding from a pseudotumor, as it the bleeding and the for transfusions,
+    the patient’s to hospice The patient did secondary to the bleeding is necessary
+    the management and treatment of pseudotumors, especially ’bleeding to in managing
+    this et for revised response for risk myelodysplastic et treatments for myelodysplastic
+    and clinical treatment for the management of lower-risk Treatment of low-risk
+    myelodysplastic et Pseudotumour Pseudotumour formation and in metal-on-metal total
+    hip arthroplasty following review and an case report with revision using a et
+    in metal-on-metal hip a study of with of pseudotumours with on radiotherapy and
+    arterial of the pseudotumor of the A rare pathological of Reports and Treatment
+    of Pseudotumour after and of pseudotumor and acute lymphocytic associated (ALVAL)
+    reactions in metal-on-metal hip a incidence of pseudotumour formation after large-diameter
+    metal-on-metal total hip et soft tissue is common with a metal-on-metal hip'
+  venue: ''
+- title: Coco
+  date: 2026-01
+  url: https://doi.org/10.5281/zenodo.19689134
+  category: nix-containers
+  subcategory: ''
+  authors:
+  - Anon
+  abstract: 'Artifact Description Option 1 (Recommended): Minimal Setup, Larger Download
+    If you prefer an easier setup and don’t mind a larger download: Download testCoco-docker-before-setup.tar.gz.
+    Load the Docker image: docker load < testCoco-docker-before-setup.tar.gz Start
+    a container from the loaded image and enter it. Navigate to: cd /testCoco/ Run
+    the setup and showcase scripts: bash ./setup.shbash ./showcase.sh This will install
+    the required dependencies (including opam, Rocq, and the Lexa compiler). The scripts
+    will execute automatically, display output. During the execution of showcase.h,
+    it will pause in the middle, right before benchmarking, and then indicate: where
+    to find the verification examples where to find the benchmarking examples You
+    can then continue execution; the benchmarking process will reproduce the results
+    reported in the paper. Option 2: More Setup, Smaller Download If you are comfortable
+    with a bit more setup and prefer a smaller download: Download: flake.nix testCoco.zip
+    Build the Docker image: nix build . in a directory with flake.nix This will produce
+    a Docker image named cocosys:v3. Unzip testCoco.zip and move its contents to the
+    root directory of cocosys:v3. This setup corresponds exactly to the contents of
+    testCoco-docker-before-setup.tar.gz. Artifact Information All required source
+    code is included in testCoco.zip. All dependencies are specified in flake.nix.
+    The file testCoco-docker-before-setup.tar.gz is generated by: Running nix build
+    . in a directory containing flake.nix, and Placing the extracted contents of testCoco.zip
+    into the root directory of the resulting environment.'
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: 'rixpress: Build Reproducible Analytical Pipelines with ''Nix'''
+  date: 2025-10
+  url: https://doi.org/10.32614/cran.package.rixpress
+  category: nix-reproducibility
+  subcategory: ''
+  authors:
+  - Bruno Rodrigues
+  abstract: Streamlines the creation of reproducible analytical pipelines using 'default.nix'
+    expressions generated via the 'rix' package for reproducibility. Define derivations
+    in 'R', 'Python' or 'Julia', chain them into a composition of pure functions and
+    build the resulting pipeline using 'Nix' as the underlying end-to-end build tool.
+    Functions to plot the pipeline as a directed acyclic graph are included, as well
+    as functions to load and inspect intermediary results for interactive analysis.
+    User experience heavily inspired by the 'targets' package.
+  venue: ''
+- title: Reproducible builds of E2EE-messengers for Android using Nix hermetic builds
+  date: 2025-01
+  url: https://resolver.obvsg.at/urn:nbn:at:at-ubl:1-94573
+  category: nix-reproducibility
+  subcategory: ''
+  authors:
+  - Kofler, Georg
+  abstract: 'This thesis explores the implementation of verifiable, Reproducible Builds
+    for End-to-End encrypted (E2EE) messaging applications for Android. The topic
+    is part of the research field of Reproducible Builds, which aims to increase trust
+    in software and to improve the security of Software Supply Chains. Reproducible
+    builds aim to enhance trust in software by allowing users to verify that the binary
+    of the software has been created from the exact source code and dependencies specified
+    in the build process. The thesis focuses on providing a reproducible build process
+    for two open-source E2EE messaging applications: Signal and Wire. The motivation
+    to ensure reproducibility—and thereby the integrity—of E2EE messaging applications
+    stems from their central role as essential tools for modern digital privacy. These
+    applications provide confidentiality for private and sensitive communications,
+    and their compromise could undermine encryption mechanisms, potentially leaking
+    sensitive data to third parties. Ensuring the integrity of E2EE apps is not only
+    critical for individual privacy but also for upholding broader principles of freedom,
+    security, and trust in the digital age. Due to time constraints, only a small
+    subset of the available E2EE messaging apps could be selected for this work. Signal
+    Android and Wire Android were chosen as two of the most popular E2EE messaging
+    applications. However, the intention is to extend the set of reproducibly built
+    applications to include many more in the future. The applications are built in
+    a hermetically isolated build environment, which is configured using a Nix expression.
+    The implementation consists of a CI/CD pipeline, which is called at regular intervals
+    and checks for new versions of the Android applications. If a new version of one
+    of the applications has been released, the pipeline will update the Nix scripts
+    and verify the reproducibility of the new version of the application by building
+    the derivation, which fetches the new source code, retrieves the dependencies,
+    and builds the APK. The resulting APK is compared to the vendor-published APK
+    using the tool Diffoscope to identify any differences. The self-built APK, its
+    hash value, and a build attestation are published as pipeline artifacts of the
+    GitLab instance and logged in a transparency log to allow further external verification
+    of the supply chain. This work contributes to improving the security and integrity
+    of software supply chains, particularly for E2EE applications, by ensuring that
+    no unauthorized modifications occur during the build process.'
+  venue: University Library Linz repository (Johannes Kepler Universitat Linz)
+- title: Assessment of Reproducibility in Nix
+  date: 2025-05
+  url: https://doi.org/10.5281/zenodo.17372810
+  category: nix-reproducibility
+  subcategory: ''
+  authors:
+  - Bandt
+  abstract: Masters Thesis about reproducible builds in nixpkgs and how to detect
+    non-reproducible derivations in a practical way.
+  venue: Zenodo (CERN European Organization for Nuclear Research)
+- title: Reproducible High Performance Computing without Redundancy with Nix
+  date: 2024-10
+  url: https://doi.org/10.31219/osf.io/3fp2v
+  category: nix-reproducibility
+  subcategory: ''
+  authors:
+  - Rohit Goswami
+  - S. Ruhila
+  - Amrita Goswami
+  abstract: High performance computing (HPC) clusters are typically managed in arestrictive
+    manner; the large user base makes cluster administrators unwillingto allow privilege
+    escalation. Here we discuss existing methods of packagemanagement, including those
+    which have been developed with scalability in mind,and enumerate the drawbacks
+    and advantages of each management methodology. Wecontrast the paradigms of containerization
+    via docker, virtualization via KVM,pod-infrastructures via Kubernetes, and specialized
+    HPC packaging systems viaSpack and identify key areas of neglect. We demonstrate
+    how functionalprogramming due to reliance on immutable states has been leveraged
+    fordeterministic package management via the nix-language expressions. We show
+    itsassociated ecosystem is a prime candidate for HPC package management. We furtherdevelop
+    guidelines and identify bottlenecks in the existing structure andpresent the methodology
+    by which the nix ecosystem should be developed furtheras an optimal tool for HPC
+    package management. We assert that the caveats of thenix ecosystem can easily
+    mitigated by considerations relevant only to HPCsystems, without compromising
+    on functional methodology and features of thenix-language. We show that benefits
+    of adoption in terms of generatingreproducible derivations in a secure manner
+    allow for workflows to be scaled acrossheterogeneous clusters. In particular,
+    from the implementation hurdles facedduring the compilation and running of the
+    d-SEAMS scientific software engine,distributed as a nix-derivation on an HPC cluster,
+    we identify communicationprotocols for working with SLURM and TORQUE user resource
+    allocation queues.These protocols are heuristically defined and described in terms
+    of thereference implementation required for queue-efficient nix builds.
+  venue: ''
+- title: 'Vibenix: An AI Assistant for Software Packaging with Nix'
+  date: 2026-01
+  url: https://doi.org/10.14722/last-x.2026.23035
+  category: nix-reproducibility
+  subcategory: ''
+  authors:
+  - Martin Schwaighofer
+  - Martim Monis
+  - Nuno Saavedra
+  abstract: Implicit and floating dependencies, uncontrolled network access, and other
+    impurities in build environments create intransparent supply chains.Discovering
+    the identity and chain of custody of every dependency that could have affected
+    the output of a build process is an error-prone forensic and reverse engineering
+    task.Hermetically isolated build steps, linked by hashes of their inputs and outputs,
+    make functional package management a principled alternative, which ensures that
+    software depends only and exactly on declared inputs listed in a reproducible
+    build recipe.Generating build recipes, which satisfy these additional constraints,
+    however, is a complex and time-consuming task, creating a barrier to adoption.We
+    present Vibenix, an AIpowered assistant that automatically generates such recipes
+    as Nix expressions.Vibenix employs an agentic architecture that leverages a large
+    language model (LLM) to iteratively refine a build recipe based on build outcomes,
+    guided by deterministic rules and a structured feedback loop.We evaluated Vibenix
+    on a dataset of 472 packaging tasks from the Nixpkgs repository.Vibenix successfully
+    builds 424 of the 472 tasks (89.8%).Manual validation of a subset of 48 packages
+    showed that 45.8% of Vibenix-built packages are functionally correct.Vibenix's
+    postbuild refinement process, based on the evaluator-optimizer pattern and leveraging
+    a VM environment for runtime testing, results in an additional 37.5% increase
+    in functionally correct packages, demonstrating that this refinement mechanism
+    is a promising and important contribution to automated software packaging.Vibenix
+    demonstrates how LLMs, as an unreliable building block, can be leveraged to generate
+    rigorously defined, complete, and easy to audit dependency trees, for real-world
+    software projects.
+  venue: ''
+- title: Improving the Usability of Mondriλn, a Visual Esoteric Functional Programming
+    Language
+  date: 2025-01
+  url: https://eprints.ost.ch/id/eprint/1365/1/HS%202025%202026-SA-EP-Strolz-Elvedi-PL%20FP%20Haskell%20Open%20Slot%202.pdf
+  category: nix-reproducibility
+  subcategory: ''
+  authors:
+  - Sven Elvedi
+  - Timo Strolz
+  abstract: The aim of this project is to make the lambda calculus more accessible
+    through interactive visualization. A previous project developed Mondriλn as a
+    proof of concept CLI application that generates Mondriλn images from lambda terms
+    and vice versa. This project builds on the initial proof of concept by re-developing
+    it as an interactive web application (Mondriλn+). Improved aspects are the visual
+    representation of nested abstractions and parenthesized terms. Additional features
+    include customizable visualizations, an α-conversion equivalent transformation
+    for the images, an interactive web interface and an enhanced language specification
+    for the images. Mondriλn+ is written in Haskell and uses Nix in combination with
+    Cabal as its build tool. The production code gets compiled to WebAssembly. This
+    enables the development of a type safe and reactive UI with reproducible builds
+    and high portability. The Mondriλn language specification was redesigned to enable
+    greater customization, stronger invariants, and an improved user experience. Among
+    the evaluated Haskell web frameworks, Miso was chosen for its simplicity and existing
+    documentation. The core concept of the application remains the pure lambda calculus
+    with an extended intermediate representation containing visual information on
+    how to render the resulting images. Mondriλn+ can generate images from textual
+    lambda calculus terms and vice versa. The application can perform β-reduction
+    on Mondriλn+ images and on their corresponding textual representations. It supports
+    α-conversion equivalent transformations on images, implemented as color changes.
+    Users can either customize Mondriλn+ images implicitly by the way they enter textual
+    terms and explicitly by resizing individual elements. The application can be used
+    to teach and learn the lambda calculus in an interactive and visually appealing
+    way. The current version of Mondriλn+ has potential for further development. Ideas
+    for additional features include for example animations of β-reduction or scanning
+    printed versions of Mondriλn+ images.
+  venue: HSR (HSR University of Applied Sciences Rapperswil)
